@@ -2,13 +2,13 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "6f29b5d2",
+   "id": "4869f567",
    "metadata": {
     "papermill": {
-     "duration": 0.006731,
-     "end_time": "2026-07-16T06:17:37.544007+00:00",
+     "duration": 0.008154,
+     "end_time": "2026-07-16T07:03:53.893317+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:17:37.537276+00:00",
+     "start_time": "2026-07-16T07:03:53.885163+00:00",
      "status": "completed"
     },
     "tags": []
@@ -32,21 +32,21 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "9c46807b",
+   "id": "ea0ff4b1",
    "metadata": {
     "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
     "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:17:37.557832Z",
-     "iopub.status.busy": "2026-07-16T06:17:37.557041Z",
-     "iopub.status.idle": "2026-07-16T06:17:38.343608Z",
-     "shell.execute_reply": "2026-07-16T06:17:38.342597Z"
+     "iopub.execute_input": "2026-07-16T07:03:53.908956Z",
+     "iopub.status.busy": "2026-07-16T07:03:53.908564Z",
+     "iopub.status.idle": "2026-07-16T07:03:54.595824Z",
+     "shell.execute_reply": "2026-07-16T07:03:54.592416Z"
     },
     "papermill": {
-     "duration": 0.795405,
-     "end_time": "2026-07-16T06:17:38.345336+00:00",
+     "duration": 0.698254,
+     "end_time": "2026-07-16T07:03:54.598570+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:17:37.549931+00:00",
+     "start_time": "2026-07-16T07:03:53.900316+00:00",
      "status": "completed"
     },
     "tags": []
@@ -61,7 +61,7 @@
       "remote: Counting objects: 100% (55/55), done.\u001b[K\r\n",
       "remote: Compressing objects: 100% (47/47), done.\u001b[K\r\n",
       "remote: Total 55 (delta 5), reused 54 (delta 5), pack-reused 0 (from 0)\u001b[K\r\n",
-      "Receiving objects: 100% (55/55), 85.58 KiB | 3.42 MiB/s, done.\r\n",
+      "Receiving objects: 100% (55/55), 85.58 KiB | 8.56 MiB/s, done.\r\n",
       "Resolving deltas: 100% (5/5), done.\r\n",
       "/kaggle/working/MAZero\n"
      ]
@@ -75,19 +75,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "5af3a9ed",
+   "id": "5ca47c47",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:17:38.359523Z",
-     "iopub.status.busy": "2026-07-16T06:17:38.358626Z",
-     "iopub.status.idle": "2026-07-16T06:17:43.867431Z",
-     "shell.execute_reply": "2026-07-16T06:17:43.866551Z"
+     "iopub.execute_input": "2026-07-16T07:03:54.619438Z",
+     "iopub.status.busy": "2026-07-16T07:03:54.619034Z",
+     "iopub.status.idle": "2026-07-16T07:03:57.863019Z",
+     "shell.execute_reply": "2026-07-16T07:03:57.861750Z"
     },
     "papermill": {
-     "duration": 5.517708,
-     "end_time": "2026-07-16T06:17:43.869176+00:00",
+     "duration": 3.255749,
+     "end_time": "2026-07-16T07:03:57.865381+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:17:38.351468+00:00",
+     "start_time": "2026-07-16T07:03:54.609632+00:00",
      "status": "completed"
     },
     "tags": []
@@ -97,7 +97,7 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "2.10.0+cu128 True\n"
+      "2.10.0+cpu False\n"
      ]
     }
    ],
@@ -109,19 +109,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "a2d575b0",
+   "id": "d8b2fb68",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:17:43.883559Z",
-     "iopub.status.busy": "2026-07-16T06:17:43.882718Z",
-     "iopub.status.idle": "2026-07-16T06:18:04.756628Z",
-     "shell.execute_reply": "2026-07-16T06:18:04.755762Z"
+     "iopub.execute_input": "2026-07-16T07:03:57.882061Z",
+     "iopub.status.busy": "2026-07-16T07:03:57.881567Z",
+     "iopub.status.idle": "2026-07-16T07:04:21.309339Z",
+     "shell.execute_reply": "2026-07-16T07:04:21.308089Z"
     },
     "papermill": {
-     "duration": 20.88338,
-     "end_time": "2026-07-16T06:18:04.758639+00:00",
+     "duration": 23.438878,
+     "end_time": "2026-07-16T07:04:21.311783+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:17:43.875259+00:00",
+     "start_time": "2026-07-16T07:03:57.872905+00:00",
      "status": "completed"
     },
     "tags": []
@@ -138,8 +138,8 @@
       "Compiling ctree_sampled/cytree.pyx because it changed.\r\n",
       "[1/1] Cythonizing ctree_sampled/cytree.pyx\r\n",
       "/kaggle/working/MAZero\n",
-      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
-      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
+      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
+      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
      ]
     }
    ],
@@ -157,19 +157,160 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "06042462",
+   "id": "48018a44",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:18:04.772962Z",
-     "iopub.status.busy": "2026-07-16T06:18:04.772631Z",
-     "iopub.status.idle": "2026-07-16T06:18:04.835128Z",
-     "shell.execute_reply": "2026-07-16T06:18:04.834054Z"
+     "iopub.execute_input": "2026-07-16T07:04:21.329820Z",
+     "iopub.status.busy": "2026-07-16T07:04:21.329350Z",
+     "iopub.status.idle": "2026-07-16T07:04:21.338610Z",
+     "shell.execute_reply": "2026-07-16T07:04:21.337692Z"
     },
     "papermill": {
-     "duration": 0.071678,
-     "end_time": "2026-07-16T06:18:04.836802+00:00",
+     "duration": 0.021193,
+     "end_time": "2026-07-16T07:04:21.340633+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:18:04.765124+00:00",
+     "start_time": "2026-07-16T07:04:21.319440+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Writing nonuct_cnode_patch.diff\n"
+     ]
+    }
+   ],
+   "source": [
+    "%%writefile nonuct_cnode_patch.diff\n",
+    "diff --git a/core/mcts/ctree/ctree_sampled/lib/cnode.cpp b/core/mcts/ctree/ctree_sampled/lib/cnode.cpp\n",
+    "index 16e8a14..a322972 100644\n",
+    "--- a/core/mcts/ctree/ctree_sampled/lib/cnode.cpp\n",
+    "+++ b/core/mcts/ctree/ctree_sampled/lib/cnode.cpp\n",
+    "@@ -330,7 +330,16 @@ namespace tree\n",
+    "         if (value_score > 1)\n",
+    "             value_score = 1;\n",
+    " \n",
+    "-        float ucb_value = prior_score + value_score;\n",
+    "+        // NonUCT: additive surrogate term. this->nonuct_weight defaults to\n",
+    "+        // 0.0 (set via CTree constructor / a new setter), so with no\n",
+    "+        // wiring from Python this reduces exactly to the original MAZero\n",
+    "+        // pUCT score -- existing configs/results are unaffected unless the\n",
+    "+        // weight is explicitly turned on. child->nonuct_score is raw\n",
+    "+        // eta(theta,a) (unbounded), so it is squashed to comparable scale\n",
+    "+        // via the same asinh-family shape rather than mixed in raw.\n",
+    "+        float nonuct_term = this->nonuct_weight * tanhf(child->get_nonuct_score());\n",
+    "+\n",
+    "+        float ucb_value = prior_score + value_score + nonuct_term;\n",
+    "         return ucb_value;\n",
+    "     }\n",
+    " \n",
+    "diff --git a/core/mcts/ctree/ctree_sampled/lib/cnode.h b/core/mcts/ctree/ctree_sampled/lib/cnode.h\n",
+    "index 7b307d7..be713c8 100644\n",
+    "--- a/core/mcts/ctree/ctree_sampled/lib/cnode.h\n",
+    "+++ b/core/mcts/ctree/ctree_sampled/lib/cnode.h\n",
+    "@@ -12,6 +12,10 @@ namespace tree\n",
+    "     {\n",
+    "         int visit_count, num_children, hidden_state_index_x;\n",
+    "         float reward, pred_value, prior, pred_prob, beta, beta_hat;\n",
+    "+        // NonUCT: eta(theta, a) computed in Python (AsinhGLMSurrogate) and\n",
+    "+        // pushed into this node before selection runs. Defaults to 0 so\n",
+    "+        // nodes never touched by the surrogate behave like standard pUCT.\n",
+    "+        float nonuct_score = 0.0f;\n",
+    "         bool is_root;\n",
+    "         tools::SubTreeValueSet subtree_info;\n",
+    "         std::vector<CNode *> children;                 // shape = (num_children, )\n",
+    "@@ -27,6 +31,12 @@ namespace tree\n",
+    "         float get_qsa(float discount);\n",
+    "         float get_mean_q(float parent_q, float discount);\n",
+    " \n",
+    "+        // NonUCT: set/get the precomputed asinh-GLM surrogate score for\n",
+    "+        // this node. Called from Python after computing eta(theta, a)\n",
+    "+        // for the candidate action this node represents.\n",
+    "+        void set_nonuct_score(float score) { this->nonuct_score = score; }\n",
+    "+        float get_nonuct_score() { return this->nonuct_score; }\n",
+    "+\n",
+    "         // shape = (agent_num, action_space_size)\n",
+    "         void get_marginal_visit_count(tools::Array2D<int>); // marginal visit_count of sampled actions\n",
+    "         void get_marginal_priors(tools::Array2D<float>);    // marginal node prior of sampled actions\n",
+    "@@ -63,6 +73,10 @@ namespace tree\n",
+    "     public:\n",
+    "         int agent_num, action_space_size, sampled_times, tot_nodes;\n",
+    "         float rho, lam;\n",
+    "+        // NonUCT: weight on the surrogate term in ucb_score. 0.0 = exact\n",
+    "+        // original MAZero behavior (opt-in only via set_nonuct_weight).\n",
+    "+        float nonuct_weight = 0.0f;\n",
+    "+        void set_nonuct_weight(float w) { this->nonuct_weight = w; }\n",
+    "         CNode *node_pool_ptr;\n",
+    "         CNode *root;\n",
+    "         tools::CMinMaxStats minmax_stat; // maintaining qsa for all nodes in the tree except the root."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "cfd7526f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T07:04:21.357544Z",
+     "iopub.status.busy": "2026-07-16T07:04:21.357189Z",
+     "iopub.status.idle": "2026-07-16T07:04:36.618514Z",
+     "shell.execute_reply": "2026-07-16T07:04:36.617304Z"
+    },
+    "papermill": {
+     "duration": 15.272655,
+     "end_time": "2026-07-16T07:04:36.620935+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T07:04:21.348280+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "/kaggle/working/MAZero\n",
+      " core/mcts/ctree/ctree_sampled/lib/cnode.cpp | 11 \u001b[32m++++++++++\u001b[m\u001b[31m-\u001b[m\r\n",
+      " core/mcts/ctree/ctree_sampled/lib/cnode.h   | 14 \u001b[32m++++++++++++++\u001b[m\r\n",
+      " core/mcts/ctree/setup.py                    |  2 \u001b[32m+\u001b[m\u001b[31m-\u001b[m\r\n",
+      " 3 files changed, 25 insertions(+), 2 deletions(-)\r\n",
+      "/kaggle/working/MAZero/core/mcts/ctree\n",
+      "/kaggle/working/MAZero\n",
+      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
+      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "%cd /kaggle/working/MAZero\n",
+    "!git apply nonuct_cnode_patch.diff\n",
+    "!git diff --stat\n",
+    "%cd core/mcts/ctree\n",
+    "!bash make.sh\n",
+    "%cd /kaggle/working/MAZero\n",
+    "!find . -name \"*.so\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "70f6cfc7",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T07:04:36.638779Z",
+     "iopub.status.busy": "2026-07-16T07:04:36.638376Z",
+     "iopub.status.idle": "2026-07-16T07:04:36.727540Z",
+     "shell.execute_reply": "2026-07-16T07:04:36.726522Z"
+    },
+    "papermill": {
+     "duration": 0.10098,
+     "end_time": "2026-07-16T07:04:36.729909+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T07:04:36.628929+00:00",
      "status": "completed"
     },
     "tags": []
@@ -194,20 +335,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
-   "id": "eda75aa1",
+   "execution_count": 7,
+   "id": "8d0ee415",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:18:04.850318Z",
-     "iopub.status.busy": "2026-07-16T06:18:04.850077Z",
-     "iopub.status.idle": "2026-07-16T06:18:11.722477Z",
-     "shell.execute_reply": "2026-07-16T06:18:11.721375Z"
+     "iopub.execute_input": "2026-07-16T07:04:36.747186Z",
+     "iopub.status.busy": "2026-07-16T07:04:36.746808Z",
+     "iopub.status.idle": "2026-07-16T07:04:43.929960Z",
+     "shell.execute_reply": "2026-07-16T07:04:43.928758Z"
     },
     "papermill": {
-     "duration": 6.881753,
-     "end_time": "2026-07-16T06:18:11.724666+00:00",
+     "duration": 7.194561,
+     "end_time": "2026-07-16T07:04:43.932314+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:18:04.842913+00:00",
+     "start_time": "2026-07-16T07:04:36.737753+00:00",
      "status": "completed"
     },
     "tags": []
@@ -217,8 +358,8 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m2.0/2.0 MB\u001b[0m \u001b[31m23.6 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
-      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.0/60.0 kB\u001b[0m \u001b[31m3.7 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m2.0/2.0 MB\u001b[0m \u001b[31m53.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.0/60.0 kB\u001b[0m \u001b[31m3.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
       "\u001b[?25h\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n",
       "gradio 5.50.0 requires gradio-client==1.14.0, but you have gradio-client 2.5.0 which is incompatible.\u001b[0m\u001b[31m\r\n",
       "\u001b[0m\u001b[33mA new version of huggingface_hub (1.23.0) is available! You are using version 1.11.0.\r\n",
@@ -241,23 +382,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
-   "id": "611462be",
+   "execution_count": 8,
+   "id": "56dbc871",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:18:11.740057Z",
-     "iopub.status.busy": "2026-07-16T06:18:11.739710Z",
-     "iopub.status.idle": "2026-07-16T06:20:01.997546Z",
-     "shell.execute_reply": "2026-07-16T06:20:01.996357Z"
+     "iopub.execute_input": "2026-07-16T07:04:43.951817Z",
+     "iopub.status.busy": "2026-07-16T07:04:43.950630Z",
+     "iopub.status.idle": "2026-07-16T07:06:36.444863Z",
+     "shell.execute_reply": "2026-07-16T07:06:36.443619Z"
     },
     "jupyter": {
      "source_hidden": true
     },
     "papermill": {
-     "duration": 110.268325,
-     "end_time": "2026-07-16T06:20:01.999789+00:00",
+     "duration": 112.506731,
+     "end_time": "2026-07-16T07:06:36.447314+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:18:11.731464+00:00",
+     "start_time": "2026-07-16T07:04:43.940583+00:00",
      "status": "completed"
     },
     "tags": []
@@ -268,30 +409,34 @@
      "output_type": "stream",
      "text": [
       "/kaggle/working/MAZero\n",
-      "[2026-07-16 06:18:40,666][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16 06:18:40\r\n",
-      "[2026-07-16 06:18:40,666][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16 06:18:40\r\n",
-      "[2026-07-16 06:18:40,666][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': True, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
-      "[2026-07-16 06:18:40,666][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': True, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
+      "[2026-07-16 07:05:15,057][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16 07:05:15\r\n",
+      "[2026-07-16 07:05:15,057][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16 07:05:15\r\n",
+      "[2026-07-16 07:05:15,057][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
+      "[2026-07-16 07:05:15,057][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
       "/kaggle/working/MAZero/core/train.py:487: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\r\n",
       "  scaler = GradScaler()\r\n",
+      "/usr/local/lib/python3.12/dist-packages/torch/cuda/amp/grad_scaler.py:31: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.\r\n",
+      "  super().__init__(\r\n",
       "/kaggle/working/MAZero/core/selfplay_worker.py:178: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
+      "/usr/local/lib/python3.12/dist-packages/torch/cuda/amp/autocast_mode.py:54: UserWarning: CUDA is not available or torch_xla is imported. Disabling autocast.\r\n",
+      "  super().__init__(\r\n",
       "/kaggle/working/MAZero/core/mcts/tree_search/mcts_sampled.py:121: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
-      "[2026-07-16 06:18:47,313][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
-      "[2026-07-16 06:18:47,313][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
-      "[2026-07-16 06:18:47,503][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
-      "[2026-07-16 06:18:47,503][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
-      "[2026-07-16 06:18:47,693][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
-      "[2026-07-16 06:18:47,693][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
-      "[2026-07-16 06:18:47,874][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
-      "[2026-07-16 06:18:47,874][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
-      "[2026-07-16 06:18:48,054][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
-      "[2026-07-16 06:18:48,054][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
-      "[2026-07-16 06:18:48,234][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
-      "[2026-07-16 06:18:48,234][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
-      "[2026-07-16 06:18:48,408][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
-      "[2026-07-16 06:18:48,408][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
+      "[2026-07-16 07:05:21,554][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
+      "[2026-07-16 07:05:21,554][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
+      "[2026-07-16 07:05:21,735][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
+      "[2026-07-16 07:05:21,735][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
+      "[2026-07-16 07:05:21,915][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
+      "[2026-07-16 07:05:21,915][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
+      "[2026-07-16 07:05:22,106][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
+      "[2026-07-16 07:05:22,106][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
+      "[2026-07-16 07:05:22,283][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
+      "[2026-07-16 07:05:22,283][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
+      "[2026-07-16 07:05:22,459][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
+      "[2026-07-16 07:05:22,459][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
+      "[2026-07-16 07:05:22,642][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
+      "[2026-07-16 07:05:22,642][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
       "/kaggle/working/MAZero/core/reanalyze_worker.py:113: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
       "/kaggle/working/MAZero/core/reanalyze_worker.py:256: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
@@ -301,41 +446,41 @@
       "Start evaluation for model 0.\r\n",
       "/kaggle/working/MAZero/core/test.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
-      "#0          Test Mean Score of matgame3: 73.25      (max: 100.0     , min:20.0      , std: 21.533404282648853)\r\n",
-      "[2026-07-16 06:18:50,226][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.698 reward_loss: 341.530 policy_loss: 11.996  value_loss: 1380.767consistency_loss: -0.510  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.358   Tp_perstep: 0.163   Tu_perstep: 1.182   Te_perstep: 0.472   \r\n",
-      "[2026-07-16 06:18:50,226][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.698 reward_loss: 341.530 policy_loss: 11.996  value_loss: 1380.767consistency_loss: -0.510  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.358   Tp_perstep: 0.163   Tu_perstep: 1.182   Te_perstep: 0.472   \r\n",
-      "[2026-07-16 06:18:50,227][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 73.25      (max: 100.0     , min:20.0      , std: 21.533404282648853)\r\n",
-      "[2026-07-16 06:18:50,227][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 73.25      (max: 100.0     , min:20.0      , std: 21.533404282648853)\r\n",
+      "#0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 07:05:23,361][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.337   Tp_perstep: 0.185   Tu_perstep: 0.094   Te_perstep: 0.439   \r\n",
+      "[2026-07-16 07:05:23,361][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.337   Tp_perstep: 0.185   Tu_perstep: 0.094   Te_perstep: 0.439   \r\n",
+      "[2026-07-16 07:05:23,362][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 07:05:23,362][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 50.\r\n",
-      "#50         Test Mean Score of matgame3: 59.59375   (max: 100.0     , min:20.0      , std: 19.05560838539405)\r\n",
+      "#50         Test Mean Score of matgame3: 94.375     (max: 100.0     , min:40.0      , std: 13.448396744593758)\r\n",
       "Start evaluation for model 100.\r\n",
-      "#100        Test Mean Score of matgame3: 51.75      (max: 100.0     , min:0.0       , std: 21.69821421223415)\r\n",
-      "[2026-07-16 06:19:10,994][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:26.50, max:80.00, min:-22.00, std:40.24) | total_loss: 293.089 reward_loss: 122.658 policy_loss: 2.188   value_loss: 685.483 consistency_loss: -1.564  lr: 0.020000  batch_future_return: 2.375   batch_model_diff: 59.688  target_model_diff: 50.000  Tc_perstep: 0.021   Tp_perstep: 0.134   Tu_perstep: 0.068   Te_perstep: 0.013   \r\n",
-      "[2026-07-16 06:19:10,994][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:26.50, max:80.00, min:-22.00, std:40.24) | total_loss: 293.089 reward_loss: 122.658 policy_loss: 2.188   value_loss: 685.483 consistency_loss: -1.564  lr: 0.020000  batch_future_return: 2.375   batch_model_diff: 59.688  target_model_diff: 50.000  Tc_perstep: 0.021   Tp_perstep: 0.134   Tu_perstep: 0.068   Te_perstep: 0.013   \r\n",
-      "[2026-07-16 06:19:10,994][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 51.75      (max: 100.0     , min:0.0       , std: 21.69821421223415)\r\n",
-      "[2026-07-16 06:19:10,994][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 51.75      (max: 100.0     , min:0.0       , std: 21.69821421223415)\r\n",
+      "#100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
+      "[2026-07-16 07:05:43,659][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.155   Tu_perstep: 0.033   Te_perstep: 0.013   \r\n",
+      "[2026-07-16 07:05:43,659][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.155   Tu_perstep: 0.033   Te_perstep: 0.013   \r\n",
+      "[2026-07-16 07:05:43,659][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
+      "[2026-07-16 07:05:43,659][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
       "Start evaluation for model 150.\r\n",
-      "#150        Test Mean Score of matgame3: 85.0       (max: 100.0     , min:40.0      , std: 19.364916731037084)\r\n",
+      "#150        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 200.\r\n",
-      "#200        Test Mean Score of matgame3: 93.125     (max: 100.0     , min:40.0      , std: 13.792547806696195)\r\n",
-      "[2026-07-16 06:19:32,154][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:41.80, max:80.00, min:-10.00, std:27.59) | total_loss: 309.646 reward_loss: 83.103  policy_loss: 3.493   value_loss: 912.040 consistency_loss: -2.480  lr: 0.020000  batch_future_return: 15.156  batch_model_diff: 105.938 target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.132   Tu_perstep: 0.062   Te_perstep: 0.011   \r\n",
-      "[2026-07-16 06:19:32,154][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:41.80, max:80.00, min:-10.00, std:27.59) | total_loss: 309.646 reward_loss: 83.103  policy_loss: 3.493   value_loss: 912.040 consistency_loss: -2.480  lr: 0.020000  batch_future_return: 15.156  batch_model_diff: 105.938 target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.132   Tu_perstep: 0.062   Te_perstep: 0.011   \r\n",
-      "[2026-07-16 06:19:32,154][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 93.125     (max: 100.0     , min:40.0      , std: 13.792547806696195)\r\n",
-      "[2026-07-16 06:19:32,154][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 93.125     (max: 100.0     , min:40.0      , std: 13.792547806696195)\r\n",
+      "#200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 07:06:06,426][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.019   Tp_perstep: 0.161   Tu_perstep: 0.033   Te_perstep: 0.011   \r\n",
+      "[2026-07-16 07:06:06,426][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.019   Tp_perstep: 0.161   Tu_perstep: 0.033   Te_perstep: 0.011   \r\n",
+      "[2026-07-16 07:06:06,426][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 07:06:06,426][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 250.\r\n",
-      "#250        Test Mean Score of matgame3: 99.375     (max: 100.0     , min:80.0      , std: 3.4798527267687636)\r\n",
+      "#250        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 300.\r\n",
       "#300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 06:19:53,429][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:74.33, max:100.00, min:40.00, std:21.53) | total_loss: 226.741 reward_loss: 60.990  policy_loss: 1.423   value_loss: 671.249 consistency_loss: -1.742  lr: 0.020000  batch_future_return: 21.797  batch_model_diff: 147.656 target_model_diff: 50.000  Tc_perstep: 0.019   Tp_perstep: 0.132   Tu_perstep: 0.059   Te_perstep: 0.010   \r\n",
-      "[2026-07-16 06:19:53,429][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:74.33, max:100.00, min:40.00, std:21.53) | total_loss: 226.741 reward_loss: 60.990  policy_loss: 1.423   value_loss: 671.249 consistency_loss: -1.742  lr: 0.020000  batch_future_return: 21.797  batch_model_diff: 147.656 target_model_diff: 50.000  Tc_perstep: 0.019   Tp_perstep: 0.132   Tu_perstep: 0.059   Te_perstep: 0.010   \r\n",
-      "[2026-07-16 06:19:53,430][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 06:19:53,430][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 06:19:57,033][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
-      "[2026-07-16 06:19:57,033][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
+      "[2026-07-16 07:06:29,671][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.018   Tp_perstep: 0.166   Tu_perstep: 0.033   Te_perstep: 0.010   \r\n",
+      "[2026-07-16 07:06:29,671][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.018   Tp_perstep: 0.166   Tu_perstep: 0.033   Te_perstep: 0.010   \r\n",
+      "[2026-07-16 07:06:29,672][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 07:06:29,672][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 07:06:33,563][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
+      "[2026-07-16 07:06:33,563][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
       "Start evaluation for model 320.\r\n",
       "#320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 06:19:57,483][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 06:19:57,483][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n"
+      "[2026-07-16 07:06:34,007][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 07:06:34,007][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n"
      ]
     }
    ],
@@ -356,20 +501,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
-   "id": "9000f656",
+   "execution_count": 9,
+   "id": "28438c14",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:02.018086Z",
-     "iopub.status.busy": "2026-07-16T06:20:02.017423Z",
-     "iopub.status.idle": "2026-07-16T06:20:02.151572Z",
-     "shell.execute_reply": "2026-07-16T06:20:02.150732Z"
+     "iopub.execute_input": "2026-07-16T07:06:36.469373Z",
+     "iopub.status.busy": "2026-07-16T07:06:36.468982Z",
+     "iopub.status.idle": "2026-07-16T07:06:36.599004Z",
+     "shell.execute_reply": "2026-07-16T07:06:36.597033Z"
     },
     "papermill": {
-     "duration": 0.145649,
-     "end_time": "2026-07-16T06:20:02.153602+00:00",
+     "duration": 0.144888,
+     "end_time": "2026-07-16T07:06:36.601977+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:02.007953+00:00",
+     "start_time": "2026-07-16T07:06:36.457089+00:00",
      "status": "completed"
     },
     "tags": []
@@ -380,13 +525,13 @@
      "output_type": "stream",
      "text": [
       "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
-      "tail: cannot open '06:18:40/logs/test.log' for reading: No such file or directory\r\n",
+      "tail: cannot open '07:05:15/logs/train.log' for reading: No such file or directory\r\n",
       "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
-      "tail: cannot open '06:18:40/logs/train_test.log' for reading: No such file or directory\r\n",
+      "tail: cannot open '07:05:15/logs/train_test.log' for reading: No such file or directory\r\n",
       "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
-      "tail: cannot open '06:18:40/logs/root.log' for reading: No such file or directory\r\n",
+      "tail: cannot open '07:05:15/logs/root.log' for reading: No such file or directory\r\n",
       "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
-      "tail: cannot open '06:18:40/logs/train.log' for reading: No such file or directory\r\n"
+      "tail: cannot open '07:05:15/logs/test.log' for reading: No such file or directory\r\n"
      ]
     }
    ],
@@ -396,20 +541,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
-   "id": "d4c4ab24",
+   "execution_count": 10,
+   "id": "9a0cd29f",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:02.171441Z",
-     "iopub.status.busy": "2026-07-16T06:20:02.171101Z",
-     "iopub.status.idle": "2026-07-16T06:20:02.179590Z",
-     "shell.execute_reply": "2026-07-16T06:20:02.178677Z"
+     "iopub.execute_input": "2026-07-16T07:06:36.626464Z",
+     "iopub.status.busy": "2026-07-16T07:06:36.626057Z",
+     "iopub.status.idle": "2026-07-16T07:06:36.635342Z",
+     "shell.execute_reply": "2026-07-16T07:06:36.634010Z"
     },
     "papermill": {
-     "duration": 0.019461,
-     "end_time": "2026-07-16T06:20:02.181261+00:00",
+     "duration": 0.025132,
+     "end_time": "2026-07-16T07:06:36.637489+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:02.161800+00:00",
+     "start_time": "2026-07-16T07:06:36.612357+00:00",
      "status": "completed"
     },
     "tags": []
@@ -550,20 +695,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
-   "id": "d9241c96",
+   "execution_count": 11,
+   "id": "17558904",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:02.198276Z",
-     "iopub.status.busy": "2026-07-16T06:20:02.197990Z",
-     "iopub.status.idle": "2026-07-16T06:20:02.326713Z",
-     "shell.execute_reply": "2026-07-16T06:20:02.325488Z"
+     "iopub.execute_input": "2026-07-16T07:06:36.659554Z",
+     "iopub.status.busy": "2026-07-16T07:06:36.659169Z",
+     "iopub.status.idle": "2026-07-16T07:06:36.790585Z",
+     "shell.execute_reply": "2026-07-16T07:06:36.789403Z"
     },
     "papermill": {
-     "duration": 0.139501,
-     "end_time": "2026-07-16T06:20:02.328673+00:00",
+     "duration": 0.145167,
+     "end_time": "2026-07-16T07:06:36.792936+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:02.189172+00:00",
+     "start_time": "2026-07-16T07:06:36.647769+00:00",
      "status": "completed"
     },
     "tags": []
@@ -583,20 +728,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
-   "id": "3f052f19",
+   "execution_count": 12,
+   "id": "4bdabb4a",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:02.347652Z",
-     "iopub.status.busy": "2026-07-16T06:20:02.346474Z",
-     "iopub.status.idle": "2026-07-16T06:20:02.353620Z",
-     "shell.execute_reply": "2026-07-16T06:20:02.352916Z"
+     "iopub.execute_input": "2026-07-16T07:06:36.814991Z",
+     "iopub.status.busy": "2026-07-16T07:06:36.814474Z",
+     "iopub.status.idle": "2026-07-16T07:06:36.823103Z",
+     "shell.execute_reply": "2026-07-16T07:06:36.821805Z"
     },
     "papermill": {
-     "duration": 0.018856,
-     "end_time": "2026-07-16T06:20:02.355557+00:00",
+     "duration": 0.022232,
+     "end_time": "2026-07-16T07:06:36.825038+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:02.336701+00:00",
+     "start_time": "2026-07-16T07:06:36.802806+00:00",
      "status": "completed"
     },
     "tags": []
@@ -711,20 +856,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
-   "id": "5cead625",
+   "execution_count": 13,
+   "id": "1b9040c0",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:02.372825Z",
-     "iopub.status.busy": "2026-07-16T06:20:02.372489Z",
-     "iopub.status.idle": "2026-07-16T06:20:02.378251Z",
-     "shell.execute_reply": "2026-07-16T06:20:02.377479Z"
+     "iopub.execute_input": "2026-07-16T07:06:36.848359Z",
+     "iopub.status.busy": "2026-07-16T07:06:36.847942Z",
+     "iopub.status.idle": "2026-07-16T07:06:36.854591Z",
+     "shell.execute_reply": "2026-07-16T07:06:36.853644Z"
     },
     "papermill": {
-     "duration": 0.01676,
-     "end_time": "2026-07-16T06:20:02.380147+00:00",
+     "duration": 0.020412,
+     "end_time": "2026-07-16T07:06:36.856710+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:02.363387+00:00",
+     "start_time": "2026-07-16T07:06:36.836298+00:00",
      "status": "completed"
     },
     "tags": []
@@ -816,20 +961,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
-   "id": "bdd813d9",
+   "execution_count": 14,
+   "id": "b86393b0",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:02.398046Z",
-     "iopub.status.busy": "2026-07-16T06:20:02.397733Z",
-     "iopub.status.idle": "2026-07-16T06:20:09.565821Z",
-     "shell.execute_reply": "2026-07-16T06:20:09.565013Z"
+     "iopub.execute_input": "2026-07-16T07:06:36.878988Z",
+     "iopub.status.busy": "2026-07-16T07:06:36.878197Z",
+     "iopub.status.idle": "2026-07-16T07:06:43.063325Z",
+     "shell.execute_reply": "2026-07-16T07:06:43.061965Z"
     },
     "papermill": {
-     "duration": 7.179164,
-     "end_time": "2026-07-16T06:20:09.567750+00:00",
+     "duration": 6.199001,
+     "end_time": "2026-07-16T07:06:43.065757+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:02.388586+00:00",
+     "start_time": "2026-07-16T07:06:36.866756+00:00",
      "status": "completed"
     },
     "tags": []
@@ -839,21 +984,21 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "epoch    0  train_mse=1366.116  test_mse=1325.957  test_R2=-17.1188\r\n",
-      "epoch  200  train_mse= 26.660  test_mse= 28.655  test_R2=0.6084\r\n",
-      "epoch  400  train_mse= 18.527  test_mse= 18.999  test_R2=0.7404\r\n",
-      "epoch  600  train_mse= 10.802  test_mse= 11.323  test_R2=0.8453\r\n",
-      "epoch  800  train_mse=  8.230  test_mse=  8.650  test_R2=0.8818\r\n",
-      "epoch 1000  train_mse=  7.526  test_mse=  7.887  test_R2=0.8922\r\n",
-      "epoch 1200  train_mse=  7.266  test_mse=  7.599  test_R2=0.8962\r\n",
-      "epoch 1400  train_mse=  7.151  test_mse=  7.471  test_R2=0.8979\r\n",
-      "epoch 1600  train_mse=  7.099  test_mse=  7.413  test_R2=0.8987\r\n",
-      "epoch 1800  train_mse=  7.080  test_mse=  7.391  test_R2=0.8990\r\n",
-      "epoch 1999  train_mse=  7.077  test_mse=  7.388  test_R2=0.8990\r\n",
+      "epoch    0  train_mse=1360.488  test_mse=1330.820  test_R2=-17.1350\r\n",
+      "epoch  200  train_mse= 26.317  test_mse= 26.825  test_R2=0.6345\r\n",
+      "epoch  400  train_mse= 18.775  test_mse= 19.338  test_R2=0.7365\r\n",
+      "epoch  600  train_mse= 11.356  test_mse= 11.561  test_R2=0.8425\r\n",
+      "epoch  800  train_mse=  8.573  test_mse=  8.507  test_R2=0.8841\r\n",
+      "epoch 1000  train_mse=  7.776  test_mse=  7.614  test_R2=0.8962\r\n",
+      "epoch 1200  train_mse=  7.479  test_mse=  7.280  test_R2=0.9008\r\n",
+      "epoch 1400  train_mse=  7.347  test_mse=  7.132  test_R2=0.9028\r\n",
+      "epoch 1600  train_mse=  7.287  test_mse=  7.066  test_R2=0.9037\r\n",
+      "epoch 1800  train_mse=  7.265  test_mse=  7.041  test_R2=0.9040\r\n",
+      "epoch 1999  train_mse=  7.262  test_mse=  7.038  test_R2=0.9041\r\n",
       "\r\n",
-      "Fitted c=42.0834  alpha=0.6736\r\n",
-      "True reward std (for reference): 8.504\r\n",
-      "Reward range in data: [10.11, 67.53]\r\n"
+      "Fitted c=42.3920  alpha=0.6752\r\n",
+      "True reward std (for reference): 8.432\r\n",
+      "Reward range in data: [8.58, 64.09]\r\n"
      ]
     }
    ],
@@ -863,13 +1008,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "50c45704",
+   "id": "4b2b09cf",
    "metadata": {
     "papermill": {
-     "duration": 0.008179,
-     "end_time": "2026-07-16T06:20:09.584255+00:00",
+     "duration": 0.01056,
+     "end_time": "2026-07-16T07:06:43.086870+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:09.576076+00:00",
+     "start_time": "2026-07-16T07:06:43.076310+00:00",
      "status": "completed"
     },
     "tags": []
@@ -885,20 +1030,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
-   "id": "7a04070c",
+   "execution_count": 15,
+   "id": "47802ccd",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:09.603069Z",
-     "iopub.status.busy": "2026-07-16T06:20:09.601972Z",
-     "iopub.status.idle": "2026-07-16T06:20:09.608069Z",
-     "shell.execute_reply": "2026-07-16T06:20:09.606976Z"
+     "iopub.execute_input": "2026-07-16T07:06:43.109821Z",
+     "iopub.status.busy": "2026-07-16T07:06:43.109435Z",
+     "iopub.status.idle": "2026-07-16T07:06:43.115892Z",
+     "shell.execute_reply": "2026-07-16T07:06:43.114577Z"
     },
     "papermill": {
-     "duration": 0.017729,
-     "end_time": "2026-07-16T06:20:09.610005+00:00",
+     "duration": 0.020636,
+     "end_time": "2026-07-16T07:06:43.118043+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:09.592276+00:00",
+     "start_time": "2026-07-16T07:06:43.097407+00:00",
      "status": "completed"
     },
     "tags": []
@@ -920,20 +1065,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
-   "id": "69fb04d1",
+   "execution_count": 16,
+   "id": "5340254e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:09.629282Z",
-     "iopub.status.busy": "2026-07-16T06:20:09.628789Z",
-     "iopub.status.idle": "2026-07-16T06:20:14.752371Z",
-     "shell.execute_reply": "2026-07-16T06:20:14.751141Z"
+     "iopub.execute_input": "2026-07-16T07:06:43.142568Z",
+     "iopub.status.busy": "2026-07-16T07:06:43.142212Z",
+     "iopub.status.idle": "2026-07-16T07:06:48.792206Z",
+     "shell.execute_reply": "2026-07-16T07:06:48.790897Z"
     },
     "papermill": {
-     "duration": 5.135704,
-     "end_time": "2026-07-16T06:20:14.754532+00:00",
+     "duration": 5.664733,
+     "end_time": "2026-07-16T07:06:48.794671+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:09.618828+00:00",
+     "start_time": "2026-07-16T07:06:43.129938+00:00",
      "status": "completed"
     },
     "tags": []
@@ -958,13 +1103,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "28cc9eee",
+   "id": "7816ee31",
    "metadata": {
     "papermill": {
-     "duration": 0.008701,
-     "end_time": "2026-07-16T06:20:14.772214+00:00",
+     "duration": 0.0109,
+     "end_time": "2026-07-16T07:06:48.816337+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:14.763513+00:00",
+     "start_time": "2026-07-16T07:06:48.805437+00:00",
      "status": "completed"
     },
     "tags": []
@@ -975,20 +1120,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
-   "id": "728030fa",
+   "execution_count": 17,
+   "id": "83b97a74",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:14.791097Z",
-     "iopub.status.busy": "2026-07-16T06:20:14.790579Z",
-     "iopub.status.idle": "2026-07-16T06:20:15.863607Z",
-     "shell.execute_reply": "2026-07-16T06:20:15.862470Z"
+     "iopub.execute_input": "2026-07-16T07:06:48.839559Z",
+     "iopub.status.busy": "2026-07-16T07:06:48.839179Z",
+     "iopub.status.idle": "2026-07-16T07:06:50.024210Z",
+     "shell.execute_reply": "2026-07-16T07:06:50.022738Z"
     },
     "papermill": {
-     "duration": 1.084966,
-     "end_time": "2026-07-16T06:20:15.865670+00:00",
+     "duration": 1.200533,
+     "end_time": "2026-07-16T07:06:50.027443+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:14.780704+00:00",
+     "start_time": "2026-07-16T07:06:48.826910+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1011,13 +1156,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "831ea2d2",
+   "id": "683fec39",
    "metadata": {
     "papermill": {
-     "duration": 0.008579,
-     "end_time": "2026-07-16T06:20:15.883576+00:00",
+     "duration": 0.010799,
+     "end_time": "2026-07-16T07:06:50.056133+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:15.874997+00:00",
+     "start_time": "2026-07-16T07:06:50.045334+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1028,20 +1173,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
-   "id": "27f4c7d0",
+   "execution_count": 18,
+   "id": "2a7a5356",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:15.903380Z",
-     "iopub.status.busy": "2026-07-16T06:20:15.902881Z",
-     "iopub.status.idle": "2026-07-16T06:20:15.910900Z",
-     "shell.execute_reply": "2026-07-16T06:20:15.909735Z"
+     "iopub.execute_input": "2026-07-16T07:06:50.080501Z",
+     "iopub.status.busy": "2026-07-16T07:06:50.079997Z",
+     "iopub.status.idle": "2026-07-16T07:06:50.089896Z",
+     "shell.execute_reply": "2026-07-16T07:06:50.088727Z"
     },
     "papermill": {
-     "duration": 0.020228,
-     "end_time": "2026-07-16T06:20:15.912787+00:00",
+     "duration": 0.025412,
+     "end_time": "2026-07-16T07:06:50.092456+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:15.892559+00:00",
+     "start_time": "2026-07-16T07:06:50.067044+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1077,13 +1222,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "980399db",
+   "id": "7263c1b8",
    "metadata": {
     "papermill": {
-     "duration": 0.008686,
-     "end_time": "2026-07-16T06:20:15.931491+00:00",
+     "duration": 0.011278,
+     "end_time": "2026-07-16T07:06:50.122166+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:15.922805+00:00",
+     "start_time": "2026-07-16T07:06:50.110888+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1094,20 +1239,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
-   "id": "e9df17e8",
+   "execution_count": 19,
+   "id": "58193906",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:15.950781Z",
-     "iopub.status.busy": "2026-07-16T06:20:15.950110Z",
-     "iopub.status.idle": "2026-07-16T06:20:23.508031Z",
-     "shell.execute_reply": "2026-07-16T06:20:23.507180Z"
+     "iopub.execute_input": "2026-07-16T07:06:50.147203Z",
+     "iopub.status.busy": "2026-07-16T07:06:50.146870Z",
+     "iopub.status.idle": "2026-07-16T07:06:58.432013Z",
+     "shell.execute_reply": "2026-07-16T07:06:58.430835Z"
     },
     "papermill": {
-     "duration": 7.569985,
-     "end_time": "2026-07-16T06:20:23.510146+00:00",
+     "duration": 8.300757,
+     "end_time": "2026-07-16T07:06:58.434519+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:15.940161+00:00",
+     "start_time": "2026-07-16T07:06:50.133762+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1139,13 +1284,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "5618e067",
+   "id": "f9942089",
    "metadata": {
     "papermill": {
-     "duration": 0.009029,
-     "end_time": "2026-07-16T06:20:23.528549+00:00",
+     "duration": 0.011081,
+     "end_time": "2026-07-16T07:06:58.456879+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:23.519520+00:00",
+     "start_time": "2026-07-16T07:06:58.445798+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1156,20 +1301,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
-   "id": "5d0eff2e",
+   "execution_count": 20,
+   "id": "65db9098",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:23.549044Z",
-     "iopub.status.busy": "2026-07-16T06:20:23.548386Z",
-     "iopub.status.idle": "2026-07-16T06:20:24.614432Z",
-     "shell.execute_reply": "2026-07-16T06:20:24.613177Z"
+     "iopub.execute_input": "2026-07-16T07:06:58.481194Z",
+     "iopub.status.busy": "2026-07-16T07:06:58.480794Z",
+     "iopub.status.idle": "2026-07-16T07:06:59.655023Z",
+     "shell.execute_reply": "2026-07-16T07:06:59.653801Z"
     },
     "papermill": {
-     "duration": 1.07934,
-     "end_time": "2026-07-16T06:20:24.616588+00:00",
+     "duration": 1.189394,
+     "end_time": "2026-07-16T07:06:59.657511+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:23.537248+00:00",
+     "start_time": "2026-07-16T07:06:58.468117+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1189,20 +1334,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
-   "id": "672dd97b",
+   "execution_count": 21,
+   "id": "4a05330b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:24.637359Z",
-     "iopub.status.busy": "2026-07-16T06:20:24.636996Z",
-     "iopub.status.idle": "2026-07-16T06:20:25.703618Z",
-     "shell.execute_reply": "2026-07-16T06:20:25.702552Z"
+     "iopub.execute_input": "2026-07-16T07:06:59.682067Z",
+     "iopub.status.busy": "2026-07-16T07:06:59.681651Z",
+     "iopub.status.idle": "2026-07-16T07:07:00.858859Z",
+     "shell.execute_reply": "2026-07-16T07:07:00.857836Z"
     },
     "papermill": {
-     "duration": 1.079806,
-     "end_time": "2026-07-16T06:20:25.705818+00:00",
+     "duration": 1.192324,
+     "end_time": "2026-07-16T07:07:00.861064+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:24.626012+00:00",
+     "start_time": "2026-07-16T07:06:59.668740+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1222,20 +1367,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
-   "id": "139a8f21",
+   "execution_count": 22,
+   "id": "805b9239",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:25.726845Z",
-     "iopub.status.busy": "2026-07-16T06:20:25.725945Z",
-     "iopub.status.idle": "2026-07-16T06:20:26.845947Z",
-     "shell.execute_reply": "2026-07-16T06:20:26.845062Z"
+     "iopub.execute_input": "2026-07-16T07:07:00.885657Z",
+     "iopub.status.busy": "2026-07-16T07:07:00.884804Z",
+     "iopub.status.idle": "2026-07-16T07:07:02.072264Z",
+     "shell.execute_reply": "2026-07-16T07:07:02.071150Z"
     },
     "papermill": {
-     "duration": 1.132917,
-     "end_time": "2026-07-16T06:20:26.848011+00:00",
+     "duration": 1.202286,
+     "end_time": "2026-07-16T07:07:02.074482+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:25.715094+00:00",
+     "start_time": "2026-07-16T07:07:00.872196+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1255,20 +1400,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
-   "id": "b6fdad20",
+   "execution_count": 23,
+   "id": "489383cb",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:26.869402Z",
-     "iopub.status.busy": "2026-07-16T06:20:26.868868Z",
-     "iopub.status.idle": "2026-07-16T06:20:28.014526Z",
-     "shell.execute_reply": "2026-07-16T06:20:28.012993Z"
+     "iopub.execute_input": "2026-07-16T07:07:02.099734Z",
+     "iopub.status.busy": "2026-07-16T07:07:02.098524Z",
+     "iopub.status.idle": "2026-07-16T07:07:03.279993Z",
+     "shell.execute_reply": "2026-07-16T07:07:03.278752Z"
     },
     "papermill": {
-     "duration": 1.159192,
-     "end_time": "2026-07-16T06:20:28.016992+00:00",
+     "duration": 1.196661,
+     "end_time": "2026-07-16T07:07:03.282328+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:26.857800+00:00",
+     "start_time": "2026-07-16T07:07:02.085667+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1288,20 +1433,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
-   "id": "c6d138e8",
+   "execution_count": 24,
+   "id": "458520c3",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:28.039596Z",
-     "iopub.status.busy": "2026-07-16T06:20:28.038400Z",
-     "iopub.status.idle": "2026-07-16T06:20:29.208199Z",
-     "shell.execute_reply": "2026-07-16T06:20:29.207151Z"
+     "iopub.execute_input": "2026-07-16T07:07:03.306867Z",
+     "iopub.status.busy": "2026-07-16T07:07:03.306461Z",
+     "iopub.status.idle": "2026-07-16T07:07:04.500017Z",
+     "shell.execute_reply": "2026-07-16T07:07:04.498721Z"
     },
     "papermill": {
-     "duration": 1.183589,
-     "end_time": "2026-07-16T06:20:29.210556+00:00",
+     "duration": 1.208724,
+     "end_time": "2026-07-16T07:07:04.502278+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:28.026967+00:00",
+     "start_time": "2026-07-16T07:07:03.293554+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1321,20 +1466,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
-   "id": "3e1acb39",
+   "execution_count": 25,
+   "id": "407f17d2",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:29.231373Z",
-     "iopub.status.busy": "2026-07-16T06:20:29.230477Z",
-     "iopub.status.idle": "2026-07-16T06:20:30.353445Z",
-     "shell.execute_reply": "2026-07-16T06:20:30.352452Z"
+     "iopub.execute_input": "2026-07-16T07:07:04.536645Z",
+     "iopub.status.busy": "2026-07-16T07:07:04.536037Z",
+     "iopub.status.idle": "2026-07-16T07:07:05.730887Z",
+     "shell.execute_reply": "2026-07-16T07:07:05.729758Z"
     },
     "papermill": {
-     "duration": 1.136081,
-     "end_time": "2026-07-16T06:20:30.355662+00:00",
+     "duration": 1.215644,
+     "end_time": "2026-07-16T07:07:05.733175+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:29.219581+00:00",
+     "start_time": "2026-07-16T07:07:04.517531+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1354,13 +1499,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e7546ff0",
+   "id": "dfd87c8e",
    "metadata": {
     "papermill": {
-     "duration": 0.010143,
-     "end_time": "2026-07-16T06:20:30.376045+00:00",
+     "duration": 0.011534,
+     "end_time": "2026-07-16T07:07:05.756122+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:30.365902+00:00",
+     "start_time": "2026-07-16T07:07:05.744588+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1371,20 +1516,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
-   "id": "e89d5baa",
+   "execution_count": 26,
+   "id": "fdd5fedd",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:30.397639Z",
-     "iopub.status.busy": "2026-07-16T06:20:30.397095Z",
-     "iopub.status.idle": "2026-07-16T06:20:31.526963Z",
-     "shell.execute_reply": "2026-07-16T06:20:31.525837Z"
+     "iopub.execute_input": "2026-07-16T07:07:05.780545Z",
+     "iopub.status.busy": "2026-07-16T07:07:05.780166Z",
+     "iopub.status.idle": "2026-07-16T07:07:06.959565Z",
+     "shell.execute_reply": "2026-07-16T07:07:06.958219Z"
     },
     "papermill": {
-     "duration": 1.143245,
-     "end_time": "2026-07-16T06:20:31.529016+00:00",
+     "duration": 1.194614,
+     "end_time": "2026-07-16T07:07:06.961967+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:30.385771+00:00",
+     "start_time": "2026-07-16T07:07:05.767353+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1407,13 +1552,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e45d4736",
+   "id": "f076cf72",
    "metadata": {
     "papermill": {
-     "duration": 0.008755,
-     "end_time": "2026-07-16T06:20:31.547536+00:00",
+     "duration": 0.011318,
+     "end_time": "2026-07-16T07:07:06.985105+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:31.538781+00:00",
+     "start_time": "2026-07-16T07:07:06.973787+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1425,20 +1570,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
-   "id": "8b8eff84",
+   "execution_count": 27,
+   "id": "a8b28c1c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:31.568165Z",
-     "iopub.status.busy": "2026-07-16T06:20:31.567376Z",
-     "iopub.status.idle": "2026-07-16T06:20:33.472988Z",
-     "shell.execute_reply": "2026-07-16T06:20:33.472288Z"
+     "iopub.execute_input": "2026-07-16T07:07:07.011049Z",
+     "iopub.status.busy": "2026-07-16T07:07:07.010578Z",
+     "iopub.status.idle": "2026-07-16T07:07:09.125746Z",
+     "shell.execute_reply": "2026-07-16T07:07:09.124646Z"
     },
     "papermill": {
-     "duration": 1.91826,
-     "end_time": "2026-07-16T06:20:33.475042+00:00",
+     "duration": 2.131387,
+     "end_time": "2026-07-16T07:07:09.127976+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:31.556782+00:00",
+     "start_time": "2026-07-16T07:07:06.996589+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1451,7 +1596,7 @@
       "Logged markdown cell to page 'conclusion'.\n",
       "\n",
       "\n",
-      "Pinned cell cell_9474cf55e3c5 on page 'conclusion'.\n",
+      "Pinned cell cell_b2bd14245d40 on page 'conclusion'.\n",
       " \n"
      ]
     }
@@ -1486,13 +1631,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "58e2414a",
+   "id": "f4e80bce",
    "metadata": {
     "papermill": {
-     "duration": 0.0092,
-     "end_time": "2026-07-16T06:20:33.493776+00:00",
+     "duration": 0.012529,
+     "end_time": "2026-07-16T07:07:09.152396+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:33.484576+00:00",
+     "start_time": "2026-07-16T07:07:09.139867+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1503,20 +1648,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
-   "id": "c78f943d",
+   "execution_count": 28,
+   "id": "f3c1ae72",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:33.513874Z",
-     "iopub.status.busy": "2026-07-16T06:20:33.513190Z",
-     "iopub.status.idle": "2026-07-16T06:20:36.414041Z",
-     "shell.execute_reply": "2026-07-16T06:20:36.412872Z"
+     "iopub.execute_input": "2026-07-16T07:07:09.177844Z",
+     "iopub.status.busy": "2026-07-16T07:07:09.177171Z",
+     "iopub.status.idle": "2026-07-16T07:07:13.569627Z",
+     "shell.execute_reply": "2026-07-16T07:07:13.568449Z"
     },
     "papermill": {
-     "duration": 2.913137,
-     "end_time": "2026-07-16T06:20:36.416043+00:00",
+     "duration": 4.408255,
+     "end_time": "2026-07-16T07:07:13.572216+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:33.502906+00:00",
+     "start_time": "2026-07-16T07:07:09.163961+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1539,13 +1684,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "6015c297",
+   "id": "bcea36b9",
    "metadata": {
     "papermill": {
-     "duration": 0.009975,
-     "end_time": "2026-07-16T06:20:36.435610+00:00",
+     "duration": 0.011598,
+     "end_time": "2026-07-16T07:07:13.595607+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:36.425635+00:00",
+     "start_time": "2026-07-16T07:07:13.584009+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1560,13 +1705,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "3792be8b",
+   "id": "1ed9a400",
    "metadata": {
     "papermill": {
-     "duration": 0.008787,
-     "end_time": "2026-07-16T06:20:36.453628+00:00",
+     "duration": 0.011755,
+     "end_time": "2026-07-16T07:07:13.620146+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:36.444841+00:00",
+     "start_time": "2026-07-16T07:07:13.608391+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1708,13 +1853,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b5015776",
+   "id": "29068446",
    "metadata": {
     "papermill": {
-     "duration": 0.008808,
-     "end_time": "2026-07-16T06:20:36.471199+00:00",
+     "duration": 0.012639,
+     "end_time": "2026-07-16T07:07:13.644974+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:36.462391+00:00",
+     "start_time": "2026-07-16T07:07:13.632335+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1732,20 +1877,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
-   "id": "2da4e938",
+   "execution_count": 29,
+   "id": "d7cedfea",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:36.491567Z",
-     "iopub.status.busy": "2026-07-16T06:20:36.491042Z",
-     "iopub.status.idle": "2026-07-16T06:20:37.491568Z",
-     "shell.execute_reply": "2026-07-16T06:20:37.490275Z"
+     "iopub.execute_input": "2026-07-16T07:07:13.670572Z",
+     "iopub.status.busy": "2026-07-16T07:07:13.670213Z",
+     "iopub.status.idle": "2026-07-16T07:07:14.788808Z",
+     "shell.execute_reply": "2026-07-16T07:07:14.787164Z"
     },
     "papermill": {
-     "duration": 1.01382,
-     "end_time": "2026-07-16T06:20:37.494285+00:00",
+     "duration": 1.134431,
+     "end_time": "2026-07-16T07:07:14.791058+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:36.480465+00:00",
+     "start_time": "2026-07-16T07:07:13.656627+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1774,20 +1919,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
-   "id": "daf93bd4",
+   "execution_count": 30,
+   "id": "e79eeced",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T06:20:37.523892Z",
-     "iopub.status.busy": "2026-07-16T06:20:37.522781Z",
-     "iopub.status.idle": "2026-07-16T06:20:40.422925Z",
-     "shell.execute_reply": "2026-07-16T06:20:40.422062Z"
+     "iopub.execute_input": "2026-07-16T07:07:14.817876Z",
+     "iopub.status.busy": "2026-07-16T07:07:14.816904Z",
+     "iopub.status.idle": "2026-07-16T07:07:19.522317Z",
+     "shell.execute_reply": "2026-07-16T07:07:19.521120Z"
     },
     "papermill": {
-     "duration": 2.913836,
-     "end_time": "2026-07-16T06:20:40.425054+00:00",
+     "duration": 4.721411,
+     "end_time": "2026-07-16T07:07:19.524716+00:00",
      "exception": false,
-     "start_time": "2026-07-16T06:20:37.511218+00:00",
+     "start_time": "2026-07-16T07:07:14.803305+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1838,14 +1983,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 186.696077,
-   "end_time": "2026-07-16T06:20:41.456603+00:00",
+   "duration": 209.566985,
+   "end_time": "2026-07-16T07:07:20.358772+00:00",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-07-16T06:17:34.760526+00:00",
+   "start_time": "2026-07-16T07:03:50.791787+00:00",
    "version": "2.7.0"
   }
  },
