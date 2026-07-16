@@ -1,0 +1,1752 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "f5f31b21",
+   "metadata": {
+    "papermill": {
+     "duration": 0.005689,
+     "end_time": "2026-07-16T05:51:32.233071+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:51:32.227382+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# NonZero Reproduction (ICML 2026 Agent-Repro Challenge)\n",
+    "\n",
+    "**Paper:** NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search (arXiv 2605.00751, OpenReview Jh6gq9QsFa)\n",
+    "\n",
+    "**What this notebook does:**\n",
+    "1. Clones and builds the MAZero codebase (NonZero's baseline, from `github.com/liuqh16/MAZero`), with Kaggle-specific build fixes applied (Cython version, compiler flag, opencv wheel).\n",
+    "2. Runs a smoke test confirming the baseline pipeline trains correctly end-to-end on a Kaggle GPU (built-in `matgame3` config — converges to the optimal joint policy).\n",
+    "3. Authenticates with Hugging Face / Trackio for logging results to the challenge logbook.\n",
+    "4. Defines a generalized N-agent MatGame environment (`matgame_nonzero.py`) matching the paper's Claim 4 setup (8 agents, 10 actions, nonlinear reward per Appendix D).\n",
+    "5. Defines the asinh-GLM return surrogate + NonUCT finite-difference operators (`nonzero_surrogate.py`), per Section 3.1 of the paper.\n",
+    "6. Validates that the surrogate can actually learn the environment's true reward structure (`validate_surrogate_fit.py`) — confirmed to reach R²=0.90, matching the theoretical noise-floor ceiling of this environment.\n",
+    "\n",
+    "**Claim coverage:** this notebook provides verified infrastructure and a component-level check for Claim 1 (surrogate math) and partial progress on Claim 4 (MatGame benchmark). See the accompanying logbook for full claim-by-claim status, including Claims 2–3 (theoretical, not code-based) and Claims 5–6 (SMAC/SMACv2, assessed as infeasible on free-tier Kaggle GPU)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "39468900",
+   "metadata": {
+    "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
+    "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:51:32.244174Z",
+     "iopub.status.busy": "2026-07-16T05:51:32.243533Z",
+     "iopub.status.idle": "2026-07-16T05:51:32.812951Z",
+     "shell.execute_reply": "2026-07-16T05:51:32.811967Z"
+    },
+    "papermill": {
+     "duration": 0.576657,
+     "end_time": "2026-07-16T05:51:32.814426+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:51:32.237769+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Cloning into 'MAZero'...\r\n",
+      "remote: Enumerating objects: 55, done.\u001b[K\r\n",
+      "remote: Counting objects: 100% (55/55), done.\u001b[K\r\n",
+      "remote: Compressing objects: 100% (47/47), done.\u001b[K\r\n",
+      "remote: Total 55 (delta 5), reused 54 (delta 5), pack-reused 0 (from 0)\u001b[K\r\n",
+      "Receiving objects: 100% (55/55), 85.58 KiB | 14.26 MiB/s, done.\r\n",
+      "Resolving deltas: 100% (5/5), done.\r\n",
+      "/kaggle/working/MAZero\n"
+     ]
+    }
+   ],
+   "source": [
+    "!git clone --depth 1 https://github.com/liuqh16/MAZero.git\n",
+    "%cd MAZero"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "988b768e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:51:32.825902Z",
+     "iopub.status.busy": "2026-07-16T05:51:32.825159Z",
+     "iopub.status.idle": "2026-07-16T05:51:37.287089Z",
+     "shell.execute_reply": "2026-07-16T05:51:37.286158Z"
+    },
+    "papermill": {
+     "duration": 4.469395,
+     "end_time": "2026-07-16T05:51:37.288686+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:51:32.819291+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2.10.0+cu128 True\n"
+     ]
+    }
+   ],
+   "source": [
+    "import torch\n",
+    "print(torch.__version__, torch.cuda.is_available())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "beb6ce1e",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:51:37.300072Z",
+     "iopub.status.busy": "2026-07-16T05:51:37.299671Z",
+     "iopub.status.idle": "2026-07-16T05:51:55.424678Z",
+     "shell.execute_reply": "2026-07-16T05:51:55.423591Z"
+    },
+    "papermill": {
+     "duration": 18.133022,
+     "end_time": "2026-07-16T05:51:55.426773+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:51:37.293751+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "/kaggle/working/MAZero\n",
+      "40:# cc1plus: warning: command line option ‘-Wstrict-prototypes’ is valid for C/ObjC but not for C++\r\n",
+      "43:        self.compiler.compiler_so = [f for f in self.compiler.compiler_so if f != '-Wstrict-prototypes']\r\n",
+      "/kaggle/working/MAZero/core/mcts/ctree\n",
+      "Compiling ctree_sampled/cytree.pyx because it changed.\r\n",
+      "[1/1] Cythonizing ctree_sampled/cytree.pyx\r\n",
+      "/kaggle/working/MAZero\n",
+      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
+      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "%cd /kaggle/working/MAZero\n",
+    "!pip install -q ray tensorboard matplotlib gymnasium wandb seaborn scipy opencv-python-headless \"cython>=3.0.10\"\n",
+    "!sed -i \"s/self.compiler.compiler_so.remove('-Wstrict-prototypes')/self.compiler.compiler_so = [f for f in self.compiler.compiler_so if f != '-Wstrict-prototypes']/\" core/mcts/ctree/setup.py\n",
+    "!grep -n \"Wstrict\" core/mcts/ctree/setup.py\n",
+    "%cd core/mcts/ctree\n",
+    "!bash make.sh\n",
+    "%cd /kaggle/working/MAZero\n",
+    "!find . -name \"*.so\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "51f83449",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:51:55.438711Z",
+     "iopub.status.busy": "2026-07-16T05:51:55.438230Z",
+     "iopub.status.idle": "2026-07-16T05:51:55.504003Z",
+     "shell.execute_reply": "2026-07-16T05:51:55.503302Z"
+    },
+    "papermill": {
+     "duration": 0.073497,
+     "end_time": "2026-07-16T05:51:55.505500+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:51:55.432003+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Token loaded: True\n"
+     ]
+    }
+   ],
+   "source": [
+    "from kaggle_secrets import UserSecretsClient\n",
+    "import os\n",
+    "os.environ[\"HF_TOKEN\"] = UserSecretsClient().get_secret(\"ICML_REPRO_HF_TOKEN\")\n",
+    "\n",
+    "# sanity check - just confirms it's non-empty, doesn't print the token\n",
+    "print(\"Token loaded:\", bool(os.environ.get(\"HF_TOKEN\")))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "87b17fda",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:51:55.518105Z",
+     "iopub.status.busy": "2026-07-16T05:51:55.517191Z",
+     "iopub.status.idle": "2026-07-16T05:52:01.326645Z",
+     "shell.execute_reply": "2026-07-16T05:52:01.325407Z"
+    },
+    "papermill": {
+     "duration": 5.817808,
+     "end_time": "2026-07-16T05:52:01.328661+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:51:55.510853+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m2.0/2.0 MB\u001b[0m \u001b[31m74.0 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.0/60.0 kB\u001b[0m \u001b[31m4.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[?25h\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n",
+      "gradio 5.50.0 requires gradio-client==1.14.0, but you have gradio-client 2.5.0 which is incompatible.\u001b[0m\u001b[31m\r\n",
+      "\u001b[0m\u001b[33mA new version of huggingface_hub (1.23.0) is available! You are using version 1.11.0.\r\n",
+      "To update, run: \u001b[1m/usr/bin/python3 -m pip install -U huggingface_hub\u001b[0m\r\n",
+      "\u001b[0m\r\n",
+      "The token has not been saved to the git credentials helper. Pass `add_to_git_credential=True` in this function directly or `--add-to-git-credential` if using via `hf`CLI if you want to set the git credential as well.\r\n",
+      "Token is valid (permission: fineGrained).\r\n",
+      "The token `ICML_REPRO_HF_TOKEN` has been saved to /root/.cache/huggingface/stored_tokens\r\n",
+      "Your token has been saved to /root/.cache/huggingface/token\r\n",
+      "Login successful.\r\n",
+      "Note: Environment variable`HF_TOKEN` is set and is the current active token independently from the token you've just configured.\r\n",
+      "yes: standard output: Broken pipe\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install -q trackio\n",
+    "!yes n | hf auth login --token $HF_TOKEN"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "7c5ac47f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:52:01.342050Z",
+     "iopub.status.busy": "2026-07-16T05:52:01.341412Z",
+     "iopub.status.idle": "2026-07-16T05:53:37.559091Z",
+     "shell.execute_reply": "2026-07-16T05:53:37.558094Z"
+    },
+    "jupyter": {
+     "source_hidden": true
+    },
+    "papermill": {
+     "duration": 96.226831,
+     "end_time": "2026-07-16T05:53:37.561331+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:52:01.334500+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "/kaggle/working/MAZero\n",
+      "[2026-07-16 05:52:25,388][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16 05:52:25\r\n",
+      "[2026-07-16 05:52:25,388][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16 05:52:25\r\n",
+      "[2026-07-16 05:52:25,388][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': True, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
+      "[2026-07-16 05:52:25,388][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': True, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
+      "/kaggle/working/MAZero/core/train.py:487: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\r\n",
+      "  scaler = GradScaler()\r\n",
+      "/kaggle/working/MAZero/core/selfplay_worker.py:178: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
+      "  with autocast():\r\n",
+      "/kaggle/working/MAZero/core/mcts/tree_search/mcts_sampled.py:121: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
+      "  with autocast():\r\n",
+      "[2026-07-16 05:52:31,123][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
+      "[2026-07-16 05:52:31,123][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
+      "[2026-07-16 05:52:31,284][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
+      "[2026-07-16 05:52:31,284][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
+      "[2026-07-16 05:52:31,438][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
+      "[2026-07-16 05:52:31,438][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
+      "[2026-07-16 05:52:31,603][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
+      "[2026-07-16 05:52:31,603][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
+      "[2026-07-16 05:52:31,756][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
+      "[2026-07-16 05:52:31,756][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
+      "[2026-07-16 05:52:31,906][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
+      "[2026-07-16 05:52:31,906][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
+      "[2026-07-16 05:52:32,064][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
+      "[2026-07-16 05:52:32,064][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
+      "/kaggle/working/MAZero/core/reanalyze_worker.py:113: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
+      "  with autocast():\r\n",
+      "/kaggle/working/MAZero/core/reanalyze_worker.py:256: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
+      "  with autocast():\r\n",
+      "/kaggle/working/MAZero/core/train.py:93: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
+      "  with autocast():\r\n",
+      "Start evaluation for model 0.\r\n",
+      "/kaggle/working/MAZero/core/test.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
+      "  with autocast():\r\n",
+      "#0          Test Mean Score of matgame3: 73.25      (max: 100.0     , min:20.0      , std: 21.533404282648853)\r\n",
+      "[2026-07-16 05:52:33,523][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.698 reward_loss: 341.530 policy_loss: 11.996  value_loss: 1380.767consistency_loss: -0.510  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.167   Tp_perstep: 0.148   Tu_perstep: 0.926   Te_perstep: 0.384   \r\n",
+      "[2026-07-16 05:52:33,523][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.698 reward_loss: 341.530 policy_loss: 11.996  value_loss: 1380.767consistency_loss: -0.510  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.167   Tp_perstep: 0.148   Tu_perstep: 0.926   Te_perstep: 0.384   \r\n",
+      "[2026-07-16 05:52:33,524][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 73.25      (max: 100.0     , min:20.0      , std: 21.533404282648853)\r\n",
+      "[2026-07-16 05:52:33,524][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 73.25      (max: 100.0     , min:20.0      , std: 21.533404282648853)\r\n",
+      "Start evaluation for model 50.\r\n",
+      "#50         Test Mean Score of matgame3: 59.59375   (max: 100.0     , min:20.0      , std: 19.05560838539405)\r\n",
+      "Start evaluation for model 100.\r\n",
+      "#100        Test Mean Score of matgame3: 51.75      (max: 100.0     , min:0.0       , std: 21.69821421223415)\r\n",
+      "[2026-07-16 05:52:51,673][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:26.50, max:80.00, min:-22.00, std:40.24) | total_loss: 293.089 reward_loss: 122.658 policy_loss: 2.188   value_loss: 685.483 consistency_loss: -1.564  lr: 0.020000  batch_future_return: 2.375   batch_model_diff: 59.688  target_model_diff: 50.000  Tc_perstep: 0.018   Tp_perstep: 0.119   Tu_perstep: 0.057   Te_perstep: 0.012   \r\n",
+      "[2026-07-16 05:52:51,673][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:26.50, max:80.00, min:-22.00, std:40.24) | total_loss: 293.089 reward_loss: 122.658 policy_loss: 2.188   value_loss: 685.483 consistency_loss: -1.564  lr: 0.020000  batch_future_return: 2.375   batch_model_diff: 59.688  target_model_diff: 50.000  Tc_perstep: 0.018   Tp_perstep: 0.119   Tu_perstep: 0.057   Te_perstep: 0.012   \r\n",
+      "[2026-07-16 05:52:51,673][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 51.75      (max: 100.0     , min:0.0       , std: 21.69821421223415)\r\n",
+      "[2026-07-16 05:52:51,673][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 51.75      (max: 100.0     , min:0.0       , std: 21.69821421223415)\r\n",
+      "Start evaluation for model 150.\r\n",
+      "#150        Test Mean Score of matgame3: 85.0       (max: 100.0     , min:40.0      , std: 19.364916731037084)\r\n",
+      "Start evaluation for model 200.\r\n",
+      "#200        Test Mean Score of matgame3: 93.125     (max: 100.0     , min:40.0      , std: 13.792547806696195)\r\n",
+      "[2026-07-16 05:53:10,655][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:41.80, max:80.00, min:-10.00, std:27.59) | total_loss: 309.646 reward_loss: 83.103  policy_loss: 3.493   value_loss: 912.040 consistency_loss: -2.480  lr: 0.020000  batch_future_return: 15.156  batch_model_diff: 105.938 target_model_diff: 50.000  Tc_perstep: 0.017   Tp_perstep: 0.119   Tu_perstep: 0.052   Te_perstep: 0.010   \r\n",
+      "[2026-07-16 05:53:10,655][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:41.80, max:80.00, min:-10.00, std:27.59) | total_loss: 309.646 reward_loss: 83.103  policy_loss: 3.493   value_loss: 912.040 consistency_loss: -2.480  lr: 0.020000  batch_future_return: 15.156  batch_model_diff: 105.938 target_model_diff: 50.000  Tc_perstep: 0.017   Tp_perstep: 0.119   Tu_perstep: 0.052   Te_perstep: 0.010   \r\n",
+      "[2026-07-16 05:53:10,655][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 93.125     (max: 100.0     , min:40.0      , std: 13.792547806696195)\r\n",
+      "[2026-07-16 05:53:10,655][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 93.125     (max: 100.0     , min:40.0      , std: 13.792547806696195)\r\n",
+      "Start evaluation for model 250.\r\n",
+      "#250        Test Mean Score of matgame3: 99.375     (max: 100.0     , min:80.0      , std: 3.4798527267687636)\r\n",
+      "Start evaluation for model 300.\r\n",
+      "#300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 05:53:30,083][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:74.33, max:100.00, min:40.00, std:21.53) | total_loss: 226.741 reward_loss: 60.990  policy_loss: 1.423   value_loss: 671.249 consistency_loss: -1.742  lr: 0.020000  batch_future_return: 21.797  batch_model_diff: 147.656 target_model_diff: 50.000  Tc_perstep: 0.016   Tp_perstep: 0.121   Tu_perstep: 0.051   Te_perstep: 0.009   \r\n",
+      "[2026-07-16 05:53:30,083][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:74.33, max:100.00, min:40.00, std:21.53) | total_loss: 226.741 reward_loss: 60.990  policy_loss: 1.423   value_loss: 671.249 consistency_loss: -1.742  lr: 0.020000  batch_future_return: 21.797  batch_model_diff: 147.656 target_model_diff: 50.000  Tc_perstep: 0.016   Tp_perstep: 0.121   Tu_perstep: 0.051   Te_perstep: 0.009   \r\n",
+      "[2026-07-16 05:53:30,083][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 05:53:30,083][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 05:53:33,321][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
+      "[2026-07-16 05:53:33,321][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
+      "Start evaluation for model 320.\r\n",
+      "#320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 05:53:33,708][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-16 05:53:33,708][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "%cd /kaggle/working/MAZero\n",
+    "!python main.py \\\n",
+    "  --opr train_sync --case matrix --env matgame3 --exp_name kaggle_smoketest --seed 1 \\\n",
+    "  --num_cpus 4 --num_gpus 1 --train_on_gpu \\\n",
+    "  --data_actors 1 --num_pmcts 1 --reanalyze_actors 1 \\\n",
+    "  --test_interval 50 --target_model_interval 50 \\\n",
+    "  --batch_size 64 --num_simulations 20 --sampled_action_times 5 \\\n",
+    "  --training_steps 300 --last_step 20 --lr 0.02 --lr_adjust_func const --max_grad_norm 10 \\\n",
+    "  --total_transitions 300 --start_transition 64 \\\n",
+    "  --target_value_type pred-re --revisit_policy_search_rate 1 --use_off_correction \\\n",
+    "  --value_transform_type scalar --use_mcts_test \\\n",
+    "  --use_priority --use_max_priority"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "4b089def",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:37.577458Z",
+     "iopub.status.busy": "2026-07-16T05:53:37.576972Z",
+     "iopub.status.idle": "2026-07-16T05:53:37.710640Z",
+     "shell.execute_reply": "2026-07-16T05:53:37.709504Z"
+    },
+    "papermill": {
+     "duration": 0.143959,
+     "end_time": "2026-07-16T05:53:37.712530+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:37.568571+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
+      "tail: cannot open '05:52:25/logs/root.log' for reading: No such file or directory\r\n",
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
+      "tail: cannot open '05:52:25/logs/train.log' for reading: No such file or directory\r\n",
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
+      "tail: cannot open '05:52:25/logs/train_test.log' for reading: No such file or directory\r\n",
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
+      "tail: cannot open '05:52:25/logs/test.log' for reading: No such file or directory\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!find results -name \"*.log\" | xargs tail -n 40"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "30a1eeff",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:37.728400Z",
+     "iopub.status.busy": "2026-07-16T05:53:37.728097Z",
+     "iopub.status.idle": "2026-07-16T05:53:37.736096Z",
+     "shell.execute_reply": "2026-07-16T05:53:37.735317Z"
+    },
+    "papermill": {
+     "duration": 0.017972,
+     "end_time": "2026-07-16T05:53:37.737474+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:37.719502+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Writing matgame_nonzero.py\n"
+     ]
+    }
+   ],
+   "source": [
+    "%%writefile matgame_nonzero.py\n",
+    "\"\"\"\n",
+    "Generalized N-agent MatGame environment for reproducing NonZero's Claim 4.\n",
+    "\n",
+    "Reward rule per NonZero paper, Appendix D (\"Settings of Benchmarks\"):\n",
+    "  - Linear setting:     r_t = sum(agent action indices)\n",
+    "  - Non-linear setting: r_t = sum(agent action indices) + u + v\n",
+    "                         where u ~ N(0, 2^2), v ~ U(-3, 3)\n",
+    "\n",
+    "This intentionally mirrors config/matrix/matgame.py's structure (same\n",
+    "gym.Env shape, same step/reset signature) so it drops into the MAZero\n",
+    "repo's config/matrix/ registration with minimal changes.\n",
+    "\"\"\"\n",
+    "\n",
+    "import gymnasium as gym\n",
+    "import gymnasium.spaces\n",
+    "import numpy as np\n",
+    "\n",
+    "\n",
+    "class MatgameNonZeroEnv(gym.Env):\n",
+    "    \"\"\"\n",
+    "    Generalized N-agent, N-action matrix game with linear or\n",
+    "    linear+noise (\"non-linear\") joint reward, per NonZero Appendix D.\n",
+    "    \"\"\"\n",
+    "\n",
+    "    def __init__(\n",
+    "            self,\n",
+    "            n_agents=8,\n",
+    "            n_actions=10,\n",
+    "            reward_type=\"nonlinear\",   # \"linear\" or \"nonlinear\"\n",
+    "            episode_limit=10,          # NOTE: matches existing matgame.py's\n",
+    "                                        # convention (episode_limit=10 for all\n",
+    "                                        # variants). Table 1's \"Steps\" column\n",
+    "                                        # (500/1000/2000) is the *training*\n",
+    "                                        # step budget passed to main.py's\n",
+    "                                        # --training_steps flag -- it is NOT\n",
+    "                                        # this environment's episode length.\n",
+    "            noise_std=2.0,             # Gaussian noise std (paper: 2)\n",
+    "            noise_uniform_range=3.0,   # Uniform noise half-range (paper: [-3, 3])\n",
+    "            seed=None,\n",
+    "    ):\n",
+    "        assert reward_type in (\"linear\", \"nonlinear\")\n",
+    "        self.n_agents = n_agents\n",
+    "        self.n_actions = n_actions\n",
+    "        self.reward_type = reward_type\n",
+    "        self.episode_limit = episode_limit\n",
+    "        self.noise_std = noise_std\n",
+    "        self.noise_uniform_range = noise_uniform_range\n",
+    "\n",
+    "        self._rng = np.random.default_rng(seed)\n",
+    "\n",
+    "        self._episode_count = 0\n",
+    "        self._episode_steps = 0\n",
+    "        self._total_steps = 0\n",
+    "\n",
+    "        self.observation_space = gym.spaces.Box(\n",
+    "            -np.inf, np.inf, shape=(self.n_agents, 1, 1), dtype=np.float64\n",
+    "        )\n",
+    "        self.action_space = gym.spaces.Discrete(self.n_actions)\n",
+    "\n",
+    "    def _joint_reward(self, actions):\n",
+    "        base = float(np.sum(actions))\n",
+    "        if self.reward_type == \"linear\":\n",
+    "            return base\n",
+    "        u = self._rng.normal(0.0, self.noise_std)\n",
+    "        v = self._rng.uniform(-self.noise_uniform_range, self.noise_uniform_range)\n",
+    "        return base + u + v\n",
+    "\n",
+    "    def step(self, actions):\n",
+    "        assert len(actions) == self.n_agents, \\\n",
+    "            f\"expected {self.n_agents} actions, got {len(actions)}\"\n",
+    "\n",
+    "        self._total_steps += 1\n",
+    "        self._episode_steps += 1\n",
+    "        info = {}\n",
+    "\n",
+    "        state = np.array([self._episode_steps for _ in range(self.n_agents)])\n",
+    "        reward = self._joint_reward(actions)\n",
+    "\n",
+    "        terminated = self._episode_steps >= self.episode_limit\n",
+    "        if terminated:\n",
+    "            self._episode_count += 1\n",
+    "\n",
+    "        return state, reward, terminated, info\n",
+    "\n",
+    "    def reset(self):\n",
+    "        self._episode_steps = 0\n",
+    "        state = np.array([self._episode_steps for _ in range(self.n_agents)])\n",
+    "        return state\n",
+    "\n",
+    "\n",
+    "TABLE1_CONFIGS = {}\n",
+    "for n_agents, n_actions in [(2, 3), (4, 5), (6, 8), (8, 10)]:\n",
+    "    for reward_type in [\"linear\", \"nonlinear\"]:\n",
+    "        key = f\"{n_agents}x{n_actions}_{reward_type}\"\n",
+    "        TABLE1_CONFIGS[key] = dict(\n",
+    "            env_kwargs=dict(\n",
+    "                n_agents=n_agents,\n",
+    "                n_actions=n_actions,\n",
+    "                reward_type=reward_type,\n",
+    "                episode_limit=10,\n",
+    "            ),\n",
+    "            training_steps_reported=[\n",
+    "                500 if n_agents == 2 else 1000,\n",
+    "                1000 if n_agents == 2 else 2000,\n",
+    "            ],\n",
+    "        )\n",
+    "\n",
+    "\n",
+    "if __name__ == \"__main__\":\n",
+    "    cfg = TABLE1_CONFIGS[\"8x10_nonlinear\"][\"env_kwargs\"]\n",
+    "    env = MatgameNonZeroEnv(**cfg)\n",
+    "    env.reset()\n",
+    "    total = 0.0\n",
+    "    rng = np.random.default_rng(0)\n",
+    "    done = False\n",
+    "    while not done:\n",
+    "        actions = rng.integers(0, env.n_actions, size=env.n_agents)\n",
+    "        _, r, done, _ = env.step(actions)\n",
+    "        total += r\n",
+    "    print(f\"Random-policy episode return (8x10, nonlinear, episode_limit=10): {total:.1f}\")\n",
+    "    print(f\"Max possible per-episode return: {env.n_agents * (env.n_actions - 1) * env.episode_limit}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "36ac177d",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:37.753148Z",
+     "iopub.status.busy": "2026-07-16T05:53:37.752416Z",
+     "iopub.status.idle": "2026-07-16T05:53:37.877757Z",
+     "shell.execute_reply": "2026-07-16T05:53:37.876927Z"
+    },
+    "papermill": {
+     "duration": 0.134674,
+     "end_time": "2026-07-16T05:53:37.879513+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:37.744839+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "main.py  matgame_nonzero.py\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!ls *.py"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "4d4461a8",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:37.895097Z",
+     "iopub.status.busy": "2026-07-16T05:53:37.894381Z",
+     "iopub.status.idle": "2026-07-16T05:53:37.901396Z",
+     "shell.execute_reply": "2026-07-16T05:53:37.900393Z"
+    },
+    "papermill": {
+     "duration": 0.016646,
+     "end_time": "2026-07-16T05:53:37.902902+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:37.886256+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Writing nonzero_surrogate.py\n"
+     ]
+    }
+   ],
+   "source": [
+    "%%writefile nonzero_surrogate.py\n",
+    "\"\"\"\n",
+    "NonZero's asinh-GLM return surrogate + NonUCT finite-difference operators.\n",
+    "\"\"\"\n",
+    "\n",
+    "import torch\n",
+    "import torch.nn as nn\n",
+    "\n",
+    "\n",
+    "def make_mlp(in_dim, hidden_dims, out_dim):\n",
+    "    layers = []\n",
+    "    prev = in_dim\n",
+    "    for h in hidden_dims:\n",
+    "        layers += [nn.Linear(prev, h), nn.LayerNorm(h), nn.ReLU()]\n",
+    "        prev = h\n",
+    "    layers.append(nn.Linear(prev, out_dim))\n",
+    "    return nn.Sequential(*layers)\n",
+    "\n",
+    "\n",
+    "class MixingHyperNet(nn.Module):\n",
+    "    def __init__(self, n_agents, n_actions, agent_hidden_dim=128, mixing_hidden=(64, 64)):\n",
+    "        super().__init__()\n",
+    "        self.n_agents = n_agents\n",
+    "        self.n_actions = n_actions\n",
+    "        theta_dim = n_agents * n_actions\n",
+    "        self.net = make_mlp(\n",
+    "            in_dim=n_agents * agent_hidden_dim,\n",
+    "            hidden_dims=list(mixing_hidden),\n",
+    "            out_dim=theta_dim,\n",
+    "        )\n",
+    "\n",
+    "    def forward(self, agent_states):\n",
+    "        batch = agent_states.shape[0]\n",
+    "        flat = agent_states.reshape(batch, -1)\n",
+    "        return self.net(flat)\n",
+    "\n",
+    "\n",
+    "class AsinhGLMSurrogate:\n",
+    "    def __init__(self, n_agents, n_actions, c=1.0, alpha=1.0):\n",
+    "        self.n_agents = n_agents\n",
+    "        self.n_actions = n_actions\n",
+    "        self.nd = n_agents * n_actions\n",
+    "        self.c = c\n",
+    "        self.alpha = alpha\n",
+    "\n",
+    "    def one_hot_joint_action(self, agent_actions):\n",
+    "        agent_actions = torch.as_tensor(agent_actions, dtype=torch.long)\n",
+    "        onehots = torch.nn.functional.one_hot(agent_actions, num_classes=self.n_actions)\n",
+    "        return onehots.reshape(*agent_actions.shape[:-1], self.nd).float()\n",
+    "\n",
+    "    def eta(self, theta, a):\n",
+    "        z = (theta * a).sum(dim=-1)\n",
+    "        return self.c * torch.asinh(self.alpha * z)\n",
+    "\n",
+    "    def neighbor_action(self, a, agent_idx, new_action):\n",
+    "        a = a.clone()\n",
+    "        start = agent_idx * self.n_actions\n",
+    "        a[..., start:start + self.n_actions] = 0.0\n",
+    "        a[..., start + new_action] = 1.0\n",
+    "        return a\n",
+    "\n",
+    "    def first_order_diff(self, theta, a, u):\n",
+    "        agent_idx, new_action = u\n",
+    "        a_u = self.neighbor_action(a, agent_idx, new_action)\n",
+    "        return self.eta(theta, a_u) - self.eta(theta, a)\n",
+    "\n",
+    "    def second_order_diff(self, theta, a, u, v):\n",
+    "        i, j = u\n",
+    "        k, l = v\n",
+    "        assert i != k, \"u and v must act on distinct agents (Section 3.1)\"\n",
+    "        a_u = self.neighbor_action(a, i, j)\n",
+    "        a_v = self.neighbor_action(a, k, l)\n",
+    "        a_uv = self.neighbor_action(a_u, k, l)\n",
+    "        return (self.eta(theta, a_uv) - self.eta(theta, a_u)\n",
+    "                - self.eta(theta, a_v) + self.eta(theta, a))\n",
+    "\n",
+    "\n",
+    "def nonuct_loss(surrogate, theta_pred, theta_star, a, u, v):\n",
+    "    agent_idx_u, new_action_u = u\n",
+    "    a_u_pred = surrogate.neighbor_action(a, agent_idx_u, new_action_u)\n",
+    "\n",
+    "    pred = torch.stack([\n",
+    "        surrogate.eta(theta_pred, a),\n",
+    "        surrogate.eta(theta_pred, a_u_pred),\n",
+    "        surrogate.first_order_diff(theta_pred, a, u),\n",
+    "        surrogate.second_order_diff(theta_pred, a, u, v),\n",
+    "    ], dim=-1)\n",
+    "\n",
+    "    target = torch.stack([\n",
+    "        surrogate.eta(theta_star, a),\n",
+    "        surrogate.eta(theta_star, a_u_pred),\n",
+    "        surrogate.first_order_diff(theta_star, a, u),\n",
+    "        surrogate.second_order_diff(theta_star, a, u, v),\n",
+    "    ], dim=-1)\n",
+    "\n",
+    "    return 0.25 * ((pred - target) ** 2).sum(dim=-1).mean()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "687b8bf1",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:37.919018Z",
+     "iopub.status.busy": "2026-07-16T05:53:37.918275Z",
+     "iopub.status.idle": "2026-07-16T05:53:37.924309Z",
+     "shell.execute_reply": "2026-07-16T05:53:37.923660Z"
+    },
+    "papermill": {
+     "duration": 0.015636,
+     "end_time": "2026-07-16T05:53:37.925751+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:37.910115+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Writing validate_surrogate_fit.py\n"
+     ]
+    }
+   ],
+   "source": [
+    "%%writefile validate_surrogate_fit.py\n",
+    "\"\"\"\n",
+    "Validation: can the asinh-GLM surrogate actually fit real environment\n",
+    "rewards from MatgameNonZeroEnv (8 agents, 10 actions, nonlinear)?\n",
+    "\"\"\"\n",
+    "\n",
+    "import torch\n",
+    "import torch.nn as nn\n",
+    "import numpy as np\n",
+    "\n",
+    "from matgame_nonzero import MatgameNonZeroEnv, TABLE1_CONFIGS\n",
+    "from nonzero_surrogate import AsinhGLMSurrogate\n",
+    "\n",
+    "\n",
+    "def collect_dataset(env, n_samples, rng):\n",
+    "    actions = rng.integers(0, env.n_actions, size=(n_samples, env.n_agents))\n",
+    "    rewards = []\n",
+    "    for a in actions:\n",
+    "        r = env._joint_reward(a)\n",
+    "        rewards.append(r)\n",
+    "    return torch.tensor(actions, dtype=torch.long), torch.tensor(rewards, dtype=torch.float32)\n",
+    "\n",
+    "\n",
+    "def main():\n",
+    "    torch.manual_seed(0)\n",
+    "    rng = np.random.default_rng(0)\n",
+    "\n",
+    "    cfg = TABLE1_CONFIGS[\"8x10_nonlinear\"][\"env_kwargs\"]\n",
+    "    env = MatgameNonZeroEnv(**cfg)\n",
+    "    surrogate = AsinhGLMSurrogate(env.n_agents, env.n_actions)\n",
+    "\n",
+    "    train_actions, train_rewards = collect_dataset(env, 4000, rng)\n",
+    "    test_actions, test_rewards = collect_dataset(env, 1000, rng)\n",
+    "\n",
+    "    train_a = surrogate.one_hot_joint_action(train_actions)\n",
+    "    test_a = surrogate.one_hot_joint_action(test_actions)\n",
+    "\n",
+    "    theta = nn.Parameter(torch.zeros(env.n_agents * env.n_actions))\n",
+    "    log_c = nn.Parameter(torch.zeros(()))\n",
+    "    log_alpha = nn.Parameter(torch.zeros(()))\n",
+    "\n",
+    "    opt = torch.optim.Adam([theta, log_c, log_alpha], lr=0.05)\n",
+    "    sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=2000)\n",
+    "\n",
+    "    def predict(a_batch):\n",
+    "        c = torch.exp(log_c)\n",
+    "        alpha = torch.exp(log_alpha)\n",
+    "        z = (theta * a_batch).sum(dim=-1)\n",
+    "        return c * torch.asinh(alpha * z)\n",
+    "\n",
+    "    n_epochs = 2000\n",
+    "    for epoch in range(n_epochs):\n",
+    "        opt.zero_grad()\n",
+    "        pred = predict(train_a)\n",
+    "        loss = ((pred - train_rewards) ** 2).mean()\n",
+    "        loss.backward()\n",
+    "        opt.step()\n",
+    "        sched.step()\n",
+    "        if epoch % 200 == 0 or epoch == n_epochs - 1:\n",
+    "            with torch.no_grad():\n",
+    "                test_pred = predict(test_a)\n",
+    "                test_mse = ((test_pred - test_rewards) ** 2).mean().item()\n",
+    "                test_r2 = 1 - test_mse / test_rewards.var().item()\n",
+    "            print(f\"epoch {epoch:4d}  train_mse={loss.item():7.3f}  \"\n",
+    "                  f\"test_mse={test_mse:7.3f}  test_R2={test_r2:.4f}\")\n",
+    "\n",
+    "    print(f\"\\nFitted c={torch.exp(log_c).item():.4f}  alpha={torch.exp(log_alpha).item():.4f}\")\n",
+    "    print(f\"True reward std (for reference): {train_rewards.std().item():.3f}\")\n",
+    "    print(f\"Reward range in data: [{train_rewards.min().item():.2f}, {train_rewards.max().item():.2f}]\")\n",
+    "\n",
+    "\n",
+    "if __name__ == \"__main__\":\n",
+    "    main()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "05b13a68",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:37.940195Z",
+     "iopub.status.busy": "2026-07-16T05:53:37.939945Z",
+     "iopub.status.idle": "2026-07-16T05:53:44.370056Z",
+     "shell.execute_reply": "2026-07-16T05:53:44.369317Z"
+    },
+    "papermill": {
+     "duration": 6.439591,
+     "end_time": "2026-07-16T05:53:44.371909+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:37.932318+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "epoch    0  train_mse=1360.886  test_mse=1347.722  test_R2=-16.8647\r\n",
+      "epoch  200  train_mse= 26.681  test_mse= 29.047  test_R2=0.6150\r\n",
+      "epoch  400  train_mse= 18.850  test_mse= 20.090  test_R2=0.7337\r\n",
+      "epoch  600  train_mse= 11.302  test_mse= 12.061  test_R2=0.8401\r\n",
+      "epoch  800  train_mse=  8.597  test_mse=  9.051  test_R2=0.8800\r\n",
+      "epoch 1000  train_mse=  7.816  test_mse=  8.163  test_R2=0.8918\r\n",
+      "epoch 1200  train_mse=  7.522  test_mse=  7.826  test_R2=0.8963\r\n",
+      "epoch 1400  train_mse=  7.390  test_mse=  7.675  test_R2=0.8983\r\n",
+      "epoch 1600  train_mse=  7.331  test_mse=  7.607  test_R2=0.8992\r\n",
+      "epoch 1800  train_mse=  7.308  test_mse=  7.582  test_R2=0.8995\r\n",
+      "epoch 1999  train_mse=  7.305  test_mse=  7.578  test_R2=0.8995\r\n",
+      "\r\n",
+      "Fitted c=42.8483  alpha=0.6734\r\n",
+      "True reward std (for reference): 8.475\r\n",
+      "Reward range in data: [1.81, 64.16]\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!python validate_surrogate_fit.py"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "22a9e01e",
+   "metadata": {
+    "papermill": {
+     "duration": 0.006973,
+     "end_time": "2026-07-16T05:53:44.386396+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:44.379423+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---\n",
+    "# Part 2: Publish the Trackio Logbook (official submission)\n",
+    "\n",
+    "Run everything below **after** the setup cells above have completed successfully (i.e. `matgame_nonzero.py`, `nonzero_surrogate.py`, and `validate_surrogate_fit.py` all exist and the validation script ran).\n",
+    "\n",
+    "**Edit the cell directly below first** to set your Hugging Face username."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "bff1bc7b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:44.402942Z",
+     "iopub.status.busy": "2026-07-16T05:53:44.401879Z",
+     "iopub.status.idle": "2026-07-16T05:53:44.407398Z",
+     "shell.execute_reply": "2026-07-16T05:53:44.406552Z"
+    },
+    "papermill": {
+     "duration": 0.015612,
+     "end_time": "2026-07-16T05:53:44.409056+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:44.393444+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "HF_USERNAME set to: your-username-here\n"
+     ]
+    }
+   ],
+   "source": [
+    "import os\n",
+    "os.environ[\"HF_USERNAME\"] = \"your-username-here\"  # <-- EDIT THIS before running\n",
+    "print(\"HF_USERNAME set to:\", os.environ[\"HF_USERNAME\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "85e80ce9",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:44.425229Z",
+     "iopub.status.busy": "2026-07-16T05:53:44.424440Z",
+     "iopub.status.idle": "2026-07-16T05:53:49.021088Z",
+     "shell.execute_reply": "2026-07-16T05:53:49.020215Z"
+    },
+    "papermill": {
+     "duration": 4.607066,
+     "end_time": "2026-07-16T05:53:49.023201+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:44.416135+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "usage: trackio [-h] [--version] [--space SPACE] [--hf-token HF_TOKEN]\r\n",
+      "               {show,status,sync,freeze,config,list,get,query,skills,logbook}\r\n",
+      "               ...\r\n",
+      "\r\n",
+      "Trackio CLI\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install -U -q trackio\n",
+    "!trackio --help | head -5"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4a9aa2e8",
+   "metadata": {
+    "papermill": {
+     "duration": 0.007209,
+     "end_time": "2026-07-16T05:53:49.037726+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:49.030517+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Step 1 — Open the logbook"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "3735f391",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:49.053894Z",
+     "iopub.status.busy": "2026-07-16T05:53:49.053568Z",
+     "iopub.status.idle": "2026-07-16T05:53:50.030441Z",
+     "shell.execute_reply": "2026-07-16T05:53:50.029420Z"
+    },
+    "papermill": {
+     "duration": 0.987468,
+     "end_time": "2026-07-16T05:53:50.032476+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:49.045008+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Warning: Trackio Logbook is an experimental feature.\r\n",
+      "Opened logbook at /kaggle/working/MAZero/.trackio/logbook\r\n",
+      "\u001b[1m\u001b[38;5;208m* Trackio logbook launched at: http://localhost:7861/\u001b[0m\r\n",
+      "  Server logs: /kaggle/working/MAZero/.trackio/logbook/.serve.log\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook open --title \"Repro - NonZero: Interaction-Guided Exploration for Multi-Agent Monte Carlo Tree Search\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "03ef998f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.007306,
+     "end_time": "2026-07-16T05:53:50.047213+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:50.039907+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Step 2 — Set paper metadata"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "af0b96c1",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:50.064642Z",
+     "iopub.status.busy": "2026-07-16T05:53:50.063509Z",
+     "iopub.status.idle": "2026-07-16T05:53:50.071419Z",
+     "shell.execute_reply": "2026-07-16T05:53:50.070595Z"
+    },
+    "papermill": {
+     "duration": 0.018401,
+     "end_time": "2026-07-16T05:53:50.073057+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:50.054656+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{\n",
+      "  \"paper\": {\n",
+      "    \"arxiv_id\": \"2605.00751\"\n",
+      "  },\n",
+      "  \"tags\": [\n",
+      "    \"icml2026-repro\",\n",
+      "    \"paper-Jh6gq9QsFa\"\n",
+      "  ]\n",
+      "}\n"
+     ]
+    }
+   ],
+   "source": [
+    "import json, os\n",
+    "os.makedirs(\".trackio\", exist_ok=True)\n",
+    "metadata = {\n",
+    "    \"paper\": {\"arxiv_id\": \"2605.00751\"},\n",
+    "    \"tags\": [\"icml2026-repro\", \"paper-Jh6gq9QsFa\"]\n",
+    "}\n",
+    "with open(\".trackio/metadata.json\", \"w\") as f:\n",
+    "    json.dump(metadata, f, indent=2)\n",
+    "print(open(\".trackio/metadata.json\").read())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1d7af750",
+   "metadata": {
+    "papermill": {
+     "duration": 0.007644,
+     "end_time": "2026-07-16T05:53:50.087853+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:50.080209+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Step 3 — Create a page for each claim"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "2c63d369",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:50.104676Z",
+     "iopub.status.busy": "2026-07-16T05:53:50.103749Z",
+     "iopub.status.idle": "2026-07-16T05:53:56.907235Z",
+     "shell.execute_reply": "2026-07-16T05:53:56.906410Z"
+    },
+    "papermill": {
+     "duration": 6.814326,
+     "end_time": "2026-07-16T05:53:56.909444+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:50.095118+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Selected page 'claim-1-low-dimensional-nonlinear-surrogate' as default.\r\n",
+      "Selected page 'claim-2-regret-bound-theorem-3-5' as default.\r\n",
+      "Selected page 'claim-3-efficiency-separation-theorem-3-7' as default.\r\n",
+      "Selected page 'claim-4-matgame-8-agent-10-action-nonlinear' as default.\r\n",
+      "Selected page 'claim-5-smac-win-rate' as default.\r\n",
+      "Selected page 'claim-6-smacv2-win-rate-ablations' as default.\r\n",
+      "Selected page 'conclusion' as default.\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook page \"Claim 1: Low-dimensional nonlinear surrogate\"\n",
+    "!trackio logbook page \"Claim 2: Regret bound (Theorem 3.5)\"\n",
+    "!trackio logbook page \"Claim 3: Efficiency separation (Theorem 3.7)\"\n",
+    "!trackio logbook page \"Claim 4: MatGame 8-agent 10-action nonlinear\"\n",
+    "!trackio logbook page \"Claim 5: SMAC win rate\"\n",
+    "!trackio logbook page \"Claim 6: SMACv2 win rate + ablations\"\n",
+    "!trackio logbook page \"Conclusion\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7e9a3292",
+   "metadata": {
+    "papermill": {
+     "duration": 0.007312,
+     "end_time": "2026-07-16T05:53:56.924296+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:56.916984+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Step 4 — Log findings on each claim page"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "325a181f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:56.941529Z",
+     "iopub.status.busy": "2026-07-16T05:53:56.940587Z",
+     "iopub.status.idle": "2026-07-16T05:53:57.902991Z",
+     "shell.execute_reply": "2026-07-16T05:53:57.901920Z"
+    },
+    "papermill": {
+     "duration": 0.973357,
+     "end_time": "2026-07-16T05:53:57.905057+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:56.931700+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'claim-1-low-dimensional-nonlinear-surrogate'.\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook cell markdown \"Implemented the asinh-GLM surrogate eta(theta,a) = c*asinh(alpha*<theta,a>) exactly per Section 3.1, Eq. 2, plus the first-order (Eq. 3) and mixed second-order (Eq. 4) finite-difference operators. **Verified the paper's stated identity exactly**: eta(a^(u,v)) - eta(a) = Delta_u eta(a) + Delta_v eta(a) + Delta^2_{u,v} eta(a), confirmed to floating-point precision (error ~1.19e-7) via unit test. **[toy]** Verified the surrogate can learn real reward structure: trained on the 8-agent/10-action nonlinear MatGame environment, converged to R2=0.900 on held-out data, matching the theoretical ceiling set by the environment's injected noise variance (Gaussian sigma^2=4 + Uniform(-3,3)) -- essentially recovering all learnable signal. This used a simplified single-global-theta setup rather than the full state-conditioned hypernetwork architecture, so it validates the model family's expressiveness rather than the complete Claim 4 pipeline.\" --page \"Claim 1: Low-dimensional nonlinear surrogate\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "ac0bff4a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:57.922904Z",
+     "iopub.status.busy": "2026-07-16T05:53:57.922165Z",
+     "iopub.status.idle": "2026-07-16T05:53:58.885949Z",
+     "shell.execute_reply": "2026-07-16T05:53:58.884847Z"
+    },
+    "papermill": {
+     "duration": 0.974746,
+     "end_time": "2026-07-16T05:53:58.887787+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:57.913041+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'claim-2-regret-bound-theorem-3-5'.\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook cell markdown \"Not attempted. This is a theoretical claim (regret bound proof, Appendix A.4) rather than an empirical one; reviewing the proof for correctness was deprioritized in favor of the empirical claims given time constraints. No numerical claim is made here.\" --page \"Claim 2: Regret bound (Theorem 3.5)\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "0ed68735",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:58.904776Z",
+     "iopub.status.busy": "2026-07-16T05:53:58.904197Z",
+     "iopub.status.idle": "2026-07-16T05:53:59.865659Z",
+     "shell.execute_reply": "2026-07-16T05:53:59.864894Z"
+    },
+    "papermill": {
+     "duration": 0.971914,
+     "end_time": "2026-07-16T05:53:59.867413+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:58.895499+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'claim-3-efficiency-separation-theorem-3-7'.\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook cell markdown \"Not attempted. Same reasoning as Claim 2 -- theoretical claim (Appendix A.6), proof review deprioritized given time constraints.\" --page \"Claim 3: Efficiency separation (Theorem 3.7)\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "03c0aeb8",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:53:59.884851Z",
+     "iopub.status.busy": "2026-07-16T05:53:59.884390Z",
+     "iopub.status.idle": "2026-07-16T05:54:00.863666Z",
+     "shell.execute_reply": "2026-07-16T05:54:00.862662Z"
+    },
+    "papermill": {
+     "duration": 0.9902,
+     "end_time": "2026-07-16T05:54:00.865469+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:53:59.875269+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'claim-4-matgame-8-agent-10-action-nonlinear'.\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook cell markdown \"**[toy / partial]** Built a generalized N-agent MatGame environment implementing the exact reward rule from Appendix D (linear = sum of agent action indices; nonlinear = linear sum + Gaussian(0,2^2) + Uniform(-3,3) noise). Sanity-checked reward scale against Table 1: random-policy episodes on the 8x10 nonlinear config average ~370-380 out of a 720 max, consistent with the paper's trained-baseline range of 587-712 sitting well above random. Confirmed the underlying MAZero codebase (which NonZero extends, per the paper's own Appendix C) builds and trains successfully on a single Kaggle T4 GPU, converging to the optimal joint policy (test score 100.0 +/- 0.0) on the repo's built-in matgame3 config. Began implementing NonUCT's selection rule as a C++ patch to MAZero's MCTS node scoring (cnode.h/cnode.cpp): added hooks for a precomputed surrogate score, blended additively into the existing pUCT formula, gated by a weight defaulting to 0 so baseline behavior is unaffected unless explicitly enabled. This patch compiles successfully. **Not completed**: the Cython bindings (cytree.pyx) needed to call these new C++ hooks from Python were not implemented, so no NonZero-vs-MAZero training comparison was run, and Table 1's actual numbers (697.1 vs 672.3) were not reproduced or falsified.\" --page \"Claim 4: MatGame 8-agent 10-action nonlinear\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "11082347",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:54:00.884126Z",
+     "iopub.status.busy": "2026-07-16T05:54:00.883442Z",
+     "iopub.status.idle": "2026-07-16T05:54:01.853094Z",
+     "shell.execute_reply": "2026-07-16T05:54:01.852157Z"
+    },
+    "papermill": {
+     "duration": 0.981173,
+     "end_time": "2026-07-16T05:54:01.854909+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:00.873736+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'claim-5-smac-win-rate'.\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook cell markdown \"Not attempted. The official MAZero training recipe (which NonZero extends) targets an NVIDIA A100 80GB per the repository documentation; free-tier compute available (Kaggle T4/P100, 16GB) is well below this, and SMAC training runs reported in the paper likely require many hours even for baseline methods. A heavily reduced/short-horizon smoke test was considered but would not produce numbers comparable to Figure 1's claims, so was not attempted rather than reporting a misleading partial result.\" --page \"Claim 5: SMAC win rate\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "3aea2a4b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:54:01.872169Z",
+     "iopub.status.busy": "2026-07-16T05:54:01.871880Z",
+     "iopub.status.idle": "2026-07-16T05:54:02.835589Z",
+     "shell.execute_reply": "2026-07-16T05:54:02.834868Z"
+    },
+    "papermill": {
+     "duration": 0.974688,
+     "end_time": "2026-07-16T05:54:02.837427+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:01.862739+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'claim-6-smacv2-win-rate-ablations'.\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook cell markdown \"Not attempted. Same reasoning as Claim 5 -- SMACv2 has the same compute requirements as SMAC, out of reach on available free-tier GPU.\" --page \"Claim 6: SMACv2 win rate + ablations\""
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f8047752",
+   "metadata": {
+    "papermill": {
+     "duration": 0.007915,
+     "end_time": "2026-07-16T05:54:02.853251+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:02.845336+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Step 5 — Attach your code as an artifact bundle"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "f661579b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:54:02.871118Z",
+     "iopub.status.busy": "2026-07-16T05:54:02.870426Z",
+     "iopub.status.idle": "2026-07-16T05:54:03.830087Z",
+     "shell.execute_reply": "2026-07-16T05:54:03.829001Z"
+    },
+    "papermill": {
+     "duration": 0.970801,
+     "end_time": "2026-07-16T05:54:03.832032+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:02.861231+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged artifact cell to page 'conclusion'.\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook cell artifact nonzero-repro/repro-bundle:v1 \\\n",
+    "  --page \"Conclusion\" \\\n",
+    "  --title \"Reproduction bundle (environment, surrogate, validation script, C++ patch)\" \\\n",
+    "  --type dataset"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c6951718",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00794,
+     "end_time": "2026-07-16T05:54:03.848096+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:03.840156+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Step 6 — Executive summary (pinned, required)\n",
+    "**Edit the two `[FILL IN]` placeholders below** with your actual time spent before running."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "f72f451a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:54:03.866203Z",
+     "iopub.status.busy": "2026-07-16T05:54:03.865307Z",
+     "iopub.status.idle": "2026-07-16T05:54:05.594122Z",
+     "shell.execute_reply": "2026-07-16T05:54:05.593228Z"
+    },
+    "papermill": {
+     "duration": 1.739566,
+     "end_time": "2026-07-16T05:54:05.595573+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:03.856007+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'conclusion'.\n",
+      "\n",
+      "\n",
+      "Pinned cell cell_8b6f18d04916 on page 'conclusion'.\n",
+      " \n"
+     ]
+    }
+   ],
+   "source": [
+    "import subprocess\n",
+    "\n",
+    "summary_text = \"\"\"Partial reproduction of NonZero. Of the paper's 6 claims, Claim 1's core mathematical formulation was verified exactly (finite-difference identity holds to floating-point precision), and the surrogate model was shown to learn true reward structure at its theoretical noise ceiling (R2=0.90) on a toy-scale test. Claim 4's supporting infrastructure (environment, baseline training pipeline, and a compiling but not-yet-wired C++ patch for NonUCT) was built and validated at the component level, but no end-to-end NonZero-vs-baseline comparison was completed, so Table 1's reported numbers were neither reproduced nor falsified. Claims 2-3 (theoretical proofs) and Claims 5-6 (SMAC/SMACv2) were not attempted: the former due to time constraints, the latter because the paper's own training recipe requires A100-class GPU hardware unavailable on free-tier compute. All work was done on a single Kaggle T4 GPU, free tier, over approximately 3 hours.\n",
+    "\n",
+    "## Scope & cost\n",
+    "\n",
+    "|  | This reproduction | Full replication |\n",
+    "|---|---|---|\n",
+    "| Scope | Claim 1 math + Claim 4 infrastructure (env, baseline, surrogate) | All 6 claims incl. SMAC/SMACv2 |\n",
+    "| Hardware | 1x Kaggle T4 (free tier) | Cluster of NVIDIA A100/A6000 GPUs |\n",
+    "| Compute time | ~3 hours | Many GPU-days |\n",
+    "| Cost | $0 | Thousands of dollars |\n",
+    "| Outcome | Claim 1 verified (toy scale); Claim 4 infrastructure validated, not completed; Claims 2-3, 5-6 not attempted |\"\"\"\n",
+    "\n",
+    "result = subprocess.run(\n",
+    "    [\"trackio\", \"logbook\", \"cell\", \"markdown\", summary_text,\n",
+    "     \"--title\", \"Executive summary\", \"--page\", \"Conclusion\"],\n",
+    "    capture_output=True, text=True\n",
+    ")\n",
+    "print(result.stdout)\n",
+    "print(result.stderr)\n",
+    "\n",
+    "pin_result = subprocess.run([\"trackio\", \"logbook\", \"pin\", \"--page\", \"Conclusion\"],\n",
+    "                             capture_output=True, text=True)\n",
+    "print(pin_result.stdout, pin_result.stderr)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6220e93f",
+   "metadata": {
+    "papermill": {
+     "duration": 0.007887,
+     "end_time": "2026-07-16T05:54:05.611732+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:05.603845+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "### Step 7 — Publish (this is the actual submission)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "1f8d040b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-16T05:54:05.629485Z",
+     "iopub.status.busy": "2026-07-16T05:54:05.628706Z",
+     "iopub.status.idle": "2026-07-16T05:54:08.585396Z",
+     "shell.execute_reply": "2026-07-16T05:54:08.584472Z"
+    },
+    "papermill": {
+     "duration": 2.967933,
+     "end_time": "2026-07-16T05:54:08.587393+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:05.619460+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "  · pushing artifacts for 'nonzero-repro' → bucket byte-vortex/nonzero-repro-artifacts\r\n",
+      "  · could not push artifacts to bucket: No database found for project 'nonzero-repro'\r\n",
+      "Published: https://huggingface.co/spaces/byte-vortex/nonzero-repro\r\n",
+      "Rendered at: https://byte-vortex-nonzero-repro.static.hf.space/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook publish byte-vortex/nonzero-repro"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "309d4084",
+   "metadata": {
+    "papermill": {
+     "duration": 0.008638,
+     "end_time": "2026-07-16T05:54:08.605080+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:08.596442+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "**Copy the link printed above** and paste it back wherever the organizers asked for it (\"print the link here\"). That's the submission.\n",
+    "\n",
+    "Notes:\n",
+    "- If `trackio logbook` commands error with \"command not found\", run `!pip install -U trackio` first (a plain earlier `pip install trackio` may have grabbed a version without the logbook CLI).\n",
+    "- The optional `posterly` poster step from the official guide is not included here — a complete, honest logbook without a poster beats an incomplete one delayed by it."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ca94531a",
+   "metadata": {
+    "papermill": {
+     "duration": 0.00808,
+     "end_time": "2026-07-16T05:54:08.621445+00:00",
+     "exception": false,
+     "start_time": "2026-07-16T05:54:08.613365+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "# Reproduction Logbook: NonZero (ICML 2026, OpenReview Jh6gq9QsFa)\n",
+    "\n",
+    "**Paper:** \"NonZero: Interaction-Guided Exploration for Multi-Agent Monte\n",
+    "Carlo Tree Search\" (arXiv 2605.00751)\n",
+    "**Status:** Partial reproduction, published. Claims 1 and 4 (environment +\n",
+    "surrogate model) validated at the component level; full end-to-end\n",
+    "NonUCT integration not yet complete. Claims 5-6 (SMAC/SMACv2) assessed\n",
+    "as infeasible on available compute.\n",
+    "**Published submission:** https://huggingface.co/spaces/byte-vortex/nonzero-repro\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## Claim-by-claim status\n",
+    "\n",
+    "### Claim 1 — Low-dimensional nonlinear surrogate + difference operators\n",
+    "**Status: Verified (component-level, toy scale).**\n",
+    "\n",
+    "- Implemented the asinh-GLM surrogate `η(θ,a) = c·asinh(α·⟨θ,a⟩)` exactly\n",
+    "  as specified in Section 3.1 (Eq. 2), with joint actions represented as\n",
+    "  n-hot vectors in `{0,1}^{n·d}`.\n",
+    "- Implemented the first-order difference `Δ_u η` (Eq. 3) and mixed\n",
+    "  second-order difference `Δ²_{u,v} η` (Eq. 4).\n",
+    "- **Verified the paper's stated identity exactly:**\n",
+    "  `η(a^(u,v)) - η(a) = Δ_u η(a) + Δ_v η(a) + Δ²_{u,v} η(a)`,\n",
+    "  confirmed to floating-point precision (error ≈ 1.19e-7) via unit test.\n",
+    "- Implemented `L_NonUCT` (Eq. 7), the 4-target supervision loss.\n",
+    "- **Verified the surrogate can fit real environment reward structure:**\n",
+    "  trained on the 8-agent/10-action nonlinear MatGame environment (see\n",
+    "  Claim 4 below), converged to R²=0.900 on held-out data — matching the\n",
+    "  theoretical ceiling set by the environment's own injected noise\n",
+    "  variance (Gaussian σ²=4 + Uniform(-3,3)), meaning the surrogate\n",
+    "  recovered essentially all learnable signal.\n",
+    "\n",
+    "**Not yet done:** the hypernetwork/mixing net (`MixingHyperNet`, per\n",
+    "Appendix B.1's `[64,64]` MLP spec) is implemented but not yet wired to\n",
+    "real per-agent latent states from a trained MuZero-style representation\n",
+    "network — the R²=0.90 result above used a single global θ fit directly\n",
+    "to actions, as a simplified test of the model family's expressiveness,\n",
+    "not the full state-conditioned architecture.\n",
+    "\n",
+    "### Claim 2 — Regret bound (Theorem 3.5)\n",
+    "**Status: Not attempted.** This is a theoretical claim, checkable by\n",
+    "verifying the proof in Appendix A.4 rather than by running code.\n",
+    "Deprioritized given time constraints in favor of empirical claims.\n",
+    "\n",
+    "### Claim 3 — Efficiency separation (Theorem 3.7)\n",
+    "**Status: Not attempted.** Same reasoning as Claim 2 — proof\n",
+    "verification (Appendix A.6) rather than empirical run.\n",
+    "\n",
+    "### Claim 4 — MatGame 8-agent/10-action nonlinear benchmark\n",
+    "**Status: Partial — infrastructure verified, full NonUCT run pending.**\n",
+    "\n",
+    "- Built a generalized N-agent, N-action MatGame environment\n",
+    "  (`matgame_nonzero.py`) implementing the exact reward rule from\n",
+    "  Appendix D: linear setting = sum of agent action indices; nonlinear\n",
+    "  setting = linear sum + Gaussian(0, 2²) + Uniform(-3, 3) noise.\n",
+    "- Sanity-checked reward scale against Table 1: random-policy episodes\n",
+    "  on the 8x10 nonlinear config average ~370-380 (out of a 720 max),\n",
+    "  consistent with the paper's trained-baseline range of 587-712 sitting\n",
+    "  well above random.\n",
+    "- Confirmed the MAZero codebase (which NonZero is built on top of, per\n",
+    "  the paper's own Appendix C) builds and trains successfully on Kaggle\n",
+    "  T4 GPU — validated end-to-end on the repo's existing `matgame3` config\n",
+    "  (converges to optimal joint policy, test score 100.0±0.0 by step 300).\n",
+    "- Began implementing NonUCT's selection rule as a C++ patch to MAZero's\n",
+    "  MCTS node scoring (`core/mcts/ctree/ctree_sampled/lib/cnode.cpp`):\n",
+    "  added a `nonuct_score` field and blended it additively into the\n",
+    "  existing pUCT formula, gated by a weight defaulting to 0 so baseline\n",
+    "  behavior is unaffected unless explicitly enabled. **This patch compiles\n",
+    "  successfully.**\n",
+    "- **Not yet done:** the Cython bindings (`cytree.pyx`) needed to call\n",
+    "  these new C++ hooks from Python were not implemented, so no NonZero\n",
+    "  vs. MAZero training comparison was run. Table 1's actual numbers\n",
+    "  (697.1 vs 672.3) were neither reproduced nor falsified.\n",
+    "\n",
+    "### Claim 5 — SMAC win rate / sample efficiency\n",
+    "**Status: Assessed as infeasible on available compute; not attempted.**\n",
+    "The official MAZero training recipe (which NonZero extends) targets an\n",
+    "NVIDIA A100 80GB per the repository documentation; free-tier Kaggle\n",
+    "GPUs (T4/P100, 16GB) are well below this, and SMAC training runs\n",
+    "reported in the paper likely require many hours even for baseline\n",
+    "methods. A heavily reduced/short-horizon smoke test was considered but\n",
+    "would not produce numbers comparable to Table/Figure claims, so was not\n",
+    "attempted rather than reporting a misleading partial result.\n",
+    "\n",
+    "### Claim 6 — SMACv2 win rate + ablations\n",
+    "**Status: Assessed as infeasible on available compute; not attempted.**\n",
+    "Same reasoning as Claim 5.\n",
+    "\n",
+    "---\n",
+    "\n",
+    "## Environment / build notes (for anyone reproducing this logbook)\n",
+    "\n",
+    "- Platform: Kaggle notebook, GPU T4 x1, Python 3.12.\n",
+    "- MAZero repo (`github.com/liuqh16/MAZero`) required three build fixes\n",
+    "  for this environment:\n",
+    "  1. `setup.py`'s `compiler_so.remove('-Wstrict-prototypes')` fails on\n",
+    "     compilers where that flag isn't present — patched to a filtered\n",
+    "     list comprehension instead of `.remove()`.\n",
+    "  2. The repo's pinned Cython 0.29.23 cannot target Python 3.12's\n",
+    "     internal C API (`longintrepr.h` relocated) — upgraded to\n",
+    "     Cython ≥3.0.10.\n",
+    "  3. The repo's pinned `opencv-python==4.5.1.48` has no Python 3.12\n",
+    "     wheel and fails building from source — replaced with unpinned\n",
+    "     `opencv-python-headless`.\n",
+    "\n",
+    "## Supporting artifacts\n",
+    "\n",
+    "- **`nonzero_repro_cleaned.ipynb`** / **`nonzero_full_submission.ipynb`**\n",
+    "  — the Kaggle notebook(s) containing the full, runnable pipeline.\n",
+    "- **`matgame_nonzero.py`** — the generalized N-agent MatGame environment\n",
+    "  (Claim 4).\n",
+    "- **`nonzero_surrogate.py`** — the asinh-GLM surrogate + NonUCT\n",
+    "  finite-difference operators (Claim 1).\n",
+    "- **`validate_surrogate_fit.py`** — the surrogate-fit validation script\n",
+    "  (produces the R²=0.90 result cited above).\n",
+    "- **`nonuct_cnode_patch.diff`** — the C++ patch adding NonUCT score\n",
+    "  hooks to MAZero's MCTS node scoring.\n",
+    "\n",
+    "## Honesty notes\n",
+    "\n",
+    "- The exact per-agent reward-index-to-score correspondence in Table 1\n",
+    "  is not fully specified in the paper (episode length vs. \"Steps\"\n",
+    "  column ambiguity); we inferred `episode_limit=10` by matching the\n",
+    "  existing MAZero repo's convention across all its built-in MatGame\n",
+    "  variants, and validated this inference against the reported score\n",
+    "  magnitudes (see Claim 4 sanity check above) rather than assuming it.\n",
+    "- The R²=0.90 surrogate-fit result used a simplified, state-independent\n",
+    "  training setup (single global θ) as a first check of model\n",
+    "  expressiveness — it is not yet the full architecture the paper\n",
+    "  describes, and should not be read as a claim-4-level result on its\n",
+    "  own."
+   ]
+  }
+ ],
+ "metadata": {
+  "kaggle": {
+   "accelerator": "none",
+   "dataSources": [],
+   "dockerImageVersionId": 28755,
+   "isGpuEnabled": false,
+   "isInternetEnabled": false,
+   "language": "python",
+   "sourceType": "notebook"
+  },
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.13"
+  },
+  "papermill": {
+   "default_parameters": {},
+   "duration": 159.890366,
+   "end_time": "2026-07-16T05:54:09.650651+00:00",
+   "environment_variables": {},
+   "exception": null,
+   "input_path": "__notebook__.ipynb",
+   "output_path": "__notebook__.ipynb",
+   "parameters": {},
+   "start_time": "2026-07-16T05:51:29.760285+00:00",
+   "version": "2.7.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
