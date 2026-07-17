@@ -2,13 +2,13 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "4869f567",
+   "id": "1f1317c6",
    "metadata": {
     "papermill": {
-     "duration": 0.008154,
-     "end_time": "2026-07-16T07:03:53.893317+00:00",
+     "duration": 0.00956,
+     "end_time": "2026-07-17T04:09:44.103024+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:03:53.885163+00:00",
+     "start_time": "2026-07-17T04:09:44.093464+00:00",
      "status": "completed"
     },
     "tags": []
@@ -32,21 +32,21 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "ea0ff4b1",
+   "id": "d2a283ef",
    "metadata": {
     "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
     "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:03:53.908956Z",
-     "iopub.status.busy": "2026-07-16T07:03:53.908564Z",
-     "iopub.status.idle": "2026-07-16T07:03:54.595824Z",
-     "shell.execute_reply": "2026-07-16T07:03:54.592416Z"
+     "iopub.execute_input": "2026-07-17T04:09:44.120928Z",
+     "iopub.status.busy": "2026-07-17T04:09:44.120599Z",
+     "iopub.status.idle": "2026-07-17T04:09:45.397289Z",
+     "shell.execute_reply": "2026-07-17T04:09:45.396044Z"
     },
     "papermill": {
-     "duration": 0.698254,
-     "end_time": "2026-07-16T07:03:54.598570+00:00",
+     "duration": 1.287935,
+     "end_time": "2026-07-17T04:09:45.399246+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:03:53.900316+00:00",
+     "start_time": "2026-07-17T04:09:44.111311+00:00",
      "status": "completed"
     },
     "tags": []
@@ -75,19 +75,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "5ca47c47",
+   "id": "f84d17e3",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:03:54.619438Z",
-     "iopub.status.busy": "2026-07-16T07:03:54.619034Z",
-     "iopub.status.idle": "2026-07-16T07:03:57.863019Z",
-     "shell.execute_reply": "2026-07-16T07:03:57.861750Z"
+     "iopub.execute_input": "2026-07-17T04:09:45.419523Z",
+     "iopub.status.busy": "2026-07-17T04:09:45.419157Z",
+     "iopub.status.idle": "2026-07-17T04:09:49.043080Z",
+     "shell.execute_reply": "2026-07-17T04:09:49.041812Z"
     },
     "papermill": {
-     "duration": 3.255749,
-     "end_time": "2026-07-16T07:03:57.865381+00:00",
+     "duration": 3.635913,
+     "end_time": "2026-07-17T04:09:49.045048+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:03:54.609632+00:00",
+     "start_time": "2026-07-17T04:09:45.409135+00:00",
      "status": "completed"
     },
     "tags": []
@@ -109,19 +109,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "d8b2fb68",
+   "id": "49885a4e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:03:57.882061Z",
-     "iopub.status.busy": "2026-07-16T07:03:57.881567Z",
-     "iopub.status.idle": "2026-07-16T07:04:21.309339Z",
-     "shell.execute_reply": "2026-07-16T07:04:21.308089Z"
+     "iopub.execute_input": "2026-07-17T04:09:49.063955Z",
+     "iopub.status.busy": "2026-07-17T04:09:49.063512Z",
+     "iopub.status.idle": "2026-07-17T04:10:12.013388Z",
+     "shell.execute_reply": "2026-07-17T04:10:12.012159Z"
     },
     "papermill": {
-     "duration": 23.438878,
-     "end_time": "2026-07-16T07:04:21.311783+00:00",
+     "duration": 22.962105,
+     "end_time": "2026-07-17T04:10:12.015687+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:03:57.872905+00:00",
+     "start_time": "2026-07-17T04:09:49.053582+00:00",
      "status": "completed"
     },
     "tags": []
@@ -138,8 +138,8 @@
       "Compiling ctree_sampled/cytree.pyx because it changed.\r\n",
       "[1/1] Cythonizing ctree_sampled/cytree.pyx\r\n",
       "/kaggle/working/MAZero\n",
-      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
-      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
+      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
+      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
      ]
     }
    ],
@@ -157,19 +157,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "48018a44",
+   "id": "25b19b60",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:04:21.329820Z",
-     "iopub.status.busy": "2026-07-16T07:04:21.329350Z",
-     "iopub.status.idle": "2026-07-16T07:04:21.338610Z",
-     "shell.execute_reply": "2026-07-16T07:04:21.337692Z"
+     "iopub.execute_input": "2026-07-17T04:10:12.036570Z",
+     "iopub.status.busy": "2026-07-17T04:10:12.036174Z",
+     "iopub.status.idle": "2026-07-17T04:10:12.045043Z",
+     "shell.execute_reply": "2026-07-17T04:10:12.044200Z"
     },
     "papermill": {
-     "duration": 0.021193,
-     "end_time": "2026-07-16T07:04:21.340633+00:00",
+     "duration": 0.021739,
+     "end_time": "2026-07-17T04:10:12.046741+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:04:21.319440+00:00",
+     "start_time": "2026-07-17T04:10:12.025002+00:00",
      "status": "completed"
     },
     "tags": []
@@ -251,19 +251,19 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "cfd7526f",
+   "id": "1d4218c2",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:04:21.357544Z",
-     "iopub.status.busy": "2026-07-16T07:04:21.357189Z",
-     "iopub.status.idle": "2026-07-16T07:04:36.618514Z",
-     "shell.execute_reply": "2026-07-16T07:04:36.617304Z"
+     "iopub.execute_input": "2026-07-17T04:10:12.067022Z",
+     "iopub.status.busy": "2026-07-17T04:10:12.066645Z",
+     "iopub.status.idle": "2026-07-17T04:10:26.465851Z",
+     "shell.execute_reply": "2026-07-17T04:10:26.464740Z"
     },
     "papermill": {
-     "duration": 15.272655,
-     "end_time": "2026-07-16T07:04:36.620935+00:00",
+     "duration": 14.411771,
+     "end_time": "2026-07-17T04:10:26.468255+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:04:21.348280+00:00",
+     "start_time": "2026-07-17T04:10:12.056484+00:00",
      "status": "completed"
     },
     "tags": []
@@ -280,8 +280,8 @@
       " 3 files changed, 25 insertions(+), 2 deletions(-)\r\n",
       "/kaggle/working/MAZero/core/mcts/ctree\n",
       "/kaggle/working/MAZero\n",
-      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
-      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
+      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
+      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
      ]
     }
    ],
@@ -298,19 +298,19 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "70f6cfc7",
+   "id": "4279ca46",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:04:36.638779Z",
-     "iopub.status.busy": "2026-07-16T07:04:36.638376Z",
-     "iopub.status.idle": "2026-07-16T07:04:36.727540Z",
-     "shell.execute_reply": "2026-07-16T07:04:36.726522Z"
+     "iopub.execute_input": "2026-07-17T04:10:26.488622Z",
+     "iopub.status.busy": "2026-07-17T04:10:26.488269Z",
+     "iopub.status.idle": "2026-07-17T04:10:26.801190Z",
+     "shell.execute_reply": "2026-07-17T04:10:26.800304Z"
     },
     "papermill": {
-     "duration": 0.10098,
-     "end_time": "2026-07-16T07:04:36.729909+00:00",
+     "duration": 0.326138,
+     "end_time": "2026-07-17T04:10:26.803453+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:04:36.628929+00:00",
+     "start_time": "2026-07-17T04:10:26.477315+00:00",
      "status": "completed"
     },
     "tags": []
@@ -336,19 +336,19 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "8d0ee415",
+   "id": "b42e7179",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:04:36.747186Z",
-     "iopub.status.busy": "2026-07-16T07:04:36.746808Z",
-     "iopub.status.idle": "2026-07-16T07:04:43.929960Z",
-     "shell.execute_reply": "2026-07-16T07:04:43.928758Z"
+     "iopub.execute_input": "2026-07-17T04:10:26.824938Z",
+     "iopub.status.busy": "2026-07-17T04:10:26.824132Z",
+     "iopub.status.idle": "2026-07-17T04:10:35.171997Z",
+     "shell.execute_reply": "2026-07-17T04:10:35.170773Z"
     },
     "papermill": {
-     "duration": 7.194561,
-     "end_time": "2026-07-16T07:04:43.932314+00:00",
+     "duration": 8.361034,
+     "end_time": "2026-07-17T04:10:35.174332+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:04:36.737753+00:00",
+     "start_time": "2026-07-17T04:10:26.813298+00:00",
      "status": "completed"
     },
     "tags": []
@@ -358,8 +358,8 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m2.0/2.0 MB\u001b[0m \u001b[31m53.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
-      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.0/60.0 kB\u001b[0m \u001b[31m3.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m2.0/2.0 MB\u001b[0m \u001b[31m4.2 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.0/60.0 kB\u001b[0m \u001b[31m3.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
       "\u001b[?25h\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n",
       "gradio 5.50.0 requires gradio-client==1.14.0, but you have gradio-client 2.5.0 which is incompatible.\u001b[0m\u001b[31m\r\n",
       "\u001b[0m\u001b[33mA new version of huggingface_hub (1.23.0) is available! You are using version 1.11.0.\r\n",
@@ -383,22 +383,22 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "56dbc871",
+   "id": "7ea9dbbb",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:04:43.951817Z",
-     "iopub.status.busy": "2026-07-16T07:04:43.950630Z",
-     "iopub.status.idle": "2026-07-16T07:06:36.444863Z",
-     "shell.execute_reply": "2026-07-16T07:06:36.443619Z"
+     "iopub.execute_input": "2026-07-17T04:10:35.201332Z",
+     "iopub.status.busy": "2026-07-17T04:10:35.200751Z",
+     "iopub.status.idle": "2026-07-17T04:12:31.163849Z",
+     "shell.execute_reply": "2026-07-17T04:12:31.162524Z"
     },
     "jupyter": {
      "source_hidden": true
     },
     "papermill": {
-     "duration": 112.506731,
-     "end_time": "2026-07-16T07:06:36.447314+00:00",
+     "duration": 115.981852,
+     "end_time": "2026-07-17T04:12:31.166319+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:04:43.940583+00:00",
+     "start_time": "2026-07-17T04:10:35.184467+00:00",
      "status": "completed"
     },
     "tags": []
@@ -409,10 +409,10 @@
      "output_type": "stream",
      "text": [
       "/kaggle/working/MAZero\n",
-      "[2026-07-16 07:05:15,057][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16 07:05:15\r\n",
-      "[2026-07-16 07:05:15,057][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16 07:05:15\r\n",
-      "[2026-07-16 07:05:15,057][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
-      "[2026-07-16 07:05:15,057][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
+      "[2026-07-17 04:11:08,324][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17 04:11:08\r\n",
+      "[2026-07-17 04:11:08,324][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17 04:11:08\r\n",
+      "[2026-07-17 04:11:08,324][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
+      "[2026-07-17 04:11:08,324][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
       "/kaggle/working/MAZero/core/train.py:487: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\r\n",
       "  scaler = GradScaler()\r\n",
       "/usr/local/lib/python3.12/dist-packages/torch/cuda/amp/grad_scaler.py:31: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.\r\n",
@@ -423,20 +423,20 @@
       "  super().__init__(\r\n",
       "/kaggle/working/MAZero/core/mcts/tree_search/mcts_sampled.py:121: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
-      "[2026-07-16 07:05:21,554][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
-      "[2026-07-16 07:05:21,554][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
-      "[2026-07-16 07:05:21,735][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
-      "[2026-07-16 07:05:21,735][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
-      "[2026-07-16 07:05:21,915][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
-      "[2026-07-16 07:05:21,915][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
-      "[2026-07-16 07:05:22,106][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
-      "[2026-07-16 07:05:22,106][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
-      "[2026-07-16 07:05:22,283][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
-      "[2026-07-16 07:05:22,283][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
-      "[2026-07-16 07:05:22,459][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
-      "[2026-07-16 07:05:22,459][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
-      "[2026-07-16 07:05:22,642][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
-      "[2026-07-16 07:05:22,642][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
+      "[2026-07-17 04:11:14,758][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
+      "[2026-07-17 04:11:14,758][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
+      "[2026-07-17 04:11:14,965][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
+      "[2026-07-17 04:11:14,965][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
+      "[2026-07-17 04:11:15,151][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
+      "[2026-07-17 04:11:15,151][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
+      "[2026-07-17 04:11:15,332][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
+      "[2026-07-17 04:11:15,332][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
+      "[2026-07-17 04:11:15,510][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
+      "[2026-07-17 04:11:15,510][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
+      "[2026-07-17 04:11:15,690][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
+      "[2026-07-17 04:11:15,690][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
+      "[2026-07-17 04:11:15,872][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
+      "[2026-07-17 04:11:15,872][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
       "/kaggle/working/MAZero/core/reanalyze_worker.py:113: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
       "/kaggle/working/MAZero/core/reanalyze_worker.py:256: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
@@ -447,40 +447,40 @@
       "/kaggle/working/MAZero/core/test.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
       "#0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 07:05:23,361][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.337   Tp_perstep: 0.185   Tu_perstep: 0.094   Te_perstep: 0.439   \r\n",
-      "[2026-07-16 07:05:23,361][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.337   Tp_perstep: 0.185   Tu_perstep: 0.094   Te_perstep: 0.439   \r\n",
-      "[2026-07-16 07:05:23,362][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 07:05:23,362][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-17 04:11:16,583][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.393   Tp_perstep: 0.188   Tu_perstep: 0.101   Te_perstep: 0.422   \r\n",
+      "[2026-07-17 04:11:16,583][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.393   Tp_perstep: 0.188   Tu_perstep: 0.101   Te_perstep: 0.422   \r\n",
+      "[2026-07-17 04:11:16,584][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-17 04:11:16,584][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 50.\r\n",
       "#50         Test Mean Score of matgame3: 94.375     (max: 100.0     , min:40.0      , std: 13.448396744593758)\r\n",
       "Start evaluation for model 100.\r\n",
       "#100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
-      "[2026-07-16 07:05:43,659][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.155   Tu_perstep: 0.033   Te_perstep: 0.013   \r\n",
-      "[2026-07-16 07:05:43,659][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.155   Tu_perstep: 0.033   Te_perstep: 0.013   \r\n",
-      "[2026-07-16 07:05:43,659][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
-      "[2026-07-16 07:05:43,659][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
+      "[2026-07-17 04:11:36,868][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.021   Tp_perstep: 0.155   Tu_perstep: 0.033   Te_perstep: 0.013   \r\n",
+      "[2026-07-17 04:11:36,868][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.021   Tp_perstep: 0.155   Tu_perstep: 0.033   Te_perstep: 0.013   \r\n",
+      "[2026-07-17 04:11:36,869][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
+      "[2026-07-17 04:11:36,869][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
       "Start evaluation for model 150.\r\n",
       "#150        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 200.\r\n",
       "#200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 07:06:06,426][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.019   Tp_perstep: 0.161   Tu_perstep: 0.033   Te_perstep: 0.011   \r\n",
-      "[2026-07-16 07:06:06,426][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.019   Tp_perstep: 0.161   Tu_perstep: 0.033   Te_perstep: 0.011   \r\n",
-      "[2026-07-16 07:06:06,426][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 07:06:06,426][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-17 04:11:59,838][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.162   Tu_perstep: 0.033   Te_perstep: 0.011   \r\n",
+      "[2026-07-17 04:11:59,838][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.162   Tu_perstep: 0.033   Te_perstep: 0.011   \r\n",
+      "[2026-07-17 04:11:59,838][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-17 04:11:59,838][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 250.\r\n",
       "#250        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 300.\r\n",
       "#300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 07:06:29,671][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.018   Tp_perstep: 0.166   Tu_perstep: 0.033   Te_perstep: 0.010   \r\n",
-      "[2026-07-16 07:06:29,671][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.018   Tp_perstep: 0.166   Tu_perstep: 0.033   Te_perstep: 0.010   \r\n",
-      "[2026-07-16 07:06:29,672][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 07:06:29,672][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 07:06:33,563][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
-      "[2026-07-16 07:06:33,563][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
+      "[2026-07-17 04:12:23,832][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.019   Tp_perstep: 0.169   Tu_perstep: 0.033   Te_perstep: 0.010   \r\n",
+      "[2026-07-17 04:12:23,832][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.019   Tp_perstep: 0.169   Tu_perstep: 0.033   Te_perstep: 0.010   \r\n",
+      "[2026-07-17 04:12:23,833][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-17 04:12:23,833][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-17 04:12:27,954][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
+      "[2026-07-17 04:12:27,954][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
       "Start evaluation for model 320.\r\n",
       "#320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 07:06:34,007][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-16 07:06:34,007][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n"
+      "[2026-07-17 04:12:28,396][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-17 04:12:28,396][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n"
      ]
     }
    ],
@@ -502,19 +502,19 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "28438c14",
+   "id": "885409c0",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:36.469373Z",
-     "iopub.status.busy": "2026-07-16T07:06:36.468982Z",
-     "iopub.status.idle": "2026-07-16T07:06:36.599004Z",
-     "shell.execute_reply": "2026-07-16T07:06:36.597033Z"
+     "iopub.execute_input": "2026-07-17T04:12:31.191097Z",
+     "iopub.status.busy": "2026-07-17T04:12:31.190716Z",
+     "iopub.status.idle": "2026-07-17T04:12:31.319620Z",
+     "shell.execute_reply": "2026-07-17T04:12:31.318509Z"
     },
     "papermill": {
-     "duration": 0.144888,
-     "end_time": "2026-07-16T07:06:36.601977+00:00",
+     "duration": 0.144407,
+     "end_time": "2026-07-17T04:12:31.321952+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:36.457089+00:00",
+     "start_time": "2026-07-17T04:12:31.177545+00:00",
      "status": "completed"
     },
     "tags": []
@@ -524,14 +524,14 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
-      "tail: cannot open '07:05:15/logs/train.log' for reading: No such file or directory\r\n",
-      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
-      "tail: cannot open '07:05:15/logs/train_test.log' for reading: No such file or directory\r\n",
-      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
-      "tail: cannot open '07:05:15/logs/root.log' for reading: No such file or directory\r\n",
-      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-16' for reading: No such file or directory\r\n",
-      "tail: cannot open '07:05:15/logs/test.log' for reading: No such file or directory\r\n"
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17' for reading: No such file or directory\r\n",
+      "tail: cannot open '04:11:08/logs/train.log' for reading: No such file or directory\r\n",
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17' for reading: No such file or directory\r\n",
+      "tail: cannot open '04:11:08/logs/train_test.log' for reading: No such file or directory\r\n",
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17' for reading: No such file or directory\r\n",
+      "tail: cannot open '04:11:08/logs/root.log' for reading: No such file or directory\r\n",
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17' for reading: No such file or directory\r\n",
+      "tail: cannot open '04:11:08/logs/test.log' for reading: No such file or directory\r\n"
      ]
     }
    ],
@@ -542,19 +542,19 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "9a0cd29f",
+   "id": "0602b2ea",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:36.626464Z",
-     "iopub.status.busy": "2026-07-16T07:06:36.626057Z",
-     "iopub.status.idle": "2026-07-16T07:06:36.635342Z",
-     "shell.execute_reply": "2026-07-16T07:06:36.634010Z"
+     "iopub.execute_input": "2026-07-17T04:12:31.346612Z",
+     "iopub.status.busy": "2026-07-17T04:12:31.346204Z",
+     "iopub.status.idle": "2026-07-17T04:12:31.355478Z",
+     "shell.execute_reply": "2026-07-17T04:12:31.354378Z"
     },
     "papermill": {
-     "duration": 0.025132,
-     "end_time": "2026-07-16T07:06:36.637489+00:00",
+     "duration": 0.024005,
+     "end_time": "2026-07-17T04:12:31.357161+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:36.612357+00:00",
+     "start_time": "2026-07-17T04:12:31.333156+00:00",
      "status": "completed"
     },
     "tags": []
@@ -696,19 +696,19 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "17558904",
+   "id": "b343a852",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:36.659554Z",
-     "iopub.status.busy": "2026-07-16T07:06:36.659169Z",
-     "iopub.status.idle": "2026-07-16T07:06:36.790585Z",
-     "shell.execute_reply": "2026-07-16T07:06:36.789403Z"
+     "iopub.execute_input": "2026-07-17T04:12:31.382373Z",
+     "iopub.status.busy": "2026-07-17T04:12:31.381068Z",
+     "iopub.status.idle": "2026-07-17T04:12:31.507460Z",
+     "shell.execute_reply": "2026-07-17T04:12:31.506242Z"
     },
     "papermill": {
-     "duration": 0.145167,
-     "end_time": "2026-07-16T07:06:36.792936+00:00",
+     "duration": 0.14104,
+     "end_time": "2026-07-17T04:12:31.509743+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:36.647769+00:00",
+     "start_time": "2026-07-17T04:12:31.368703+00:00",
      "status": "completed"
     },
     "tags": []
@@ -729,19 +729,19 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "4bdabb4a",
+   "id": "eaed14f3",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:36.814991Z",
-     "iopub.status.busy": "2026-07-16T07:06:36.814474Z",
-     "iopub.status.idle": "2026-07-16T07:06:36.823103Z",
-     "shell.execute_reply": "2026-07-16T07:06:36.821805Z"
+     "iopub.execute_input": "2026-07-17T04:12:31.534769Z",
+     "iopub.status.busy": "2026-07-17T04:12:31.534417Z",
+     "iopub.status.idle": "2026-07-17T04:12:31.542145Z",
+     "shell.execute_reply": "2026-07-17T04:12:31.541039Z"
     },
     "papermill": {
-     "duration": 0.022232,
-     "end_time": "2026-07-16T07:06:36.825038+00:00",
+     "duration": 0.022927,
+     "end_time": "2026-07-17T04:12:31.544065+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:36.802806+00:00",
+     "start_time": "2026-07-17T04:12:31.521138+00:00",
      "status": "completed"
     },
     "tags": []
@@ -857,19 +857,19 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "id": "1b9040c0",
+   "id": "252f94ce",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:36.848359Z",
-     "iopub.status.busy": "2026-07-16T07:06:36.847942Z",
-     "iopub.status.idle": "2026-07-16T07:06:36.854591Z",
-     "shell.execute_reply": "2026-07-16T07:06:36.853644Z"
+     "iopub.execute_input": "2026-07-17T04:12:31.569002Z",
+     "iopub.status.busy": "2026-07-17T04:12:31.568642Z",
+     "iopub.status.idle": "2026-07-17T04:12:31.575740Z",
+     "shell.execute_reply": "2026-07-17T04:12:31.574754Z"
     },
     "papermill": {
-     "duration": 0.020412,
-     "end_time": "2026-07-16T07:06:36.856710+00:00",
+     "duration": 0.021796,
+     "end_time": "2026-07-17T04:12:31.577521+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:36.836298+00:00",
+     "start_time": "2026-07-17T04:12:31.555725+00:00",
      "status": "completed"
     },
     "tags": []
@@ -962,19 +962,19 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "b86393b0",
+   "id": "8253b4ca",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:36.878988Z",
-     "iopub.status.busy": "2026-07-16T07:06:36.878197Z",
-     "iopub.status.idle": "2026-07-16T07:06:43.063325Z",
-     "shell.execute_reply": "2026-07-16T07:06:43.061965Z"
+     "iopub.execute_input": "2026-07-17T04:12:31.602249Z",
+     "iopub.status.busy": "2026-07-17T04:12:31.601839Z",
+     "iopub.status.idle": "2026-07-17T04:12:37.947720Z",
+     "shell.execute_reply": "2026-07-17T04:12:37.946480Z"
     },
     "papermill": {
-     "duration": 6.199001,
-     "end_time": "2026-07-16T07:06:43.065757+00:00",
+     "duration": 6.360888,
+     "end_time": "2026-07-17T04:12:37.949980+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:36.866756+00:00",
+     "start_time": "2026-07-17T04:12:31.589092+00:00",
      "status": "completed"
     },
     "tags": []
@@ -984,21 +984,21 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "epoch    0  train_mse=1360.488  test_mse=1330.820  test_R2=-17.1350\r\n",
-      "epoch  200  train_mse= 26.317  test_mse= 26.825  test_R2=0.6345\r\n",
-      "epoch  400  train_mse= 18.775  test_mse= 19.338  test_R2=0.7365\r\n",
-      "epoch  600  train_mse= 11.356  test_mse= 11.561  test_R2=0.8425\r\n",
-      "epoch  800  train_mse=  8.573  test_mse=  8.507  test_R2=0.8841\r\n",
-      "epoch 1000  train_mse=  7.776  test_mse=  7.614  test_R2=0.8962\r\n",
-      "epoch 1200  train_mse=  7.479  test_mse=  7.280  test_R2=0.9008\r\n",
-      "epoch 1400  train_mse=  7.347  test_mse=  7.132  test_R2=0.9028\r\n",
-      "epoch 1600  train_mse=  7.287  test_mse=  7.066  test_R2=0.9037\r\n",
-      "epoch 1800  train_mse=  7.265  test_mse=  7.041  test_R2=0.9040\r\n",
-      "epoch 1999  train_mse=  7.262  test_mse=  7.038  test_R2=0.9041\r\n",
+      "epoch    0  train_mse=1363.047  test_mse=1349.766  test_R2=-17.2679\r\n",
+      "epoch  200  train_mse= 26.162  test_mse= 28.800  test_R2=0.6102\r\n",
+      "epoch  400  train_mse= 18.529  test_mse= 20.300  test_R2=0.7253\r\n",
+      "epoch  600  train_mse= 11.047  test_mse= 12.429  test_R2=0.8318\r\n",
+      "epoch  800  train_mse=  8.330  test_mse=  9.227  test_R2=0.8751\r\n",
+      "epoch 1000  train_mse=  7.555  test_mse=  8.263  test_R2=0.8882\r\n",
+      "epoch 1200  train_mse=  7.265  test_mse=  7.895  test_R2=0.8931\r\n",
+      "epoch 1400  train_mse=  7.136  test_mse=  7.730  test_R2=0.8954\r\n",
+      "epoch 1600  train_mse=  7.077  test_mse=  7.654  test_R2=0.8964\r\n",
+      "epoch 1800  train_mse=  7.056  test_mse=  7.626  test_R2=0.8968\r\n",
+      "epoch 1999  train_mse=  7.053  test_mse=  7.622  test_R2=0.8968\r\n",
       "\r\n",
-      "Fitted c=42.3920  alpha=0.6752\r\n",
-      "True reward std (for reference): 8.432\r\n",
-      "Reward range in data: [8.58, 64.09]\r\n"
+      "Fitted c=42.1836  alpha=0.6780\r\n",
+      "True reward std (for reference): 8.410\r\n",
+      "Reward range in data: [7.93, 60.93]\r\n"
      ]
     }
    ],
@@ -1008,13 +1008,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "4b2b09cf",
+   "id": "8d405f9c",
    "metadata": {
     "papermill": {
-     "duration": 0.01056,
-     "end_time": "2026-07-16T07:06:43.086870+00:00",
+     "duration": 0.011783,
+     "end_time": "2026-07-17T04:12:37.973771+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:43.076310+00:00",
+     "start_time": "2026-07-17T04:12:37.961988+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1031,19 +1031,19 @@
   {
    "cell_type": "code",
    "execution_count": 15,
-   "id": "47802ccd",
+   "id": "1a9395c8",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:43.109821Z",
-     "iopub.status.busy": "2026-07-16T07:06:43.109435Z",
-     "iopub.status.idle": "2026-07-16T07:06:43.115892Z",
-     "shell.execute_reply": "2026-07-16T07:06:43.114577Z"
+     "iopub.execute_input": "2026-07-17T04:12:37.999727Z",
+     "iopub.status.busy": "2026-07-17T04:12:37.999346Z",
+     "iopub.status.idle": "2026-07-17T04:12:38.005061Z",
+     "shell.execute_reply": "2026-07-17T04:12:38.003971Z"
     },
     "papermill": {
-     "duration": 0.020636,
-     "end_time": "2026-07-16T07:06:43.118043+00:00",
+     "duration": 0.021578,
+     "end_time": "2026-07-17T04:12:38.007157+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:43.097407+00:00",
+     "start_time": "2026-07-17T04:12:37.985579+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1066,19 +1066,19 @@
   {
    "cell_type": "code",
    "execution_count": 16,
-   "id": "5340254e",
+   "id": "e0a0c4d5",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:43.142568Z",
-     "iopub.status.busy": "2026-07-16T07:06:43.142212Z",
-     "iopub.status.idle": "2026-07-16T07:06:48.792206Z",
-     "shell.execute_reply": "2026-07-16T07:06:48.790897Z"
+     "iopub.execute_input": "2026-07-17T04:12:38.033280Z",
+     "iopub.status.busy": "2026-07-17T04:12:38.032849Z",
+     "iopub.status.idle": "2026-07-17T04:12:43.846871Z",
+     "shell.execute_reply": "2026-07-17T04:12:43.845470Z"
     },
     "papermill": {
-     "duration": 5.664733,
-     "end_time": "2026-07-16T07:06:48.794671+00:00",
+     "duration": 5.829597,
+     "end_time": "2026-07-17T04:12:43.849140+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:43.129938+00:00",
+     "start_time": "2026-07-17T04:12:38.019543+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1103,13 +1103,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7816ee31",
+   "id": "d1267e52",
    "metadata": {
     "papermill": {
-     "duration": 0.0109,
-     "end_time": "2026-07-16T07:06:48.816337+00:00",
+     "duration": 0.011935,
+     "end_time": "2026-07-17T04:12:43.873877+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:48.805437+00:00",
+     "start_time": "2026-07-17T04:12:43.861942+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1121,19 +1121,19 @@
   {
    "cell_type": "code",
    "execution_count": 17,
-   "id": "83b97a74",
+   "id": "a7f9817c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:48.839559Z",
-     "iopub.status.busy": "2026-07-16T07:06:48.839179Z",
-     "iopub.status.idle": "2026-07-16T07:06:50.024210Z",
-     "shell.execute_reply": "2026-07-16T07:06:50.022738Z"
+     "iopub.execute_input": "2026-07-17T04:12:43.899848Z",
+     "iopub.status.busy": "2026-07-17T04:12:43.899488Z",
+     "iopub.status.idle": "2026-07-17T04:12:45.101021Z",
+     "shell.execute_reply": "2026-07-17T04:12:45.099839Z"
     },
     "papermill": {
-     "duration": 1.200533,
-     "end_time": "2026-07-16T07:06:50.027443+00:00",
+     "duration": 1.217255,
+     "end_time": "2026-07-17T04:12:45.103227+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:48.826910+00:00",
+     "start_time": "2026-07-17T04:12:43.885972+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1156,13 +1156,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "683fec39",
+   "id": "82890007",
    "metadata": {
     "papermill": {
-     "duration": 0.010799,
-     "end_time": "2026-07-16T07:06:50.056133+00:00",
+     "duration": 0.012255,
+     "end_time": "2026-07-17T04:12:45.128484+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:50.045334+00:00",
+     "start_time": "2026-07-17T04:12:45.116229+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1174,19 +1174,19 @@
   {
    "cell_type": "code",
    "execution_count": 18,
-   "id": "2a7a5356",
+   "id": "52271122",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:50.080501Z",
-     "iopub.status.busy": "2026-07-16T07:06:50.079997Z",
-     "iopub.status.idle": "2026-07-16T07:06:50.089896Z",
-     "shell.execute_reply": "2026-07-16T07:06:50.088727Z"
+     "iopub.execute_input": "2026-07-17T04:12:45.155509Z",
+     "iopub.status.busy": "2026-07-17T04:12:45.155051Z",
+     "iopub.status.idle": "2026-07-17T04:12:45.164396Z",
+     "shell.execute_reply": "2026-07-17T04:12:45.163199Z"
     },
     "papermill": {
-     "duration": 0.025412,
-     "end_time": "2026-07-16T07:06:50.092456+00:00",
+     "duration": 0.025385,
+     "end_time": "2026-07-17T04:12:45.166328+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:50.067044+00:00",
+     "start_time": "2026-07-17T04:12:45.140943+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1222,13 +1222,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7263c1b8",
+   "id": "fd25d47b",
    "metadata": {
     "papermill": {
-     "duration": 0.011278,
-     "end_time": "2026-07-16T07:06:50.122166+00:00",
+     "duration": 0.013215,
+     "end_time": "2026-07-17T04:12:45.192377+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:50.110888+00:00",
+     "start_time": "2026-07-17T04:12:45.179162+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1240,19 +1240,19 @@
   {
    "cell_type": "code",
    "execution_count": 19,
-   "id": "58193906",
+   "id": "d2c9d048",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:50.147203Z",
-     "iopub.status.busy": "2026-07-16T07:06:50.146870Z",
-     "iopub.status.idle": "2026-07-16T07:06:58.432013Z",
-     "shell.execute_reply": "2026-07-16T07:06:58.430835Z"
+     "iopub.execute_input": "2026-07-17T04:12:45.219210Z",
+     "iopub.status.busy": "2026-07-17T04:12:45.218722Z",
+     "iopub.status.idle": "2026-07-17T04:12:53.729164Z",
+     "shell.execute_reply": "2026-07-17T04:12:53.727837Z"
     },
     "papermill": {
-     "duration": 8.300757,
-     "end_time": "2026-07-16T07:06:58.434519+00:00",
+     "duration": 8.526972,
+     "end_time": "2026-07-17T04:12:53.731450+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:50.133762+00:00",
+     "start_time": "2026-07-17T04:12:45.204478+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1284,13 +1284,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f9942089",
+   "id": "b9bcced7",
    "metadata": {
     "papermill": {
-     "duration": 0.011081,
-     "end_time": "2026-07-16T07:06:58.456879+00:00",
+     "duration": 0.012597,
+     "end_time": "2026-07-17T04:12:53.760537+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:58.445798+00:00",
+     "start_time": "2026-07-17T04:12:53.747940+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1302,19 +1302,19 @@
   {
    "cell_type": "code",
    "execution_count": 20,
-   "id": "65db9098",
+   "id": "19f69129",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:58.481194Z",
-     "iopub.status.busy": "2026-07-16T07:06:58.480794Z",
-     "iopub.status.idle": "2026-07-16T07:06:59.655023Z",
-     "shell.execute_reply": "2026-07-16T07:06:59.653801Z"
+     "iopub.execute_input": "2026-07-17T04:12:53.788019Z",
+     "iopub.status.busy": "2026-07-17T04:12:53.787656Z",
+     "iopub.status.idle": "2026-07-17T04:12:55.030620Z",
+     "shell.execute_reply": "2026-07-17T04:12:55.029197Z"
     },
     "papermill": {
-     "duration": 1.189394,
-     "end_time": "2026-07-16T07:06:59.657511+00:00",
+     "duration": 1.259923,
+     "end_time": "2026-07-17T04:12:55.033227+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:58.468117+00:00",
+     "start_time": "2026-07-17T04:12:53.773304+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1335,19 +1335,19 @@
   {
    "cell_type": "code",
    "execution_count": 21,
-   "id": "4a05330b",
+   "id": "a4f486de",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:06:59.682067Z",
-     "iopub.status.busy": "2026-07-16T07:06:59.681651Z",
-     "iopub.status.idle": "2026-07-16T07:07:00.858859Z",
-     "shell.execute_reply": "2026-07-16T07:07:00.857836Z"
+     "iopub.execute_input": "2026-07-17T04:12:55.062963Z",
+     "iopub.status.busy": "2026-07-17T04:12:55.062565Z",
+     "iopub.status.idle": "2026-07-17T04:12:56.323542Z",
+     "shell.execute_reply": "2026-07-17T04:12:56.322250Z"
     },
     "papermill": {
-     "duration": 1.192324,
-     "end_time": "2026-07-16T07:07:00.861064+00:00",
+     "duration": 1.279796,
+     "end_time": "2026-07-17T04:12:56.326044+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:06:59.668740+00:00",
+     "start_time": "2026-07-17T04:12:55.046248+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1368,19 +1368,19 @@
   {
    "cell_type": "code",
    "execution_count": 22,
-   "id": "805b9239",
+   "id": "d4db8ab0",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:07:00.885657Z",
-     "iopub.status.busy": "2026-07-16T07:07:00.884804Z",
-     "iopub.status.idle": "2026-07-16T07:07:02.072264Z",
-     "shell.execute_reply": "2026-07-16T07:07:02.071150Z"
+     "iopub.execute_input": "2026-07-17T04:12:56.355816Z",
+     "iopub.status.busy": "2026-07-17T04:12:56.355435Z",
+     "iopub.status.idle": "2026-07-17T04:12:57.531636Z",
+     "shell.execute_reply": "2026-07-17T04:12:57.530370Z"
     },
     "papermill": {
-     "duration": 1.202286,
-     "end_time": "2026-07-16T07:07:02.074482+00:00",
+     "duration": 1.194981,
+     "end_time": "2026-07-17T04:12:57.533982+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:00.872196+00:00",
+     "start_time": "2026-07-17T04:12:56.339001+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1401,19 +1401,19 @@
   {
    "cell_type": "code",
    "execution_count": 23,
-   "id": "489383cb",
+   "id": "0fcbc61f",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:07:02.099734Z",
-     "iopub.status.busy": "2026-07-16T07:07:02.098524Z",
-     "iopub.status.idle": "2026-07-16T07:07:03.279993Z",
-     "shell.execute_reply": "2026-07-16T07:07:03.278752Z"
+     "iopub.execute_input": "2026-07-17T04:12:57.563697Z",
+     "iopub.status.busy": "2026-07-17T04:12:57.563326Z",
+     "iopub.status.idle": "2026-07-17T04:12:58.841749Z",
+     "shell.execute_reply": "2026-07-17T04:12:58.840237Z"
     },
     "papermill": {
-     "duration": 1.196661,
-     "end_time": "2026-07-16T07:07:03.282328+00:00",
+     "duration": 1.297275,
+     "end_time": "2026-07-17T04:12:58.844063+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:02.085667+00:00",
+     "start_time": "2026-07-17T04:12:57.546788+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1434,19 +1434,19 @@
   {
    "cell_type": "code",
    "execution_count": 24,
-   "id": "458520c3",
+   "id": "a320c46f",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:07:03.306867Z",
-     "iopub.status.busy": "2026-07-16T07:07:03.306461Z",
-     "iopub.status.idle": "2026-07-16T07:07:04.500017Z",
-     "shell.execute_reply": "2026-07-16T07:07:04.498721Z"
+     "iopub.execute_input": "2026-07-17T04:12:58.874316Z",
+     "iopub.status.busy": "2026-07-17T04:12:58.873880Z",
+     "iopub.status.idle": "2026-07-17T04:13:00.104545Z",
+     "shell.execute_reply": "2026-07-17T04:13:00.103249Z"
     },
     "papermill": {
-     "duration": 1.208724,
-     "end_time": "2026-07-16T07:07:04.502278+00:00",
+     "duration": 1.248419,
+     "end_time": "2026-07-17T04:13:00.106947+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:03.293554+00:00",
+     "start_time": "2026-07-17T04:12:58.858528+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1467,19 +1467,19 @@
   {
    "cell_type": "code",
    "execution_count": 25,
-   "id": "407f17d2",
+   "id": "8e9d01a3",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:07:04.536645Z",
-     "iopub.status.busy": "2026-07-16T07:07:04.536037Z",
-     "iopub.status.idle": "2026-07-16T07:07:05.730887Z",
-     "shell.execute_reply": "2026-07-16T07:07:05.729758Z"
+     "iopub.execute_input": "2026-07-17T04:13:00.140906Z",
+     "iopub.status.busy": "2026-07-17T04:13:00.140371Z",
+     "iopub.status.idle": "2026-07-17T04:13:01.403782Z",
+     "shell.execute_reply": "2026-07-17T04:13:01.402582Z"
     },
     "papermill": {
-     "duration": 1.215644,
-     "end_time": "2026-07-16T07:07:05.733175+00:00",
+     "duration": 1.284617,
+     "end_time": "2026-07-17T04:13:01.406007+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:04.517531+00:00",
+     "start_time": "2026-07-17T04:13:00.121390+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1499,13 +1499,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "dfd87c8e",
+   "id": "0fba57b4",
    "metadata": {
     "papermill": {
-     "duration": 0.011534,
-     "end_time": "2026-07-16T07:07:05.756122+00:00",
+     "duration": 0.013151,
+     "end_time": "2026-07-17T04:13:01.433362+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:05.744588+00:00",
+     "start_time": "2026-07-17T04:13:01.420211+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1517,19 +1517,19 @@
   {
    "cell_type": "code",
    "execution_count": 26,
-   "id": "fdd5fedd",
+   "id": "65ec3725",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:07:05.780545Z",
-     "iopub.status.busy": "2026-07-16T07:07:05.780166Z",
-     "iopub.status.idle": "2026-07-16T07:07:06.959565Z",
-     "shell.execute_reply": "2026-07-16T07:07:06.958219Z"
+     "iopub.execute_input": "2026-07-17T04:13:01.460938Z",
+     "iopub.status.busy": "2026-07-17T04:13:01.460526Z",
+     "iopub.status.idle": "2026-07-17T04:13:02.651827Z",
+     "shell.execute_reply": "2026-07-17T04:13:02.649129Z"
     },
     "papermill": {
-     "duration": 1.194614,
-     "end_time": "2026-07-16T07:07:06.961967+00:00",
+     "duration": 1.208349,
+     "end_time": "2026-07-17T04:13:02.654309+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:05.767353+00:00",
+     "start_time": "2026-07-17T04:13:01.445960+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1552,13 +1552,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f076cf72",
+   "id": "511c4e97",
    "metadata": {
     "papermill": {
-     "duration": 0.011318,
-     "end_time": "2026-07-16T07:07:06.985105+00:00",
+     "duration": 0.012622,
+     "end_time": "2026-07-17T04:13:02.680037+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:06.973787+00:00",
+     "start_time": "2026-07-17T04:13:02.667415+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1571,19 +1571,19 @@
   {
    "cell_type": "code",
    "execution_count": 27,
-   "id": "a8b28c1c",
+   "id": "089fba4a",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:07:07.011049Z",
-     "iopub.status.busy": "2026-07-16T07:07:07.010578Z",
-     "iopub.status.idle": "2026-07-16T07:07:09.125746Z",
-     "shell.execute_reply": "2026-07-16T07:07:09.124646Z"
+     "iopub.execute_input": "2026-07-17T04:13:02.707748Z",
+     "iopub.status.busy": "2026-07-17T04:13:02.707394Z",
+     "iopub.status.idle": "2026-07-17T04:13:04.876515Z",
+     "shell.execute_reply": "2026-07-17T04:13:04.875176Z"
     },
     "papermill": {
-     "duration": 2.131387,
-     "end_time": "2026-07-16T07:07:09.127976+00:00",
+     "duration": 2.185781,
+     "end_time": "2026-07-17T04:13:04.878660+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:06.996589+00:00",
+     "start_time": "2026-07-17T04:13:02.692879+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1596,7 +1596,7 @@
       "Logged markdown cell to page 'conclusion'.\n",
       "\n",
       "\n",
-      "Pinned cell cell_b2bd14245d40 on page 'conclusion'.\n",
+      "Pinned cell cell_9b3c1367e410 on page 'conclusion'.\n",
       " \n"
      ]
     }
@@ -1631,13 +1631,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f4e80bce",
+   "id": "a52196af",
    "metadata": {
     "papermill": {
-     "duration": 0.012529,
-     "end_time": "2026-07-16T07:07:09.152396+00:00",
+     "duration": 0.017747,
+     "end_time": "2026-07-17T04:13:04.914436+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:09.139867+00:00",
+     "start_time": "2026-07-17T04:13:04.896689+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1649,19 +1649,19 @@
   {
    "cell_type": "code",
    "execution_count": 28,
-   "id": "f3c1ae72",
+   "id": "73d56dfc",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:07:09.177844Z",
-     "iopub.status.busy": "2026-07-16T07:07:09.177171Z",
-     "iopub.status.idle": "2026-07-16T07:07:13.569627Z",
-     "shell.execute_reply": "2026-07-16T07:07:13.568449Z"
+     "iopub.execute_input": "2026-07-17T04:13:04.952731Z",
+     "iopub.status.busy": "2026-07-17T04:13:04.952208Z",
+     "iopub.status.idle": "2026-07-17T04:13:09.333871Z",
+     "shell.execute_reply": "2026-07-17T04:13:09.332021Z"
     },
     "papermill": {
-     "duration": 4.408255,
-     "end_time": "2026-07-16T07:07:13.572216+00:00",
+     "duration": 4.402316,
+     "end_time": "2026-07-17T04:13:09.336787+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:09.163961+00:00",
+     "start_time": "2026-07-17T04:13:04.934471+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1684,13 +1684,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "bcea36b9",
+   "id": "c031fafb",
    "metadata": {
     "papermill": {
-     "duration": 0.011598,
-     "end_time": "2026-07-16T07:07:13.595607+00:00",
+     "duration": 0.014919,
+     "end_time": "2026-07-17T04:13:09.367457+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:13.584009+00:00",
+     "start_time": "2026-07-17T04:13:09.352538+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1705,13 +1705,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "1ed9a400",
+   "id": "d3380a78",
    "metadata": {
     "papermill": {
-     "duration": 0.011755,
-     "end_time": "2026-07-16T07:07:13.620146+00:00",
+     "duration": 0.01287,
+     "end_time": "2026-07-17T04:13:09.394204+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:13.608391+00:00",
+     "start_time": "2026-07-17T04:13:09.381334+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1853,13 +1853,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "29068446",
+   "id": "8025ff35",
    "metadata": {
     "papermill": {
-     "duration": 0.012639,
-     "end_time": "2026-07-16T07:07:13.644974+00:00",
+     "duration": 0.016189,
+     "end_time": "2026-07-17T04:13:09.423479+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:13.632335+00:00",
+     "start_time": "2026-07-17T04:13:09.407290+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1878,19 +1878,19 @@
   {
    "cell_type": "code",
    "execution_count": 29,
-   "id": "d7cedfea",
+   "id": "5516d032",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:07:13.670572Z",
-     "iopub.status.busy": "2026-07-16T07:07:13.670213Z",
-     "iopub.status.idle": "2026-07-16T07:07:14.788808Z",
-     "shell.execute_reply": "2026-07-16T07:07:14.787164Z"
+     "iopub.execute_input": "2026-07-17T04:13:09.452708Z",
+     "iopub.status.busy": "2026-07-17T04:13:09.452359Z",
+     "iopub.status.idle": "2026-07-17T04:13:10.580816Z",
+     "shell.execute_reply": "2026-07-17T04:13:10.579365Z"
     },
     "papermill": {
-     "duration": 1.134431,
-     "end_time": "2026-07-16T07:07:14.791058+00:00",
+     "duration": 1.146095,
+     "end_time": "2026-07-17T04:13:10.583618+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:13.656627+00:00",
+     "start_time": "2026-07-17T04:13:09.437523+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1920,19 +1920,1195 @@
   {
    "cell_type": "code",
    "execution_count": 30,
-   "id": "e79eeced",
+   "id": "4e8241e8",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-16T07:07:14.817876Z",
-     "iopub.status.busy": "2026-07-16T07:07:14.816904Z",
-     "iopub.status.idle": "2026-07-16T07:07:19.522317Z",
-     "shell.execute_reply": "2026-07-16T07:07:19.521120Z"
+     "iopub.execute_input": "2026-07-17T04:13:10.615968Z",
+     "iopub.status.busy": "2026-07-17T04:13:10.615500Z",
+     "iopub.status.idle": "2026-07-17T04:13:18.805962Z",
+     "shell.execute_reply": "2026-07-17T04:13:18.804664Z"
     },
     "papermill": {
-     "duration": 4.721411,
-     "end_time": "2026-07-16T07:07:19.524716+00:00",
+     "duration": 8.210259,
+     "end_time": "2026-07-17T04:13:18.808514+00:00",
      "exception": false,
-     "start_time": "2026-07-16T07:07:14.803305+00:00",
+     "start_time": "2026-07-17T04:13:10.598255+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "  · pushing artifacts for 'nonzero-repro' → bucket byte-vortex/nonzero-repro-artifacts\r\n",
+      "  · could not push artifacts to bucket: No database found for project 'nonzero-repro'\r\n",
+      "Published: https://huggingface.co/spaces/byte-vortex/nonzero-repro\r\n",
+      "Rendered at: https://byte-vortex-nonzero-repro.static.hf.space/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook publish byte-vortex/nonzero-repro"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "1c91e2e6",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:13:18.838403Z",
+     "iopub.status.busy": "2026-07-17T04:13:18.838002Z",
+     "iopub.status.idle": "2026-07-17T04:13:18.851024Z",
+     "shell.execute_reply": "2026-07-17T04:13:18.849760Z"
+    },
+    "papermill": {
+     "duration": 0.030752,
+     "end_time": "2026-07-17T04:13:18.853050+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:13:18.822298+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Writing claim1_mechanism_test.py\n"
+     ]
+    }
+   ],
+   "source": [
+    "%%writefile claim1_mechanism_test.py\n",
+    "# /// script\n",
+    "# dependencies = [\"torch\", \"numpy\"]\n",
+    "# ///\n",
+    "\"\"\"\n",
+    "Claim 1 -- toy-scale test of NonZero's actual proposal mechanism.\n",
+    "\n",
+    "The paper's real claim isn't just \"the surrogate can fit rewards\" -- it's\n",
+    "that using the surrogate's first-order (single-agent) and second-order\n",
+    "(two-agent) difference operators to PROPOSE candidate action changes finds\n",
+    "good joint actions more efficiently than enumerating/random-sampling the\n",
+    "full joint-action space (Section 3, Section 3.1).\n",
+    "\n",
+    "This script tests that directly: under an EQUAL evaluation budget, does\n",
+    "NonUCT-style guided local search find better joint actions than random\n",
+    "sampling, on the 8-agent/10-action nonlinear MatGame environment?\n",
+    "\"\"\"\n",
+    "\n",
+    "import torch\n",
+    "import torch.nn as nn\n",
+    "import numpy as np\n",
+    "\n",
+    "\n",
+    "class MatgameNonZeroEnv:\n",
+    "    def __init__(self, n_agents=8, n_actions=10, reward_type=\"nonlinear\",\n",
+    "                 noise_std=2.0, noise_uniform_range=3.0, seed=None):\n",
+    "        self.n_agents = n_agents\n",
+    "        self.n_actions = n_actions\n",
+    "        self.reward_type = reward_type\n",
+    "        self.noise_std = noise_std\n",
+    "        self.noise_uniform_range = noise_uniform_range\n",
+    "        self._rng = np.random.default_rng(seed)\n",
+    "\n",
+    "    def joint_reward(self, actions):\n",
+    "        base = float(np.sum(actions))\n",
+    "        if self.reward_type == \"linear\":\n",
+    "            return base\n",
+    "        u = self._rng.normal(0.0, self.noise_std)\n",
+    "        v = self._rng.uniform(-self.noise_uniform_range, self.noise_uniform_range)\n",
+    "        return base + u + v\n",
+    "\n",
+    "\n",
+    "class AsinhGLMSurrogate:\n",
+    "    def __init__(self, n_agents, n_actions, c=1.0, alpha=1.0):\n",
+    "        self.n_agents, self.n_actions = n_agents, n_actions\n",
+    "        self.nd = n_agents * n_actions\n",
+    "        self.c, self.alpha = c, alpha\n",
+    "\n",
+    "    def one_hot(self, agent_actions):\n",
+    "        agent_actions = torch.as_tensor(agent_actions, dtype=torch.long)\n",
+    "        oh = torch.nn.functional.one_hot(agent_actions, num_classes=self.n_actions)\n",
+    "        return oh.reshape(*agent_actions.shape[:-1], self.nd).float()\n",
+    "\n",
+    "    def eta(self, theta, a):\n",
+    "        return self.c * torch.asinh(self.alpha * (theta * a).sum(dim=-1))\n",
+    "\n",
+    "    def neighbor(self, a, agent_idx, new_action):\n",
+    "        a = a.clone()\n",
+    "        s = agent_idx * self.n_actions\n",
+    "        a[..., s:s + self.n_actions] = 0.0\n",
+    "        a[..., s + new_action] = 1.0\n",
+    "        return a\n",
+    "\n",
+    "    def neighbor_pair(self, a, agent_i, action_i, agent_j, action_j):\n",
+    "        a = self.neighbor(a, agent_i, action_i)\n",
+    "        a = self.neighbor(a, agent_j, action_j)\n",
+    "        return a\n",
+    "\n",
+    "\n",
+    "def fit_surrogate(env, surrogate, n_samples=4000, n_epochs=1500, rng=None):\n",
+    "    actions = rng.integers(0, env.n_actions, size=(n_samples, env.n_agents))\n",
+    "    rewards = torch.tensor([env.joint_reward(a) for a in actions], dtype=torch.float32)\n",
+    "    a_enc = surrogate.one_hot(torch.tensor(actions, dtype=torch.long))\n",
+    "\n",
+    "    theta = nn.Parameter(torch.zeros(surrogate.nd))\n",
+    "    log_c, log_alpha = nn.Parameter(torch.zeros(())), nn.Parameter(torch.zeros(()))\n",
+    "    opt = torch.optim.Adam([theta, log_c, log_alpha], lr=0.05)\n",
+    "    sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=n_epochs)\n",
+    "\n",
+    "    def predict(a_batch):\n",
+    "        return torch.exp(log_c) * torch.asinh(torch.exp(log_alpha) * (theta * a_batch).sum(dim=-1))\n",
+    "\n",
+    "    for _ in range(n_epochs):\n",
+    "        opt.zero_grad()\n",
+    "        loss = ((predict(a_enc) - rewards) ** 2).mean()\n",
+    "        loss.backward()\n",
+    "        opt.step()\n",
+    "        sched.step()\n",
+    "    return theta.detach()\n",
+    "\n",
+    "\n",
+    "def nonuct_guided_search(env, surrogate, theta, eval_budget, rng):\n",
+    "    n_agents, n_actions = env.n_agents, env.n_actions\n",
+    "    current = rng.integers(0, n_actions, size=n_agents)\n",
+    "    best_reward = env.joint_reward(current)\n",
+    "    evals_used = 1\n",
+    "\n",
+    "    while evals_used < eval_budget:\n",
+    "        cur_enc = surrogate.one_hot(torch.tensor(current, dtype=torch.long))\n",
+    "        cur_eta = surrogate.eta(theta, cur_enc).item()\n",
+    "\n",
+    "        best_candidate, best_delta, best_kind = None, -float(\"inf\"), None\n",
+    "        for agent_idx in range(n_agents):\n",
+    "            for new_action in range(n_actions):\n",
+    "                if new_action == current[agent_idx]:\n",
+    "                    continue\n",
+    "                cand_enc = surrogate.neighbor(cur_enc, agent_idx, new_action)\n",
+    "                delta = (surrogate.eta(theta, cand_enc) - cur_eta).item()\n",
+    "                if delta > best_delta:\n",
+    "                    best_delta, best_candidate, best_kind = delta, (agent_idx, new_action), \"first\"\n",
+    "\n",
+    "        for i in range(n_agents):\n",
+    "            for j in range(i + 1, n_agents):\n",
+    "                for ai in range(n_actions):\n",
+    "                    if ai == current[i]:\n",
+    "                        continue\n",
+    "                    for aj in range(n_actions):\n",
+    "                        if aj == current[j]:\n",
+    "                            continue\n",
+    "                        cand_enc = surrogate.neighbor_pair(cur_enc, i, ai, j, aj)\n",
+    "                        delta = (surrogate.eta(theta, cand_enc) - cur_eta).item()\n",
+    "                        if delta > best_delta:\n",
+    "                            best_delta, best_candidate, best_kind = delta, (i, ai, j, aj), \"second\"\n",
+    "\n",
+    "        if best_candidate is None or evals_used >= eval_budget:\n",
+    "            break\n",
+    "\n",
+    "        candidate_actions = current.copy()\n",
+    "        if best_kind == \"first\":\n",
+    "            agent_idx, new_action = best_candidate\n",
+    "            candidate_actions[agent_idx] = new_action\n",
+    "        else:\n",
+    "            i, ai, j, aj = best_candidate\n",
+    "            candidate_actions[i] = ai\n",
+    "            candidate_actions[j] = aj\n",
+    "\n",
+    "        real_reward = env.joint_reward(candidate_actions)\n",
+    "        evals_used += 1\n",
+    "\n",
+    "        if real_reward > best_reward:\n",
+    "            current = candidate_actions\n",
+    "            best_reward = real_reward\n",
+    "        else:\n",
+    "            break\n",
+    "\n",
+    "    return best_reward, evals_used\n",
+    "\n",
+    "\n",
+    "def random_search(env, eval_budget, rng):\n",
+    "    best_reward = -float(\"inf\")\n",
+    "    for _ in range(eval_budget):\n",
+    "        actions = rng.integers(0, env.n_actions, size=env.n_agents)\n",
+    "        r = env.joint_reward(actions)\n",
+    "        if r > best_reward:\n",
+    "            best_reward = r\n",
+    "    return best_reward\n",
+    "\n",
+    "\n",
+    "def main():\n",
+    "    print(\"=\" * 70)\n",
+    "    print(\"NonZero reproduction -- Claim 1 mechanism test (toy scale)\")\n",
+    "    print(\"Testing: does surrogate-guided proposal beat random search\")\n",
+    "    print(\"under an EQUAL real-environment evaluation budget?\")\n",
+    "    print(\"=\" * 70)\n",
+    "\n",
+    "    n_trials = 200\n",
+    "    eval_budget = 15\n",
+    "\n",
+    "    rng_fit = np.random.default_rng(0)\n",
+    "    env_fit = MatgameNonZeroEnv(n_agents=8, n_actions=10, reward_type=\"nonlinear\", seed=1)\n",
+    "    surrogate = AsinhGLMSurrogate(8, 10)\n",
+    "    theta = fit_surrogate(env_fit, surrogate, rng=rng_fit)\n",
+    "    print(f\"\\nSurrogate fit complete (theta trained on 4000 samples).\")\n",
+    "\n",
+    "    guided_rewards, random_rewards = [], []\n",
+    "    for trial in range(n_trials):\n",
+    "        rng = np.random.default_rng(1000 + trial)\n",
+    "        env = MatgameNonZeroEnv(n_agents=8, n_actions=10, reward_type=\"nonlinear\", seed=2000 + trial)\n",
+    "\n",
+    "        g_reward, g_evals = nonuct_guided_search(env, surrogate, theta, eval_budget, rng)\n",
+    "        guided_rewards.append(g_reward)\n",
+    "\n",
+    "        env2 = MatgameNonZeroEnv(n_agents=8, n_actions=10, reward_type=\"nonlinear\", seed=2000 + trial)\n",
+    "        rng2 = np.random.default_rng(1000 + trial)\n",
+    "        r_reward = random_search(env2, eval_budget, rng2)\n",
+    "        random_rewards.append(r_reward)\n",
+    "\n",
+    "    guided_mean, guided_std = np.mean(guided_rewards), np.std(guided_rewards)\n",
+    "    random_mean, random_std = np.mean(random_rewards), np.std(random_rewards)\n",
+    "    improvement = (guided_mean - random_mean) / abs(random_mean) * 100\n",
+    "\n",
+    "    print(f\"\\n[Results over {n_trials} trials, eval_budget={eval_budget}]\")\n",
+    "    print(f\"  Surrogate-guided search: {guided_mean:.2f} +/- {guided_std:.2f}\")\n",
+    "    print(f\"  Random search (baseline): {random_mean:.2f} +/- {random_std:.2f}\")\n",
+    "    print(f\"  Improvement: {improvement:+.1f}%\")\n",
+    "\n",
+    "    print(\"\\n\" + \"=\" * 70)\n",
+    "    print(\"SUMMARY\")\n",
+    "    if guided_mean > random_mean:\n",
+    "        print(f\"  PASS: surrogate-guided proposal outperforms random search\")\n",
+    "        print(f\"  by {improvement:.1f}% under equal evaluation budget.\")\n",
+    "        print(f\"  This supports Claim 1's core mechanism at toy scale.\")\n",
+    "    else:\n",
+    "        print(f\"  FAIL: surrogate-guided proposal did NOT outperform random search\")\n",
+    "        print(f\"  in this toy setting.\")\n",
+    "    print(\"=\" * 70)\n",
+    "\n",
+    "\n",
+    "if __name__ == \"__main__\":\n",
+    "    main()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "5f4c4b6b",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:13:18.882764Z",
+     "iopub.status.busy": "2026-07-17T04:13:18.882452Z",
+     "iopub.status.idle": "2026-07-17T04:15:54.408955Z",
+     "shell.execute_reply": "2026-07-17T04:15:54.407680Z"
+    },
+    "papermill": {
+     "duration": 155.543905,
+     "end_time": "2026-07-17T04:15:54.411401+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:13:18.867496+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "# /// script\r\n",
+      "# dependencies = [\"torch\", \"numpy\"]\r\n",
+      "# ///\r\n",
+      "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_experimental.py:59: UserWarning: 'HfApi.run_uv_job' is experimental and might be subject to breaking changes in the future without prior notice. You can disable this warning by setting `HF_HUB_DISABLE_EXPERIMENTAL_WARNING=1` as environment variable.\r\n",
+      "  warnings.warn(\r\n",
+      "Job started with ID: 6a59abe185d9643ce16d71ff\r\n",
+      "View at: https://huggingface.co/jobs/byte-vortex/6a59abe185d9643ce16d71ff\r\n",
+      "Downloading nvidia-curand (56.8MiB)\r\n",
+      "Downloading networkx (2.0MiB)\r\n",
+      "Downloading nvidia-cuda-runtime (2.1MiB)\r\n",
+      "Downloading nvidia-cusparselt-cu13 (162.3MiB)\r\n",
+      "Downloading sympy (6.0MiB)\r\n",
+      "Downloading numpy (15.9MiB)\r\n",
+      "Downloading nvidia-cuda-nvrtc (86.0MiB)\r\n",
+      "Downloading nvidia-cufile (1.2MiB)\r\n",
+      "Downloading nvidia-cuda-cupti (10.2MiB)\r\n",
+      "Downloading nvidia-cusparse (139.2MiB)\r\n",
+      "Downloading cuda-bindings (6.3MiB)\r\n",
+      "Downloading nvidia-cublas (403.5MiB)\r\n",
+      "Downloading nvidia-nvshmem-cu13 (57.6MiB)\r\n",
+      "Downloading nvidia-cufft (204.2MiB)\r\n",
+      "Downloading nvidia-cusolver (191.6MiB)\r\n",
+      "Downloading nvidia-cudnn-cu13 (349.2MiB)\r\n",
+      "Downloading triton (188.6MiB)\r\n",
+      "Downloading torch (502.2MiB)\r\n",
+      "Downloading nvidia-nccl-cu13 (196.4MiB)\r\n",
+      "Downloading nvidia-nvjitlink (38.9MiB)\r\n",
+      " Downloaded nvidia-cufile\r\n",
+      " Downloaded nvidia-cuda-runtime\r\n",
+      " Downloaded networkx\r\n",
+      " Downloaded cuda-bindings\r\n",
+      " Downloaded nvidia-cuda-cupti\r\n",
+      " Downloaded numpy\r\n",
+      " Downloaded sympy\r\n",
+      " Downloaded nvidia-nvjitlink\r\n",
+      " Downloaded nvidia-curand\r\n",
+      " Downloaded nvidia-nvshmem-cu13\r\n",
+      " Downloaded nvidia-cuda-nvrtc\r\n",
+      " Downloaded nvidia-cusparse\r\n",
+      " Downloaded nvidia-cusparselt-cu13\r\n",
+      " Downloaded nvidia-cusolver\r\n",
+      " Downloaded nvidia-nccl-cu13\r\n",
+      " Downloaded nvidia-cufft\r\n",
+      " Downloaded triton\r\n",
+      " Downloaded nvidia-cudnn-cu13\r\n",
+      " Downloaded nvidia-cublas\r\n",
+      " Downloaded torch\r\n",
+      "Installed 30 packages in 246ms\r\n",
+      "======================================================================\r\n",
+      "NonZero reproduction -- Claim 1 mechanism test (toy scale)\r\n",
+      "Testing: does surrogate-guided proposal beat random search\r\n",
+      "under an EQUAL real-environment evaluation budget?\r\n",
+      "======================================================================\r\n",
+      "\r\n",
+      "Surrogate fit complete (theta trained on 4000 samples).\r\n",
+      "\r\n",
+      "[Results over 200 trials, eval_budget=15]\r\n",
+      "  Surrogate-guided search: 73.19 +/- 2.59\r\n",
+      "  Random search (baseline): 51.04 +/- 4.58\r\n",
+      "  Improvement: +43.4%\r\n",
+      "\r\n",
+      "======================================================================\r\n",
+      "SUMMARY\r\n",
+      "  PASS: surrogate-guided proposal outperforms random search\r\n",
+      "  by 43.4% under equal evaluation budget.\r\n",
+      "  This supports Claim 1's core mechanism at toy scale.\r\n",
+      "======================================================================\r\n",
+      "Logged run to page 'claim-1-low-dimensional-nonlinear-surrogate'. · syncing to byte-vortex/nonzero-repro…\r\n",
+      "  · pushing artifacts for 'nonzero-repro' → bucket byte-vortex/nonzero-repro-artifacts\r\n",
+      "  · could not push artifacts to bucket: No database found for project 'nonzero-repro'\r\n",
+      "Published: https://huggingface.co/spaces/byte-vortex/nonzero-repro\r\n",
+      "Rendered at: https://byte-vortex-nonzero-repro.static.hf.space/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!head -3 claim1_mechanism_test.py\n",
+    "!trackio logbook run --page \"Claim 1: Low-dimensional nonlinear surrogate\" -- hf jobs uv run --flavor cpu-basic --secrets HF_TOKEN claim1_mechanism_test.py\n",
+    "!trackio logbook publish byte-vortex/nonzero-repro"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b740e3e0",
+   "metadata": {
+    "papermill": {
+     "duration": 0.013409,
+     "end_time": "2026-07-17T04:15:54.438856+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:15:54.425447+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Fix — upload your files to the bucket directly, using the hf sync command shown on that page (the PowerShell install line only matters for Windows; you already have the hf CLI on Kaggle, so skip straight to the sync command):\n",
+    "\n",
+    "Cell 1 — gather your deliverable files into one folder:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "c278b869",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:15:54.468207Z",
+     "iopub.status.busy": "2026-07-17T04:15:54.467725Z",
+     "iopub.status.idle": "2026-07-17T04:15:55.306547Z",
+     "shell.execute_reply": "2026-07-17T04:15:55.305224Z"
+    },
+    "papermill": {
+     "duration": 0.856346,
+     "end_time": "2026-07-17T04:15:55.308851+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:15:54.452505+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "total 28\r\n",
+      "drwxr-xr-x 2 root root 4096 Jul 17 04:15 .\r\n",
+      "drwxr-xr-x 4 root root 4096 Jul 17 04:15 ..\r\n",
+      "-rw-r--r-- 1 root root 4397 Jul 17 04:15 matgame_nonzero.py\r\n",
+      "-rw-r--r-- 1 root root 3201 Jul 17 04:15 nonuct_cnode_patch.diff\r\n",
+      "-rw-r--r-- 1 root root 3164 Jul 17 04:15 nonzero_surrogate.py\r\n",
+      "-rw-r--r-- 1 root root 2539 Jul 17 04:15 validate_surrogate_fit.py\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!mkdir -p /kaggle/working/artifacts\n",
+    "!cp /kaggle/working/MAZero/matgame_nonzero.py /kaggle/working/artifacts/ 2>/dev/null\n",
+    "!cp /kaggle/working/MAZero/nonzero_surrogate.py /kaggle/working/artifacts/ 2>/dev/null\n",
+    "!cp /kaggle/working/MAZero/validate_surrogate_fit.py /kaggle/working/artifacts/ 2>/dev/null\n",
+    "!cp /kaggle/working/MAZero/nonuct_cnode_patch.diff /kaggle/working/artifacts/ 2>/dev/null\n",
+    "!cp /kaggle/working/hf_job_claim1_validation.py /kaggle/working/artifacts/ 2>/dev/null\n",
+    "!ls -la /kaggle/working/artifacts"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a9f1eea9",
+   "metadata": {
+    "papermill": {
+     "duration": 0.013627,
+     "end_time": "2026-07-17T04:15:55.336260+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:15:55.322633+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "Cell 2 — actually sync to the bucket:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "af40152d",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:15:55.366293Z",
+     "iopub.status.busy": "2026-07-17T04:15:55.365872Z",
+     "iopub.status.idle": "2026-07-17T04:15:59.642064Z",
+     "shell.execute_reply": "2026-07-17T04:15:59.641059Z"
+    },
+    "papermill": {
+     "duration": 4.293894,
+     "end_time": "2026-07-17T04:15:59.644198+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:15:55.350304+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\u001b[K\u001b[90mScanning local directory (4 files)\u001b[0m\r\n",
+      "\u001b[K\u001b[90mScanning remote bucket (4 files)\u001b[0m\r\n",
+      "\u001b[K\u001b[90mComparing files (4 paths)\u001b[0m\r\n",
+      "Sync plan: /kaggle/working/artifacts -> hf://buckets/byte-vortex/nonzero-repro-artifacts\r\n",
+      "  Uploads: 4\r\n",
+      "  Downloads: 0\r\n",
+      "  Deletes: 0\r\n",
+      "  Skips: 0\r\n",
+      "Syncing...\r\n",
+      "\u001b[K\u001b[90mUploading 4 files\u001b[0m\r\n",
+      "Processing Files (0 / 0)      : |                  |  0.00B /  0.00B            \r\n",
+      "New Data Upload               : |                  |  0.00B /  0.00B            \u001b[A\r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...acts/nonzero_surrogate.py: 100%|██████████████| 3.16kB / 3.16kB            \u001b[A\u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "Processing Files (4 / 4)      : 100%|██████████████| 13.3kB / 13.3kB, 16.6kB/s  \r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...acts/nonzero_surrogate.py: 100%|██████████████| 3.16kB / 3.16kB            \u001b[A\u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...acts/nonzero_surrogate.py: 100%|██████████████| 3.16kB / 3.16kB            \u001b[A\u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...acts/nonzero_surrogate.py: 100%|██████████████| 3.16kB / 3.16kB            \u001b[A\u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...acts/nonzero_surrogate.py: 100%|██████████████| 3.16kB / 3.16kB            \u001b[A\u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...acts/nonzero_surrogate.py: 100%|██████████████| 3.16kB / 3.16kB            \u001b[A\u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...acts/nonzero_surrogate.py: 100%|██████████████| 3.16kB / 3.16kB            \u001b[A\u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...acts/nonzero_surrogate.py: 100%|██████████████| 3.16kB / 3.16kB            \u001b[A\u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \u001b[A\u001b[A\u001b[A\u001b[A\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "\r\n",
+      "Processing Files (4 / 4)      : 100%|██████████████| 13.3kB / 13.3kB,  0.00B/s  \r\n",
+      "New Data Upload               : |                  |  0.00B /  0.00B,  0.00B/s  \r\n",
+      "  ...s/nonuct_cnode_patch.diff: 100%|██████████████| 3.20kB / 3.20kB            \r\n",
+      "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \r\n",
+      "  ...validate_surrogate_fit.py: 100%|██████████████| 2.54kB / 2.54kB            \r\n",
+      "  ...acts/nonzero_surrogate.py: 100%|██████████████| 3.16kB / 3.16kB            \r\n",
+      "Sync completed.\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!hf sync /kaggle/working/artifacts hf://buckets/byte-vortex/nonzero-repro-artifacts"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "a4660643",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:15:59.674965Z",
+     "iopub.status.busy": "2026-07-17T04:15:59.674588Z",
+     "iopub.status.idle": "2026-07-17T04:16:00.756990Z",
+     "shell.execute_reply": "2026-07-17T04:16:00.755830Z"
+    },
+    "papermill": {
+     "duration": 1.100359,
+     "end_time": "2026-07-17T04:16:00.758934+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:15:59.658575+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'conclusion'. · syncing to byte-vortex/nonzero-repro…\n",
+      " \n"
+     ]
+    }
+   ],
+   "source": [
+    "import subprocess\n",
+    "\n",
+    "bucket_note = \"\"\"All supporting code for this reproduction (the MatGame environment, asinh-GLM surrogate, validation script, and the NonUCT C++ patch) is available in this reproduction's Hugging Face Bucket:\n",
+    "\n",
+    "hf://buckets/byte-vortex/nonzero-repro-artifacts\n",
+    "\n",
+    "Browsable at: https://huggingface.co/buckets/byte-vortex/nonzero-repro-artifacts\"\"\"\n",
+    "\n",
+    "result = subprocess.run(\n",
+    "    [\"trackio\", \"logbook\", \"cell\", \"markdown\", bucket_note,\n",
+    "     \"--title\", \"Supporting code (corrected)\", \"--page\", \"Conclusion\"],\n",
+    "    capture_output=True, text=True\n",
+    ")\n",
+    "print(result.stdout, result.stderr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "572f5740",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:16:00.790477Z",
+     "iopub.status.busy": "2026-07-17T04:16:00.790079Z",
+     "iopub.status.idle": "2026-07-17T04:16:05.208066Z",
+     "shell.execute_reply": "2026-07-17T04:16:05.206937Z"
+    },
+    "papermill": {
+     "duration": 4.436017,
+     "end_time": "2026-07-17T04:16:05.210328+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:16:00.774311+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "  · pushing artifacts for 'nonzero-repro' → bucket byte-vortex/nonzero-repro-artifacts\r\n",
+      "  · could not push artifacts to bucket: No database found for project 'nonzero-repro'\r\n",
+      "Published: https://huggingface.co/spaces/byte-vortex/nonzero-repro\r\n",
+      "Rendered at: https://byte-vortex-nonzero-repro.static.hf.space/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook publish byte-vortex/nonzero-repro"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c7f6d60d",
+   "metadata": {
+    "papermill": {
+     "duration": 0.014434,
+     "end_time": "2026-07-17T04:16:05.239603+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:16:05.225169+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "**One important honesty note before you run this:** this compares NonZero's proposal mechanism against a MAZero-style random-sampling baseline under equal budget — it does **not** reproduce Table 1's exact reported numbers (697.1 vs 672.3), since that requires the full trained MCTS pipeline we haven't wired up. This is directionally consistent evidence (NonZero-style > MAZero-style, on the exact paper's hardest config), clearly labeled as toy-scale — the same honest framing that worked for Claim 1."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "426b6303",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:16:05.272515Z",
+     "iopub.status.busy": "2026-07-17T04:16:05.272153Z",
+     "iopub.status.idle": "2026-07-17T04:16:05.282939Z",
+     "shell.execute_reply": "2026-07-17T04:16:05.281900Z"
+    },
+    "papermill": {
+     "duration": 0.030193,
+     "end_time": "2026-07-17T04:16:05.284811+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:16:05.254618+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Writing claim4_toy_comparison.py\n"
+     ]
+    }
+   ],
+   "source": [
+    "%%writefile claim4_toy_comparison.py\n",
+    "\n",
+    "# /// script\n",
+    "# dependencies = [\"torch\", \"numpy\"]\n",
+    "# ///\n",
+    "\"\"\"\n",
+    "Claim 4 -- toy-scale head-to-head comparison on the paper's exact\n",
+    "8-agent, 10-action nonlinear MatGame setting (Table 1). Vectorized\n",
+    "version: candidate generation uses precomputed batched tensor masks\n",
+    "instead of per-candidate Python loops, since the naive version is too\n",
+    "slow for 2000 decisions.\n",
+    "\"\"\"\n",
+    "\n",
+    "import torch\n",
+    "import torch.nn as nn\n",
+    "import numpy as np\n",
+    "\n",
+    "\n",
+    "class MatgameNonZeroEnv:\n",
+    "    def __init__(self, n_agents=8, n_actions=10, reward_type=\"nonlinear\",\n",
+    "                 noise_std=2.0, noise_uniform_range=3.0, seed=None):\n",
+    "        self.n_agents = n_agents\n",
+    "        self.n_actions = n_actions\n",
+    "        self.reward_type = reward_type\n",
+    "        self.noise_std = noise_std\n",
+    "        self.noise_uniform_range = noise_uniform_range\n",
+    "        self._rng = np.random.default_rng(seed)\n",
+    "\n",
+    "    def joint_reward(self, actions):\n",
+    "        base = float(np.sum(actions))\n",
+    "        if self.reward_type == \"linear\":\n",
+    "            return base\n",
+    "        u = self._rng.normal(0.0, self.noise_std)\n",
+    "        v = self._rng.uniform(-self.noise_uniform_range, self.noise_uniform_range)\n",
+    "        return base + u + v\n",
+    "\n",
+    "\n",
+    "class VectorizedProposer:\n",
+    "    def __init__(self, n_agents, n_actions, c=1.0, alpha=1.0):\n",
+    "        self.n_agents, self.n_actions = n_agents, n_actions\n",
+    "        self.nd = n_agents * n_actions\n",
+    "        self.c, self.alpha = c, alpha\n",
+    "\n",
+    "        rows1 = n_agents * n_actions\n",
+    "        self.agent1 = torch.zeros(rows1, dtype=torch.long)\n",
+    "        self.action1 = torch.zeros(rows1, dtype=torch.long)\n",
+    "        self.block_mask1 = torch.zeros(rows1, self.nd)\n",
+    "        self.target1 = torch.zeros(rows1, self.nd)\n",
+    "        r = 0\n",
+    "        for i in range(n_agents):\n",
+    "            for j in range(n_actions):\n",
+    "                self.agent1[r], self.action1[r] = i, j\n",
+    "                self.block_mask1[r, i * n_actions:(i + 1) * n_actions] = 1.0\n",
+    "                self.target1[r, i * n_actions + j] = 1.0\n",
+    "                r += 1\n",
+    "\n",
+    "        pairs = [(i, j) for i in range(n_agents) for j in range(i + 1, n_agents)]\n",
+    "        rows2 = len(pairs) * n_actions * n_actions\n",
+    "        self.pair_i = torch.zeros(rows2, dtype=torch.long)\n",
+    "        self.pair_j = torch.zeros(rows2, dtype=torch.long)\n",
+    "        self.action_i = torch.zeros(rows2, dtype=torch.long)\n",
+    "        self.action_j = torch.zeros(rows2, dtype=torch.long)\n",
+    "        self.block_mask2 = torch.zeros(rows2, self.nd)\n",
+    "        self.target2 = torch.zeros(rows2, self.nd)\n",
+    "        r = 0\n",
+    "        for (i, j) in pairs:\n",
+    "            for ai in range(n_actions):\n",
+    "                for aj in range(n_actions):\n",
+    "                    self.pair_i[r], self.pair_j[r] = i, j\n",
+    "                    self.action_i[r], self.action_j[r] = ai, aj\n",
+    "                    self.block_mask2[r, i * n_actions:(i + 1) * n_actions] = 1.0\n",
+    "                    self.block_mask2[r, j * n_actions:(j + 1) * n_actions] = 1.0\n",
+    "                    self.target2[r, i * n_actions + ai] = 1.0\n",
+    "                    self.target2[r, j * n_actions + aj] = 1.0\n",
+    "                    r += 1\n",
+    "\n",
+    "    def one_hot(self, agent_actions):\n",
+    "        agent_actions = torch.as_tensor(agent_actions, dtype=torch.long)\n",
+    "        oh = torch.nn.functional.one_hot(agent_actions, num_classes=self.n_actions)\n",
+    "        return oh.reshape(-1).float()\n",
+    "\n",
+    "    def eta(self, theta, a_batch):\n",
+    "        return self.c * torch.asinh(self.alpha * (theta.unsqueeze(0) * a_batch).sum(dim=-1))\n",
+    "\n",
+    "    def best_candidate(self, theta, cur_enc, current_actions):\n",
+    "        cur_eta = self.eta(theta, cur_enc.unsqueeze(0)).item()\n",
+    "\n",
+    "        cand1 = cur_enc.unsqueeze(0) * (1 - self.block_mask1) + self.target1\n",
+    "        eta1 = self.eta(theta, cand1)\n",
+    "        current_action1 = torch.as_tensor(current_actions)[self.agent1]\n",
+    "        self_mask1 = (self.action1 == current_action1)\n",
+    "        eta1 = eta1.masked_fill(self_mask1, -float(\"inf\"))\n",
+    "        delta1 = eta1 - cur_eta\n",
+    "        best1_val, best1_idx = delta1.max(dim=0)\n",
+    "\n",
+    "        cand2 = cur_enc.unsqueeze(0) * (1 - self.block_mask2) + self.target2\n",
+    "        eta2 = self.eta(theta, cand2)\n",
+    "        cur_ai = torch.as_tensor(current_actions)[self.pair_i]\n",
+    "        cur_aj = torch.as_tensor(current_actions)[self.pair_j]\n",
+    "        self_mask2 = (self.action_i == cur_ai) | (self.action_j == cur_aj)\n",
+    "        eta2 = eta2.masked_fill(self_mask2, -float(\"inf\"))\n",
+    "        delta2 = eta2 - cur_eta\n",
+    "        best2_val, best2_idx = delta2.max(dim=0)\n",
+    "\n",
+    "        if best1_val.item() >= best2_val.item():\n",
+    "            agent_idx, new_action = self.agent1[best1_idx].item(), self.action1[best1_idx].item()\n",
+    "            candidate_actions = current_actions.copy()\n",
+    "            candidate_actions[agent_idx] = new_action\n",
+    "        else:\n",
+    "            i, j = self.pair_i[best2_idx].item(), self.pair_j[best2_idx].item()\n",
+    "            ai, aj = self.action_i[best2_idx].item(), self.action_j[best2_idx].item()\n",
+    "            candidate_actions = current_actions.copy()\n",
+    "            candidate_actions[i], candidate_actions[j] = ai, aj\n",
+    "\n",
+    "        return candidate_actions\n",
+    "\n",
+    "\n",
+    "def fit_surrogate(env, n_agents, n_actions, n_samples=4000, n_epochs=1500, rng=None):\n",
+    "    actions = rng.integers(0, n_actions, size=(n_samples, n_agents))\n",
+    "    rewards = torch.tensor([env.joint_reward(a) for a in actions], dtype=torch.float32)\n",
+    "    onehots = torch.nn.functional.one_hot(torch.tensor(actions, dtype=torch.long), num_classes=n_actions)\n",
+    "    a_enc = onehots.reshape(n_samples, -1).float()\n",
+    "\n",
+    "    nd = n_agents * n_actions\n",
+    "    theta = nn.Parameter(torch.zeros(nd))\n",
+    "    log_c, log_alpha = nn.Parameter(torch.zeros(())), nn.Parameter(torch.zeros(()))\n",
+    "    opt = torch.optim.Adam([theta, log_c, log_alpha], lr=0.05)\n",
+    "    sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=n_epochs)\n",
+    "\n",
+    "    for _ in range(n_epochs):\n",
+    "        opt.zero_grad()\n",
+    "        pred = torch.exp(log_c) * torch.asinh(torch.exp(log_alpha) * (theta * a_enc).sum(dim=-1))\n",
+    "        loss = ((pred - rewards) ** 2).mean()\n",
+    "        loss.backward()\n",
+    "        opt.step()\n",
+    "        sched.step()\n",
+    "    return theta.detach()\n",
+    "\n",
+    "\n",
+    "def nonzero_style_decision(env, proposer, theta, budget, rng):\n",
+    "    n_agents, n_actions = env.n_agents, env.n_actions\n",
+    "    current = rng.integers(0, n_actions, size=n_agents)\n",
+    "    best_reward = env.joint_reward(current)\n",
+    "    evals_used = 1\n",
+    "\n",
+    "    while evals_used < budget:\n",
+    "        cur_enc = proposer.one_hot(current)\n",
+    "        candidate_actions = proposer.best_candidate(theta, cur_enc, current)\n",
+    "        real_reward = env.joint_reward(candidate_actions)\n",
+    "        evals_used += 1\n",
+    "\n",
+    "        if real_reward > best_reward:\n",
+    "            current = candidate_actions\n",
+    "            best_reward = real_reward\n",
+    "        else:\n",
+    "            break\n",
+    "\n",
+    "    return best_reward\n",
+    "\n",
+    "\n",
+    "def mazero_style_decision(env, budget, rng):\n",
+    "    best_reward = -float(\"inf\")\n",
+    "    for _ in range(budget):\n",
+    "        actions = rng.integers(0, env.n_actions, size=env.n_agents)\n",
+    "        r = env.joint_reward(actions)\n",
+    "        if r > best_reward:\n",
+    "            best_reward = r\n",
+    "    return best_reward\n",
+    "\n",
+    "\n",
+    "def main():\n",
+    "    print(\"=\" * 70)\n",
+    "    print(\"NonZero reproduction -- Claim 4 toy comparison (vectorized)\")\n",
+    "    print(\"Setting: 8 agents, 10 actions, nonlinear (Table 1's hardest config)\")\n",
+    "    print(\"2000 sequential decisions, equal real-eval budget per decision\")\n",
+    "    print(\"=\" * 70)\n",
+    "\n",
+    "    n_agents, n_actions = 8, 10\n",
+    "    n_steps = 2000\n",
+    "    budget_per_step = 15\n",
+    "\n",
+    "    rng_fit = np.random.default_rng(0)\n",
+    "    env_fit = MatgameNonZeroEnv(n_agents=n_agents, n_actions=n_actions,\n",
+    "                                 reward_type=\"nonlinear\", seed=1)\n",
+    "    theta = fit_surrogate(env_fit, n_agents, n_actions, rng=rng_fit)\n",
+    "    proposer = VectorizedProposer(n_agents, n_actions)\n",
+    "    print(f\"\\nSurrogate fit complete. Candidate masks precomputed \"\n",
+    "          f\"({proposer.block_mask1.shape[0]} first-order + \"\n",
+    "          f\"{proposer.block_mask2.shape[0]} second-order candidates/decision).\")\n",
+    "\n",
+    "    nonzero_rewards, mazero_rewards = [], []\n",
+    "    for step in range(n_steps):\n",
+    "        env_a = MatgameNonZeroEnv(n_agents=n_agents, n_actions=n_actions,\n",
+    "                                   reward_type=\"nonlinear\", seed=5000 + step)\n",
+    "        rng_a = np.random.default_rng(3000 + step)\n",
+    "        nonzero_rewards.append(nonzero_style_decision(env_a, proposer, theta, budget_per_step, rng_a))\n",
+    "\n",
+    "        env_b = MatgameNonZeroEnv(n_agents=n_agents, n_actions=n_actions,\n",
+    "                                   reward_type=\"nonlinear\", seed=5000 + step)\n",
+    "        rng_b = np.random.default_rng(3000 + step)\n",
+    "        mazero_rewards.append(mazero_style_decision(env_b, budget_per_step, rng_b))\n",
+    "\n",
+    "        if (step + 1) % 400 == 0:\n",
+    "            print(f\"  ...{step + 1}/{n_steps} decisions completed\")\n",
+    "\n",
+    "    nz_mean, nz_std = np.mean(nonzero_rewards), np.std(nonzero_rewards)\n",
+    "    mz_mean, mz_std = np.mean(mazero_rewards), np.std(mazero_rewards)\n",
+    "    improvement = (nz_mean - mz_mean) / abs(mz_mean) * 100\n",
+    "\n",
+    "    print(f\"\\n[Results over {n_steps} decisions, budget={budget_per_step}/decision]\")\n",
+    "    print(f\"  NonZero-style (guided proposal):  {nz_mean:.2f} +/- {nz_std:.2f}\")\n",
+    "    print(f\"  MAZero-style (random sampled):    {mz_mean:.2f} +/- {mz_std:.2f}\")\n",
+    "    print(f\"  Improvement: {improvement:+.1f}%\")\n",
+    "\n",
+    "    print(\"\\n\" + \"=\" * 70)\n",
+    "    print(\"SUMMARY\")\n",
+    "    if nz_mean > mz_mean:\n",
+    "        print(f\"  PASS (toy scale): NonZero-style guided proposal outperforms\")\n",
+    "        print(f\"  MAZero-style random sampling by {improvement:.1f}% under equal budget.\")\n",
+    "    else:\n",
+    "        print(f\"  FAIL: guided proposal did NOT outperform the baseline.\")\n",
+    "    print(\"=\" * 70)\n",
+    "\n",
+    "\n",
+    "if __name__ == \"__main__\":\n",
+    "    main()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "9beea33a",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:16:05.316816Z",
+     "iopub.status.busy": "2026-07-17T04:16:05.316480Z",
+     "iopub.status.idle": "2026-07-17T04:17:14.442601Z",
+     "shell.execute_reply": "2026-07-17T04:17:14.441338Z"
+    },
+    "papermill": {
+     "duration": 69.145061,
+     "end_time": "2026-07-17T04:17:14.444928+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:16:05.299867+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "\r\n",
+      "# /// script\r\n",
+      "# dependencies = [\"torch\", \"numpy\"]\r\n",
+      "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_experimental.py:59: UserWarning: 'HfApi.run_uv_job' is experimental and might be subject to breaking changes in the future without prior notice. You can disable this warning by setting `HF_HUB_DISABLE_EXPERIMENTAL_WARNING=1` as environment variable.\r\n",
+      "  warnings.warn(\r\n",
+      "Job started with ID: 6a59ac87b1669a49bf0790ad\r\n",
+      "View at: https://huggingface.co/jobs/byte-vortex/6a59ac87b1669a49bf0790ad\r\n",
+      "Downloading nvidia-cusparse (139.2MiB)\r\n",
+      "Downloading sympy (6.0MiB)\r\n",
+      "Downloading cuda-bindings (6.3MiB)\r\n",
+      "Downloading networkx (2.0MiB)\r\n",
+      "Downloading nvidia-nvjitlink (38.9MiB)\r\n",
+      "Downloading nvidia-cuda-cupti (10.2MiB)\r\n",
+      "Downloading nvidia-cusparselt-cu13 (162.3MiB)\r\n",
+      "Downloading nvidia-cufile (1.2MiB)\r\n",
+      "Downloading nvidia-cuda-nvrtc (86.0MiB)\r\n",
+      "Downloading torch (502.2MiB)\r\n",
+      "Downloading nvidia-cuda-runtime (2.1MiB)\r\n",
+      "Downloading numpy (15.9MiB)\r\n",
+      "Downloading nvidia-cudnn-cu13 (349.2MiB)\r\n",
+      "Downloading triton (188.6MiB)\r\n",
+      "Downloading nvidia-cufft (204.2MiB)\r\n",
+      "Downloading nvidia-nvshmem-cu13 (57.6MiB)\r\n",
+      "Downloading nvidia-curand (56.8MiB)\r\n",
+      "Downloading nvidia-cusolver (191.6MiB)\r\n",
+      "Downloading nvidia-nccl-cu13 (196.4MiB)\r\n",
+      "Downloading nvidia-cublas (403.5MiB)\r\n",
+      " Downloaded nvidia-cufile\r\n",
+      " Downloaded nvidia-cuda-runtime\r\n",
+      " Downloaded networkx\r\n",
+      " Downloaded cuda-bindings\r\n",
+      " Downloaded nvidia-cuda-cupti\r\n",
+      " Downloaded numpy\r\n",
+      " Downloaded nvidia-nvjitlink\r\n",
+      " Downloaded sympy\r\n",
+      " Downloaded nvidia-curand\r\n",
+      " Downloaded nvidia-nvshmem-cu13\r\n",
+      " Downloaded nvidia-cuda-nvrtc\r\n",
+      " Downloaded nvidia-cusparse\r\n",
+      " Downloaded nvidia-cusparselt-cu13\r\n",
+      " Downloaded nvidia-cusolver\r\n",
+      " Downloaded nvidia-nccl-cu13\r\n",
+      " Downloaded nvidia-cufft\r\n",
+      " Downloaded triton\r\n",
+      " Downloaded nvidia-cudnn-cu13\r\n",
+      " Downloaded nvidia-cublas\r\n",
+      " Downloaded torch\r\n",
+      "Installed 30 packages in 223ms\r\n",
+      "======================================================================\r\n",
+      "NonZero reproduction -- Claim 4 toy comparison (vectorized)\r\n",
+      "Setting: 8 agents, 10 actions, nonlinear (Table 1's hardest config)\r\n",
+      "2000 sequential decisions, equal real-eval budget per decision\r\n",
+      "======================================================================\r\n",
+      "\r\n",
+      "Surrogate fit complete. Candidate masks precomputed (80 first-order + 2800 second-order candidates/decision).\r\n",
+      "  ...400/2000 decisions completed\r\n",
+      "  ...800/2000 decisions completed\r\n",
+      "  ...1200/2000 decisions completed\r\n",
+      "  ...1600/2000 decisions completed\r\n",
+      "  ...2000/2000 decisions completed\r\n",
+      "\r\n",
+      "[Results over 2000 decisions, budget=15/decision]\r\n",
+      "  NonZero-style (guided proposal):  72.97 +/- 2.59\r\n",
+      "  MAZero-style (random sampled):    50.84 +/- 4.51\r\n",
+      "  Improvement: +43.5%\r\n",
+      "\r\n",
+      "======================================================================\r\n",
+      "SUMMARY\r\n",
+      "  PASS (toy scale): NonZero-style guided proposal outperforms\r\n",
+      "  MAZero-style random sampling by 43.5% under equal budget.\r\n",
+      "======================================================================\r\n",
+      "Logged run to page 'claim-4-matgame-8-agent-10-action-nonlinear'. · syncing to byte-vortex/nonzero-repro…\r\n",
+      "  · pushing artifacts for 'nonzero-repro' → bucket byte-vortex/nonzero-repro-artifacts\r\n",
+      "  · could not push artifacts to bucket: No database found for project 'nonzero-repro'\r\n",
+      "Published: https://huggingface.co/spaces/byte-vortex/nonzero-repro\r\n",
+      "Rendered at: https://byte-vortex-nonzero-repro.static.hf.space/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!head -3 claim4_toy_comparison.py\n",
+    "!trackio logbook run --page \"Claim 4: MatGame 8-agent 10-action nonlinear\" -- hf jobs uv run --flavor cpu-basic --secrets HF_TOKEN claim4_toy_comparison.py\n",
+    "!trackio logbook publish byte-vortex/nonzero-repro"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "06996dfd",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:17:14.477100Z",
+     "iopub.status.busy": "2026-07-17T04:17:14.476761Z",
+     "iopub.status.idle": "2026-07-17T04:17:15.593734Z",
+     "shell.execute_reply": "2026-07-17T04:17:15.592713Z"
+    },
+    "papermill": {
+     "duration": 1.136373,
+     "end_time": "2026-07-17T04:17:15.596447+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:17:14.460074+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'conclusion'. · syncing to byte-vortex/nonzero-repro…\n",
+      " \n"
+     ]
+    }
+   ],
+   "source": [
+    "import subprocess\n",
+    "\n",
+    "updated_summary = \"\"\"Partial reproduction of NonZero. Of the paper's 6 claims: Claim 1 was verified at toy scale with genuine evidence -- the finite-difference identity holds exactly, and a real Hugging Face Job run showed the paper's full proposal mechanism (first- and second-order difference operators) outperforming random search by 43.4% under equal evaluation budget. Claim 4 has a toy-scale empirical result (a real HF Job showing the same mechanism outperforming a MAZero-style random-sampling baseline by 43.5% on the paper's exact 8-agent/10-action/nonlinear configuration) plus validated supporting infrastructure (environment, baseline training pipeline, and a compiling C++ patch for NonUCT) -- but no full trained NonZero-vs-baseline comparison was completed, so Table 1's exact reported numbers (697.1 vs 672.3) were neither reproduced nor falsified. Claims 2-3 (theoretical proofs) and Claims 5-6 (SMAC/SMACv2) were not attempted: the former due to time constraints, the latter because the paper's own training recipe requires A100-class GPU hardware unavailable on free-tier compute.\n",
+    "\n",
+    "## Scope & cost\n",
+    "\n",
+    "|  | This reproduction | Full replication |\n",
+    "|---|---|---|\n",
+    "| Scope | Claim 1 (verified, toy) + Claim 4 (toy empirical result + infrastructure) | All 6 claims incl. SMAC/SMACv2 |\n",
+    "| Hardware | Kaggle T4 (free tier) + Hugging Face Jobs (cpu-basic) | Cluster of NVIDIA A100/A6000 GPUs |\n",
+    "| Compute time | ~3-4 hours | Many GPU-days |\n",
+    "| Cost | $0 | Thousands of dollars |\n",
+    "| Outcome | Claim 1 verified (toy scale, real evidence); Claim 4 toy result + infrastructure validated, full comparison not completed; Claims 2-3, 5-6 not attempted |\"\"\"\n",
+    "\n",
+    "result = subprocess.run(\n",
+    "    [\"trackio\", \"logbook\", \"cell\", \"markdown\", updated_summary,\n",
+    "     \"--title\", \"Executive summary (updated)\", \"--page\", \"Conclusion\"],\n",
+    "    capture_output=True, text=True\n",
+    ")\n",
+    "print(result.stdout, result.stderr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "82bfe3c7",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-17T04:17:15.629398Z",
+     "iopub.status.busy": "2026-07-17T04:17:15.629026Z",
+     "iopub.status.idle": "2026-07-17T04:17:19.384372Z",
+     "shell.execute_reply": "2026-07-17T04:17:19.383202Z"
+    },
+    "papermill": {
+     "duration": 3.774331,
+     "end_time": "2026-07-17T04:17:19.386677+00:00",
+     "exception": false,
+     "start_time": "2026-07-17T04:17:15.612346+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1983,14 +3159,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 209.566985,
-   "end_time": "2026-07-16T07:07:20.358772+00:00",
+   "duration": 459.63858,
+   "end_time": "2026-07-17T04:17:20.325178+00:00",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-07-16T07:03:50.791787+00:00",
+   "start_time": "2026-07-17T04:09:40.686598+00:00",
    "version": "2.7.0"
   }
  },
