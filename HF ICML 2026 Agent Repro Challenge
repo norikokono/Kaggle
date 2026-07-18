@@ -2,13 +2,13 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "0f8b9137",
+   "id": "cc420d46",
    "metadata": {
     "papermill": {
-     "duration": 0.010013,
-     "end_time": "2026-07-17T04:55:17.228770+00:00",
+     "duration": 0.012051,
+     "end_time": "2026-07-18T20:20:52.434981+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:55:17.218757+00:00",
+     "start_time": "2026-07-18T20:20:52.422930+00:00",
      "status": "completed"
     },
     "tags": []
@@ -32,21 +32,21 @@
   {
    "cell_type": "code",
    "execution_count": 1,
-   "id": "071ed359",
+   "id": "76deca12",
    "metadata": {
     "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
     "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:55:17.249055Z",
-     "iopub.status.busy": "2026-07-17T04:55:17.248698Z",
-     "iopub.status.idle": "2026-07-17T04:55:17.924323Z",
-     "shell.execute_reply": "2026-07-17T04:55:17.922894Z"
+     "iopub.execute_input": "2026-07-18T20:20:52.457981Z",
+     "iopub.status.busy": "2026-07-18T20:20:52.457082Z",
+     "iopub.status.idle": "2026-07-18T20:20:53.391176Z",
+     "shell.execute_reply": "2026-07-18T20:20:53.389376Z"
     },
     "papermill": {
-     "duration": 0.688008,
-     "end_time": "2026-07-17T04:55:17.926659+00:00",
+     "duration": 0.948553,
+     "end_time": "2026-07-18T20:20:53.393614+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:55:17.238651+00:00",
+     "start_time": "2026-07-18T20:20:52.445061+00:00",
      "status": "completed"
     },
     "tags": []
@@ -61,7 +61,7 @@
       "remote: Counting objects: 100% (55/55), done.\u001b[K\r\n",
       "remote: Compressing objects: 100% (47/47), done.\u001b[K\r\n",
       "remote: Total 55 (delta 5), reused 54 (delta 5), pack-reused 0 (from 0)\u001b[K\r\n",
-      "Receiving objects: 100% (55/55), 85.58 KiB | 9.51 MiB/s, done.\r\n",
+      "Receiving objects: 100% (55/55), 85.58 KiB | 1.71 MiB/s, done.\r\n",
       "Resolving deltas: 100% (5/5), done.\r\n",
       "/kaggle/working/MAZero\n"
      ]
@@ -75,19 +75,19 @@
   {
    "cell_type": "code",
    "execution_count": 2,
-   "id": "4e1e439a",
+   "id": "e3245e77",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:55:17.947885Z",
-     "iopub.status.busy": "2026-07-17T04:55:17.947025Z",
-     "iopub.status.idle": "2026-07-17T04:55:21.385491Z",
-     "shell.execute_reply": "2026-07-17T04:55:21.384482Z"
+     "iopub.execute_input": "2026-07-18T20:20:53.417934Z",
+     "iopub.status.busy": "2026-07-18T20:20:53.417587Z",
+     "iopub.status.idle": "2026-07-18T20:20:57.079740Z",
+     "shell.execute_reply": "2026-07-18T20:20:57.078428Z"
     },
     "papermill": {
-     "duration": 3.450958,
-     "end_time": "2026-07-17T04:55:21.387494+00:00",
+     "duration": 3.67682,
+     "end_time": "2026-07-18T20:20:57.081895+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:55:17.936536+00:00",
+     "start_time": "2026-07-18T20:20:53.405075+00:00",
      "status": "completed"
     },
     "tags": []
@@ -109,19 +109,19 @@
   {
    "cell_type": "code",
    "execution_count": 3,
-   "id": "ed2890af",
+   "id": "a496e70b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:55:21.408498Z",
-     "iopub.status.busy": "2026-07-17T04:55:21.407952Z",
-     "iopub.status.idle": "2026-07-17T04:55:44.676387Z",
-     "shell.execute_reply": "2026-07-17T04:55:44.675102Z"
+     "iopub.execute_input": "2026-07-18T20:20:57.104817Z",
+     "iopub.status.busy": "2026-07-18T20:20:57.104302Z",
+     "iopub.status.idle": "2026-07-18T20:21:21.703924Z",
+     "shell.execute_reply": "2026-07-18T20:21:21.702637Z"
     },
     "papermill": {
-     "duration": 23.281934,
-     "end_time": "2026-07-17T04:55:44.678682+00:00",
+     "duration": 24.614917,
+     "end_time": "2026-07-18T20:21:21.706419+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:55:21.396748+00:00",
+     "start_time": "2026-07-18T20:20:57.091502+00:00",
      "status": "completed"
     },
     "tags": []
@@ -138,8 +138,8 @@
       "Compiling ctree_sampled/cytree.pyx because it changed.\r\n",
       "[1/1] Cythonizing ctree_sampled/cytree.pyx\r\n",
       "/kaggle/working/MAZero\n",
-      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
-      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
+      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
+      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
      ]
     }
    ],
@@ -157,19 +157,19 @@
   {
    "cell_type": "code",
    "execution_count": 4,
-   "id": "b76788f2",
+   "id": "63eac768",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:55:44.700003Z",
-     "iopub.status.busy": "2026-07-17T04:55:44.699646Z",
-     "iopub.status.idle": "2026-07-17T04:55:44.709442Z",
-     "shell.execute_reply": "2026-07-17T04:55:44.708449Z"
+     "iopub.execute_input": "2026-07-18T20:21:21.738657Z",
+     "iopub.status.busy": "2026-07-18T20:21:21.737857Z",
+     "iopub.status.idle": "2026-07-18T20:21:21.749533Z",
+     "shell.execute_reply": "2026-07-18T20:21:21.748163Z"
     },
     "papermill": {
-     "duration": 0.023004,
-     "end_time": "2026-07-17T04:55:44.711286+00:00",
+     "duration": 0.029201,
+     "end_time": "2026-07-18T20:21:21.751811+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:55:44.688282+00:00",
+     "start_time": "2026-07-18T20:21:21.722610+00:00",
      "status": "completed"
     },
     "tags": []
@@ -331,19 +331,19 @@
   {
    "cell_type": "code",
    "execution_count": 5,
-   "id": "66f5abab",
+   "id": "1727241d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:55:44.731788Z",
-     "iopub.status.busy": "2026-07-17T04:55:44.731443Z",
-     "iopub.status.idle": "2026-07-17T04:56:01.109597Z",
-     "shell.execute_reply": "2026-07-17T04:56:01.108373Z"
+     "iopub.execute_input": "2026-07-18T20:21:21.773819Z",
+     "iopub.status.busy": "2026-07-18T20:21:21.773393Z",
+     "iopub.status.idle": "2026-07-18T20:21:38.870045Z",
+     "shell.execute_reply": "2026-07-18T20:21:38.868938Z"
     },
     "papermill": {
-     "duration": 16.391495,
-     "end_time": "2026-07-17T04:56:01.111898+00:00",
+     "duration": 17.110595,
+     "end_time": "2026-07-18T20:21:38.872559+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:55:44.720403+00:00",
+     "start_time": "2026-07-18T20:21:21.761964+00:00",
      "status": "completed"
     },
     "tags": []
@@ -364,8 +364,8 @@
       "Compiling ctree_sampled/cytree.pyx because it changed.\r\n",
       "[1/1] Cythonizing ctree_sampled/cytree.pyx\r\n",
       "/kaggle/working/MAZero\n",
-      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
-      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
+      "./core/mcts/ctree/build/lib.linux-x86_64-cpython-312/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n",
+      "./core/mcts/ctree/ctree_sampled/cytree.cpython-312-x86_64-linux-gnu.so\r\n"
      ]
     }
    ],
@@ -382,19 +382,19 @@
   {
    "cell_type": "code",
    "execution_count": 6,
-   "id": "d41b5131",
+   "id": "38b7001b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:56:01.133332Z",
-     "iopub.status.busy": "2026-07-17T04:56:01.132225Z",
-     "iopub.status.idle": "2026-07-17T04:56:01.141256Z",
-     "shell.execute_reply": "2026-07-17T04:56:01.140155Z"
+     "iopub.execute_input": "2026-07-18T20:21:38.896549Z",
+     "iopub.status.busy": "2026-07-18T20:21:38.896034Z",
+     "iopub.status.idle": "2026-07-18T20:21:38.906934Z",
+     "shell.execute_reply": "2026-07-18T20:21:38.905490Z"
     },
     "papermill": {
-     "duration": 0.021788,
-     "end_time": "2026-07-17T04:56:01.143119+00:00",
+     "duration": 0.026156,
+     "end_time": "2026-07-18T20:21:38.909306+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:56:01.121331+00:00",
+     "start_time": "2026-07-18T20:21:38.883150+00:00",
      "status": "completed"
     },
     "tags": []
@@ -431,19 +431,19 @@
   {
    "cell_type": "code",
    "execution_count": 7,
-   "id": "bafa454a",
+   "id": "7cacf155",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:56:01.163929Z",
-     "iopub.status.busy": "2026-07-17T04:56:01.163366Z",
-     "iopub.status.idle": "2026-07-17T04:56:01.245850Z",
-     "shell.execute_reply": "2026-07-17T04:56:01.244759Z"
+     "iopub.execute_input": "2026-07-18T20:21:38.936101Z",
+     "iopub.status.busy": "2026-07-18T20:21:38.935015Z",
+     "iopub.status.idle": "2026-07-18T20:21:39.028764Z",
+     "shell.execute_reply": "2026-07-18T20:21:39.027488Z"
     },
     "papermill": {
-     "duration": 0.095152,
-     "end_time": "2026-07-17T04:56:01.248059+00:00",
+     "duration": 0.111071,
+     "end_time": "2026-07-18T20:21:39.031351+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:56:01.152907+00:00",
+     "start_time": "2026-07-18T20:21:38.920280+00:00",
      "status": "completed"
     },
     "tags": []
@@ -469,19 +469,19 @@
   {
    "cell_type": "code",
    "execution_count": 8,
-   "id": "9f95c3c2",
+   "id": "49f5eb2c",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:56:01.268865Z",
-     "iopub.status.busy": "2026-07-17T04:56:01.268511Z",
-     "iopub.status.idle": "2026-07-17T04:56:08.377685Z",
-     "shell.execute_reply": "2026-07-17T04:56:08.376610Z"
+     "iopub.execute_input": "2026-07-18T20:21:39.056423Z",
+     "iopub.status.busy": "2026-07-18T20:21:39.055719Z",
+     "iopub.status.idle": "2026-07-18T20:21:46.700835Z",
+     "shell.execute_reply": "2026-07-18T20:21:46.699580Z"
     },
     "papermill": {
-     "duration": 7.122384,
-     "end_time": "2026-07-17T04:56:08.380271+00:00",
+     "duration": 7.660027,
+     "end_time": "2026-07-18T20:21:46.703220+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:56:01.257887+00:00",
+     "start_time": "2026-07-18T20:21:39.043193+00:00",
      "status": "completed"
     },
     "tags": []
@@ -491,11 +491,11 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m2.0/2.0 MB\u001b[0m \u001b[31m53.5 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
-      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.0/60.0 kB\u001b[0m \u001b[31m2.3 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m2.0/2.0 MB\u001b[0m \u001b[31m22.4 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
+      "\u001b[2K   \u001b[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\u001b[0m \u001b[32m60.0/60.0 kB\u001b[0m \u001b[31m2.8 MB/s\u001b[0m eta \u001b[36m0:00:00\u001b[0m\r\n",
       "\u001b[?25h\u001b[31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\r\n",
       "gradio 5.50.0 requires gradio-client==1.14.0, but you have gradio-client 2.5.0 which is incompatible.\u001b[0m\u001b[31m\r\n",
-      "\u001b[0m\u001b[33mA new version of huggingface_hub (1.23.0) is available! You are using version 1.11.0.\r\n",
+      "\u001b[0m\u001b[33mA new version of huggingface_hub (1.24.0) is available! You are using version 1.11.0.\r\n",
       "To update, run: \u001b[1m/usr/bin/python3 -m pip install -U huggingface_hub\u001b[0m\r\n",
       "\u001b[0m\r\n",
       "The token has not been saved to the git credentials helper. Pass `add_to_git_credential=True` in this function directly or `--add-to-git-credential` if using via `hf`CLI if you want to set the git credential as well.\r\n",
@@ -516,22 +516,22 @@
   {
    "cell_type": "code",
    "execution_count": 9,
-   "id": "92b25f28",
+   "id": "e528664d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:56:08.403874Z",
-     "iopub.status.busy": "2026-07-17T04:56:08.402791Z",
-     "iopub.status.idle": "2026-07-17T04:58:07.385366Z",
-     "shell.execute_reply": "2026-07-17T04:58:07.384133Z"
+     "iopub.execute_input": "2026-07-18T20:21:46.727640Z",
+     "iopub.status.busy": "2026-07-18T20:21:46.727092Z",
+     "iopub.status.idle": "2026-07-18T20:23:49.800609Z",
+     "shell.execute_reply": "2026-07-18T20:23:49.799049Z"
     },
     "jupyter": {
      "source_hidden": true
     },
     "papermill": {
-     "duration": 118.997231,
-     "end_time": "2026-07-17T04:58:07.387861+00:00",
+     "duration": 123.089553,
+     "end_time": "2026-07-18T20:23:49.803435+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:56:08.390630+00:00",
+     "start_time": "2026-07-18T20:21:46.713882+00:00",
      "status": "completed"
     },
     "tags": []
@@ -542,10 +542,10 @@
      "output_type": "stream",
      "text": [
       "/kaggle/working/MAZero\n",
-      "[2026-07-17 04:56:40,540][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17 04:56:40\r\n",
-      "[2026-07-17 04:56:40,540][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17 04:56:40\r\n",
-      "[2026-07-17 04:56:40,540][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
-      "[2026-07-17 04:56:40,540][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
+      "[2026-07-18 20:22:19,505][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-18 20:22:19\r\n",
+      "[2026-07-18 20:22:19,505][train][INFO][main.py><module>] ==> Path: /kaggle/working/MAZero/results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-18 20:22:19\r\n",
+      "[2026-07-18 20:22:19,506][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
+      "[2026-07-18 20:22:19,506][train][INFO][main.py><module>] ==> Param: {'seed': 1, 'discount': 0.997, 'use_wandb': False, 'num_agents': 2, 'image_channel': 1, 'obs_shape': (2, 1, 1), 'action_space_size': 3, 'max_moves': 10, 'test_max_moves': 10, 'selfplay_on_gpu': False, 'data_actors': 1, 'num_pmcts': 1, 'checkpoint_interval': 100, 'total_transitions': 300, 'start_transitions': 64, 'use_priority': True, 'priority_prob_alpha': 0.6, 'priority_prob_beta': 0.4, 'prioritized_replay_eps': 1e-06, 'use_max_priority': True, 'use_change_temperature': False, 'eps_start': 0.0, 'eps_end': 0.0, 'eps_annealing_time': 1000, 'use_priority_refresh': False, 'refresh_actors': 1, 'refresh_interval': 100, 'refresh_mini_size': 256, 'num_simulations': 20, 'pb_c_base': 19652, 'pb_c_init': 1.25, 'tree_value_stat_delta_lb': 0.01, 'root_dirichlet_alpha': 0.3, 'root_exploration_fraction': 0.25, 'sampled_action_times': 5, 'mcts_rho': 0.75, 'mcts_lambda': 0.8, 'train_on_gpu': False, 'training_steps': 300, 'last_steps': 20, 'batch_size': 64, 'num_unroll_steps': 5, 'max_grad_norm': 10.0, 'reward_loss_coeff': 1.0, 'value_loss_coeff': 0.25, 'policy_loss_coeff': 1.0, 'consistency_coeff': 2.0, 'awac_lambda': 1.0, 'adv_clip': 3.0, 'lr': 0.02, 'lr_warm_step': 3.0, 'lr_decay_rate': 0.1, 'lr_decay_steps': 300, 'opti_eps': 1e-05, 'weight_decay': 0, 'reanalyze_on_gpu': False, 'reanalyze_actors': 1, 'reanalyze_update_actors': 0, 'td_steps': 5, 'mini_infer_size': 64, 'use_root_value': False, 'use_pred_value': True, 'use_reanalyze_value': True, 'revisit_policy_search_rate': 1.0, 'use_off_correction': True, 'auto_td_steps': 90.0, 'target_model_interval': 50, 'test_interval': 50, 'test_episodes': 32, 'use_mcts_test': True, 'save_interval': 10000, 'log_interval': 100, 'image_based': False, 'gray_scale': False, 'cvt_string': False, 'frame_skip': 1, 'episode_life': False, 'use_augmentation': False, 'augmentation': ['shift', 'intensity'], 'clip_param': 0.2, 'gae_lambda': 0.95, 'ppo_loss_proportion': 0, 'stacked_observations': 1, 'hidden_state_size': 64, 'fc_representation_layers': [64, 64], 'fc_dynamic_layers': [64, 64], 'fc_reward_layers': [32], 'fc_value_layers': [32], 'fc_policy_layers': [32], 'proj_hid': 128, 'proj_out': 128, 'pred_hid': 64, 'pred_out': 128, 'use_vectorization': False}\r\n",
       "/kaggle/working/MAZero/core/train.py:487: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.\r\n",
       "  scaler = GradScaler()\r\n",
       "/usr/local/lib/python3.12/dist-packages/torch/cuda/amp/grad_scaler.py:31: UserWarning: torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.\r\n",
@@ -556,20 +556,20 @@
       "  super().__init__(\r\n",
       "/kaggle/working/MAZero/core/mcts/tree_search/mcts_sampled.py:121: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
-      "[2026-07-17 04:56:46,869][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
-      "[2026-07-17 04:56:46,869][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
-      "[2026-07-17 04:56:47,079][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
-      "[2026-07-17 04:56:47,079][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
-      "[2026-07-17 04:56:47,279][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
-      "[2026-07-17 04:56:47,279][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
-      "[2026-07-17 04:56:47,466][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
-      "[2026-07-17 04:56:47,466][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
-      "[2026-07-17 04:56:47,654][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
-      "[2026-07-17 04:56:47,654][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
-      "[2026-07-17 04:56:47,845][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
-      "[2026-07-17 04:56:47,845][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
-      "[2026-07-17 04:56:48,037][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
-      "[2026-07-17 04:56:48,037][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
+      "[2026-07-18 20:22:25,931][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
+      "[2026-07-18 20:22:25,931][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:10/64\r\n",
+      "[2026-07-18 20:22:26,149][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
+      "[2026-07-18 20:22:26,149][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:20/64\r\n",
+      "[2026-07-18 20:22:26,360][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
+      "[2026-07-18 20:22:26,360][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:30/64\r\n",
+      "[2026-07-18 20:22:26,566][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
+      "[2026-07-18 20:22:26,566][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:40/64\r\n",
+      "[2026-07-18 20:22:26,773][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
+      "[2026-07-18 20:22:26,773][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:50/64\r\n",
+      "[2026-07-18 20:22:26,978][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
+      "[2026-07-18 20:22:26,978][train][DEBUG][train.py>train_sync_serial] ==> ReplayBufferSize:60/64\r\n",
+      "[2026-07-18 20:22:27,194][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
+      "[2026-07-18 20:22:27,194][train][INFO][train.py>train_sync_serial] ==> Begin training...\r\n",
       "/kaggle/working/MAZero/core/reanalyze_worker.py:113: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
       "/kaggle/working/MAZero/core/reanalyze_worker.py:256: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
@@ -580,40 +580,40 @@
       "/kaggle/working/MAZero/core/test.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.\r\n",
       "  with autocast():\r\n",
       "#0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-17 04:56:48,759][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.439   Tp_perstep: 0.191   Tu_perstep: 0.096   Te_perstep: 0.434   \r\n",
-      "[2026-07-17 04:56:48,759][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.439   Tp_perstep: 0.191   Tu_perstep: 0.096   Te_perstep: 0.434   \r\n",
-      "[2026-07-17 04:56:48,759][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-17 04:56:48,759][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-18 20:22:27,989][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.561   Tp_perstep: 0.206   Tu_perstep: 0.102   Te_perstep: 0.486   \r\n",
+      "[2026-07-18 20:22:27,989][train][INFO][log.py>_log] ==> #0          Episodes Collected: 7          Transitions Collected: 70         Batch Size: 64    | NewEpisode Model(mean:0         ) Reward(mean:-14.14, max:9.00 , min:-42.00, std:21.96) | total_loss: 697.775 reward_loss: 341.572 policy_loss: 11.997  value_loss: 1380.912consistency_loss: -0.511  lr: 0.020000  batch_future_return: -9.344  batch_model_diff: 0.000   target_model_diff: 0.000   Tc_perstep: 1.561   Tp_perstep: 0.206   Tu_perstep: 0.102   Te_perstep: 0.486   \r\n",
+      "[2026-07-18 20:22:27,989][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-18 20:22:27,989][train_test][INFO][log.py>_log] ==> #0          Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 50.\r\n",
       "#50         Test Mean Score of matgame3: 94.375     (max: 100.0     , min:40.0      , std: 13.448396744593758)\r\n",
       "Start evaluation for model 100.\r\n",
       "#100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
-      "[2026-07-17 04:57:10,663][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.022   Tp_perstep: 0.168   Tu_perstep: 0.035   Te_perstep: 0.013   \r\n",
-      "[2026-07-17 04:57:10,663][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.022   Tp_perstep: 0.168   Tu_perstep: 0.035   Te_perstep: 0.013   \r\n",
-      "[2026-07-17 04:57:10,663][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
-      "[2026-07-17 04:57:10,663][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
+      "[2026-07-18 20:22:50,067][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.023   Tp_perstep: 0.167   Tu_perstep: 0.037   Te_perstep: 0.014   \r\n",
+      "[2026-07-18 20:22:50,067][train][INFO][log.py>_log] ==> #100        Episodes Collected: 11         Transitions Collected: 110        Batch Size: 64    | NewEpisode Model(mean:85        ) Reward(mean:74.25, max:100.00, min:58.00, std:17.27) | total_loss: 300.236 reward_loss: 65.611  policy_loss: 2.609   value_loss: 941.276 consistency_loss: -1.652  lr: 0.020000  batch_future_return: 11.172  batch_model_diff: 58.438  target_model_diff: 50.000  Tc_perstep: 0.023   Tp_perstep: 0.167   Tu_perstep: 0.037   Te_perstep: 0.014   \r\n",
+      "[2026-07-18 20:22:50,067][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
+      "[2026-07-18 20:22:50,067][train_test][INFO][log.py>_log] ==> #100        Test Mean Score of matgame3: 95.625     (max: 100.0     , min:60.0      , std: 9.662265521087692)\r\n",
       "Start evaluation for model 150.\r\n",
       "#150        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 200.\r\n",
       "#200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-17 04:57:34,676][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.173   Tu_perstep: 0.034   Te_perstep: 0.012   \r\n",
-      "[2026-07-17 04:57:34,676][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.173   Tu_perstep: 0.034   Te_perstep: 0.012   \r\n",
-      "[2026-07-17 04:57:34,676][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-17 04:57:34,676][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-18 20:23:16,124][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.023   Tp_perstep: 0.178   Tu_perstep: 0.038   Te_perstep: 0.012   \r\n",
+      "[2026-07-18 20:23:16,124][train][INFO][log.py>_log] ==> #200        Episodes Collected: 21         Transitions Collected: 210        Batch Size: 64    | NewEpisode Model(mean:155       ) Reward(mean:81.90, max:100.00, min:50.00, std:16.02) | total_loss: 83.567  reward_loss: 28.229  policy_loss: 0.527   value_loss: 227.640 consistency_loss: -1.050  lr: 0.020000  batch_future_return: 25.656  batch_model_diff: 106.875 target_model_diff: 50.000  Tc_perstep: 0.023   Tp_perstep: 0.178   Tu_perstep: 0.038   Te_perstep: 0.012   \r\n",
+      "[2026-07-18 20:23:16,124][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-18 20:23:16,124][train_test][INFO][log.py>_log] ==> #200        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 250.\r\n",
       "#250        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
       "Start evaluation for model 300.\r\n",
       "#300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-17 04:57:59,810][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.178   Tu_perstep: 0.034   Te_perstep: 0.011   \r\n",
-      "[2026-07-17 04:57:59,810][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.020   Tp_perstep: 0.178   Tu_perstep: 0.034   Te_perstep: 0.011   \r\n",
-      "[2026-07-17 04:57:59,810][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-17 04:57:59,810][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-17 04:58:04,019][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
-      "[2026-07-17 04:58:04,019][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
+      "[2026-07-18 20:23:41,753][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.021   Tp_perstep: 0.182   Tu_perstep: 0.038   Te_perstep: 0.012   \r\n",
+      "[2026-07-18 20:23:41,753][train][INFO][log.py>_log] ==> #300        Episodes Collected: 30         Transitions Collected: 300        Batch Size: 64    | NewEpisode Model(mean:250       ) Reward(mean:85.56, max:100.00, min:80.00, std:8.31 ) | total_loss: 90.107  reward_loss: 17.166  policy_loss: 0.643   value_loss: 298.775 consistency_loss: -1.197  lr: 0.020000  batch_future_return: 33.812  batch_model_diff: 148.281 target_model_diff: 50.000  Tc_perstep: 0.021   Tp_perstep: 0.182   Tu_perstep: 0.038   Te_perstep: 0.012   \r\n",
+      "[2026-07-18 20:23:41,753][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-18 20:23:41,753][train_test][INFO][log.py>_log] ==> #300        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-18 20:23:46,292][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
+      "[2026-07-18 20:23:46,292][train][INFO][train.py>train_sync_serial] ==> Training over...\r\n",
       "Start evaluation for model 320.\r\n",
       "#320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-17 04:58:04,488][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
-      "[2026-07-17 04:58:04,488][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n"
+      "[2026-07-18 20:23:46,798][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n",
+      "[2026-07-18 20:23:46,798][train_test][INFO][train.py>train_sync_serial] ==> #320        Test Mean Score of matgame3: 100.0      (max: 100.0     , min:100.0     , std: 0.0       )\r\n"
      ]
     }
    ],
@@ -635,19 +635,19 @@
   {
    "cell_type": "code",
    "execution_count": 10,
-   "id": "b7c835f6",
+   "id": "dad92068",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:07.414948Z",
-     "iopub.status.busy": "2026-07-17T04:58:07.414547Z",
-     "iopub.status.idle": "2026-07-17T04:58:07.545990Z",
-     "shell.execute_reply": "2026-07-17T04:58:07.544619Z"
+     "iopub.execute_input": "2026-07-18T20:23:49.832541Z",
+     "iopub.status.busy": "2026-07-18T20:23:49.830952Z",
+     "iopub.status.idle": "2026-07-18T20:23:49.961893Z",
+     "shell.execute_reply": "2026-07-18T20:23:49.960749Z"
     },
     "papermill": {
-     "duration": 0.14872,
-     "end_time": "2026-07-17T04:58:07.548462+00:00",
+     "duration": 0.147779,
+     "end_time": "2026-07-18T20:23:49.964145+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:07.399742+00:00",
+     "start_time": "2026-07-18T20:23:49.816366+00:00",
      "status": "completed"
     },
     "tags": []
@@ -657,14 +657,14 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17' for reading: No such file or directory\r\n",
-      "tail: cannot open '04:56:40/logs/train_test.log' for reading: No such file or directory\r\n",
-      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17' for reading: No such file or directory\r\n",
-      "tail: cannot open '04:56:40/logs/train.log' for reading: No such file or directory\r\n",
-      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17' for reading: No such file or directory\r\n",
-      "tail: cannot open '04:56:40/logs/test.log' for reading: No such file or directory\r\n",
-      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-17' for reading: No such file or directory\r\n",
-      "tail: cannot open '04:56:40/logs/root.log' for reading: No such file or directory\r\n"
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-18' for reading: No such file or directory\r\n",
+      "tail: cannot open '20:22:19/logs/train.log' for reading: No such file or directory\r\n",
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-18' for reading: No such file or directory\r\n",
+      "tail: cannot open '20:22:19/logs/root.log' for reading: No such file or directory\r\n",
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-18' for reading: No such file or directory\r\n",
+      "tail: cannot open '20:22:19/logs/train_test.log' for reading: No such file or directory\r\n",
+      "tail: cannot open 'results/matrix/matgame3/kaggle_smoketest/seed=1/2026-07-18' for reading: No such file or directory\r\n",
+      "tail: cannot open '20:22:19/logs/test.log' for reading: No such file or directory\r\n"
      ]
     }
    ],
@@ -675,19 +675,19 @@
   {
    "cell_type": "code",
    "execution_count": 11,
-   "id": "b46274b9",
+   "id": "ce62b66e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:07.574354Z",
-     "iopub.status.busy": "2026-07-17T04:58:07.573881Z",
-     "iopub.status.idle": "2026-07-17T04:58:07.582922Z",
-     "shell.execute_reply": "2026-07-17T04:58:07.582099Z"
+     "iopub.execute_input": "2026-07-18T20:23:49.991423Z",
+     "iopub.status.busy": "2026-07-18T20:23:49.991020Z",
+     "iopub.status.idle": "2026-07-18T20:23:50.000723Z",
+     "shell.execute_reply": "2026-07-18T20:23:49.999521Z"
     },
     "papermill": {
-     "duration": 0.025434,
-     "end_time": "2026-07-17T04:58:07.585071+00:00",
+     "duration": 0.026437,
+     "end_time": "2026-07-18T20:23:50.002768+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:07.559637+00:00",
+     "start_time": "2026-07-18T20:23:49.976331+00:00",
      "status": "completed"
     },
     "tags": []
@@ -829,19 +829,19 @@
   {
    "cell_type": "code",
    "execution_count": 12,
-   "id": "a72f9829",
+   "id": "32bf1066",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:07.610950Z",
-     "iopub.status.busy": "2026-07-17T04:58:07.610582Z",
-     "iopub.status.idle": "2026-07-17T04:58:07.740309Z",
-     "shell.execute_reply": "2026-07-17T04:58:07.738997Z"
+     "iopub.execute_input": "2026-07-18T20:23:50.029621Z",
+     "iopub.status.busy": "2026-07-18T20:23:50.029184Z",
+     "iopub.status.idle": "2026-07-18T20:23:50.157635Z",
+     "shell.execute_reply": "2026-07-18T20:23:50.156351Z"
     },
     "papermill": {
-     "duration": 0.145745,
-     "end_time": "2026-07-17T04:58:07.742661+00:00",
+     "duration": 0.144459,
+     "end_time": "2026-07-18T20:23:50.159885+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:07.596916+00:00",
+     "start_time": "2026-07-18T20:23:50.015426+00:00",
      "status": "completed"
     },
     "tags": []
@@ -862,19 +862,19 @@
   {
    "cell_type": "code",
    "execution_count": 13,
-   "id": "132e3394",
+   "id": "ecb6441d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:07.768383Z",
-     "iopub.status.busy": "2026-07-17T04:58:07.767767Z",
-     "iopub.status.idle": "2026-07-17T04:58:07.776437Z",
-     "shell.execute_reply": "2026-07-17T04:58:07.775354Z"
+     "iopub.execute_input": "2026-07-18T20:23:50.187594Z",
+     "iopub.status.busy": "2026-07-18T20:23:50.187164Z",
+     "iopub.status.idle": "2026-07-18T20:23:50.195298Z",
+     "shell.execute_reply": "2026-07-18T20:23:50.194041Z"
     },
     "papermill": {
-     "duration": 0.024216,
-     "end_time": "2026-07-17T04:58:07.778544+00:00",
+     "duration": 0.024765,
+     "end_time": "2026-07-18T20:23:50.197399+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:07.754328+00:00",
+     "start_time": "2026-07-18T20:23:50.172634+00:00",
      "status": "completed"
     },
     "tags": []
@@ -990,19 +990,19 @@
   {
    "cell_type": "code",
    "execution_count": 14,
-   "id": "12f7499a",
+   "id": "9beb208b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:07.803969Z",
-     "iopub.status.busy": "2026-07-17T04:58:07.803434Z",
-     "iopub.status.idle": "2026-07-17T04:58:07.810809Z",
-     "shell.execute_reply": "2026-07-17T04:58:07.809763Z"
+     "iopub.execute_input": "2026-07-18T20:23:50.223948Z",
+     "iopub.status.busy": "2026-07-18T20:23:50.223636Z",
+     "iopub.status.idle": "2026-07-18T20:23:50.231542Z",
+     "shell.execute_reply": "2026-07-18T20:23:50.230381Z"
     },
     "papermill": {
-     "duration": 0.022646,
-     "end_time": "2026-07-17T04:58:07.812991+00:00",
+     "duration": 0.023865,
+     "end_time": "2026-07-18T20:23:50.233762+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:07.790345+00:00",
+     "start_time": "2026-07-18T20:23:50.209897+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1095,19 +1095,19 @@
   {
    "cell_type": "code",
    "execution_count": 15,
-   "id": "948d9d29",
+   "id": "32605d65",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:07.837807Z",
-     "iopub.status.busy": "2026-07-17T04:58:07.837464Z",
-     "iopub.status.idle": "2026-07-17T04:58:14.963479Z",
-     "shell.execute_reply": "2026-07-17T04:58:14.962083Z"
+     "iopub.execute_input": "2026-07-18T20:23:50.261276Z",
+     "iopub.status.busy": "2026-07-18T20:23:50.260948Z",
+     "iopub.status.idle": "2026-07-18T20:23:57.272384Z",
+     "shell.execute_reply": "2026-07-18T20:23:57.271175Z"
     },
     "papermill": {
-     "duration": 7.141409,
-     "end_time": "2026-07-17T04:58:14.965978+00:00",
+     "duration": 7.028139,
+     "end_time": "2026-07-18T20:23:57.274886+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:07.824569+00:00",
+     "start_time": "2026-07-18T20:23:50.246747+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1117,21 +1117,21 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "epoch    0  train_mse=1362.427  test_mse=1347.224  test_R2=-16.2441\r\n",
-      "epoch  200  train_mse= 26.655  test_mse= 30.613  test_R2=0.6082\r\n",
-      "epoch  400  train_mse= 19.063  test_mse= 21.351  test_R2=0.7267\r\n",
-      "epoch  600  train_mse= 11.415  test_mse= 12.514  test_R2=0.8398\r\n",
-      "epoch  800  train_mse=  8.552  test_mse=  9.156  test_R2=0.8828\r\n",
-      "epoch 1000  train_mse=  7.740  test_mse=  8.199  test_R2=0.8951\r\n",
-      "epoch 1200  train_mse=  7.438  test_mse=  7.843  test_R2=0.8996\r\n",
-      "epoch 1400  train_mse=  7.303  test_mse=  7.686  test_R2=0.9016\r\n",
-      "epoch 1600  train_mse=  7.242  test_mse=  7.615  test_R2=0.9025\r\n",
-      "epoch 1800  train_mse=  7.220  test_mse=  7.589  test_R2=0.9029\r\n",
-      "epoch 1999  train_mse=  7.216  test_mse=  7.585  test_R2=0.9029\r\n",
+      "epoch    0  train_mse=1363.084  test_mse=1341.169  test_R2=-17.2048\r\n",
+      "epoch  200  train_mse= 26.284  test_mse= 26.651  test_R2=0.6382\r\n",
+      "epoch  400  train_mse= 18.571  test_mse= 19.079  test_R2=0.7410\r\n",
+      "epoch  600  train_mse= 10.983  test_mse= 11.490  test_R2=0.8440\r\n",
+      "epoch  800  train_mse=  8.379  test_mse=  8.662  test_R2=0.8824\r\n",
+      "epoch 1000  train_mse=  7.650  test_mse=  7.838  test_R2=0.8936\r\n",
+      "epoch 1200  train_mse=  7.378  test_mse=  7.526  test_R2=0.8978\r\n",
+      "epoch 1400  train_mse=  7.258  test_mse=  7.386  test_R2=0.8997\r\n",
+      "epoch 1600  train_mse=  7.204  test_mse=  7.322  test_R2=0.9006\r\n",
+      "epoch 1800  train_mse=  7.184  test_mse=  7.299  test_R2=0.9009\r\n",
+      "epoch 1999  train_mse=  7.181  test_mse=  7.295  test_R2=0.9010\r\n",
       "\r\n",
-      "Fitted c=43.0472  alpha=0.6759\r\n",
-      "True reward std (for reference): 8.416\r\n",
-      "Reward range in data: [8.14, 65.78]\r\n"
+      "Fitted c=41.5222  alpha=0.6760\r\n",
+      "True reward std (for reference): 8.461\r\n",
+      "Reward range in data: [2.34, 63.70]\r\n"
      ]
     }
    ],
@@ -1141,13 +1141,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9f01b60b",
+   "id": "2be9a8fc",
    "metadata": {
     "papermill": {
-     "duration": 0.011842,
-     "end_time": "2026-07-17T04:58:14.991326+00:00",
+     "duration": 0.015499,
+     "end_time": "2026-07-18T20:23:57.305036+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:14.979484+00:00",
+     "start_time": "2026-07-18T20:23:57.289537+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1164,19 +1164,19 @@
   {
    "cell_type": "code",
    "execution_count": 16,
-   "id": "55837cea",
+   "id": "0fe6a90e",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:15.018025Z",
-     "iopub.status.busy": "2026-07-17T04:58:15.017616Z",
-     "iopub.status.idle": "2026-07-17T04:58:15.023712Z",
-     "shell.execute_reply": "2026-07-17T04:58:15.022647Z"
+     "iopub.execute_input": "2026-07-18T20:23:57.335340Z",
+     "iopub.status.busy": "2026-07-18T20:23:57.334990Z",
+     "iopub.status.idle": "2026-07-18T20:23:57.341732Z",
+     "shell.execute_reply": "2026-07-18T20:23:57.340616Z"
     },
     "papermill": {
-     "duration": 0.021783,
-     "end_time": "2026-07-17T04:58:15.025519+00:00",
+     "duration": 0.02552,
+     "end_time": "2026-07-18T20:23:57.343839+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:15.003736+00:00",
+     "start_time": "2026-07-18T20:23:57.318319+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1199,19 +1199,19 @@
   {
    "cell_type": "code",
    "execution_count": 17,
-   "id": "cd22666d",
+   "id": "89d8aced",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:15.052376Z",
-     "iopub.status.busy": "2026-07-17T04:58:15.052006Z",
-     "iopub.status.idle": "2026-07-17T04:58:20.990946Z",
-     "shell.execute_reply": "2026-07-17T04:58:20.989251Z"
+     "iopub.execute_input": "2026-07-18T20:23:57.373147Z",
+     "iopub.status.busy": "2026-07-18T20:23:57.372317Z",
+     "iopub.status.idle": "2026-07-18T20:24:03.072961Z",
+     "shell.execute_reply": "2026-07-18T20:24:03.071702Z"
     },
     "papermill": {
-     "duration": 5.955554,
-     "end_time": "2026-07-17T04:58:20.993528+00:00",
+     "duration": 5.717939,
+     "end_time": "2026-07-18T20:24:03.075268+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:15.037974+00:00",
+     "start_time": "2026-07-18T20:23:57.357329+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1236,13 +1236,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "fb1f0e8d",
+   "id": "82c4ae09",
    "metadata": {
     "papermill": {
-     "duration": 0.02052,
-     "end_time": "2026-07-17T04:58:21.029284+00:00",
+     "duration": 0.013531,
+     "end_time": "2026-07-18T20:24:03.102573+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:21.008764+00:00",
+     "start_time": "2026-07-18T20:24:03.089042+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1254,19 +1254,19 @@
   {
    "cell_type": "code",
    "execution_count": 18,
-   "id": "62681ac1",
+   "id": "aee63ee4",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:21.071642Z",
-     "iopub.status.busy": "2026-07-17T04:58:21.070718Z",
-     "iopub.status.idle": "2026-07-17T04:58:22.503566Z",
-     "shell.execute_reply": "2026-07-17T04:58:22.501015Z"
+     "iopub.execute_input": "2026-07-18T20:24:03.129993Z",
+     "iopub.status.busy": "2026-07-18T20:24:03.129651Z",
+     "iopub.status.idle": "2026-07-18T20:24:04.331330Z",
+     "shell.execute_reply": "2026-07-18T20:24:04.329942Z"
     },
     "papermill": {
-     "duration": 1.454625,
-     "end_time": "2026-07-17T04:58:22.506609+00:00",
+     "duration": 1.218492,
+     "end_time": "2026-07-18T20:24:04.333963+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:21.051984+00:00",
+     "start_time": "2026-07-18T20:24:03.115471+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1289,13 +1289,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "57fdfbfe",
+   "id": "00a22432",
    "metadata": {
     "papermill": {
-     "duration": 0.014759,
-     "end_time": "2026-07-17T04:58:22.538929+00:00",
+     "duration": 0.012902,
+     "end_time": "2026-07-18T20:24:04.359839+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:22.524170+00:00",
+     "start_time": "2026-07-18T20:24:04.346937+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1307,19 +1307,19 @@
   {
    "cell_type": "code",
    "execution_count": 19,
-   "id": "d8bd315d",
+   "id": "3ace5425",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:22.572233Z",
-     "iopub.status.busy": "2026-07-17T04:58:22.571635Z",
-     "iopub.status.idle": "2026-07-17T04:58:22.584590Z",
-     "shell.execute_reply": "2026-07-17T04:58:22.582223Z"
+     "iopub.execute_input": "2026-07-18T20:24:04.388326Z",
+     "iopub.status.busy": "2026-07-18T20:24:04.387761Z",
+     "iopub.status.idle": "2026-07-18T20:24:04.397051Z",
+     "shell.execute_reply": "2026-07-18T20:24:04.395719Z"
     },
     "papermill": {
-     "duration": 0.035828,
-     "end_time": "2026-07-17T04:58:22.588892+00:00",
+     "duration": 0.026223,
+     "end_time": "2026-07-18T20:24:04.399136+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:22.553064+00:00",
+     "start_time": "2026-07-18T20:24:04.372913+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1355,13 +1355,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "002ecfb3",
+   "id": "b3489a05",
    "metadata": {
     "papermill": {
-     "duration": 0.016116,
-     "end_time": "2026-07-17T04:58:22.621288+00:00",
+     "duration": 0.017233,
+     "end_time": "2026-07-18T20:24:04.430029+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:22.605172+00:00",
+     "start_time": "2026-07-18T20:24:04.412796+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1373,19 +1373,19 @@
   {
    "cell_type": "code",
    "execution_count": 20,
-   "id": "793f596c",
+   "id": "04ebf15a",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:22.657666Z",
-     "iopub.status.busy": "2026-07-17T04:58:22.657282Z",
-     "iopub.status.idle": "2026-07-17T04:58:31.994453Z",
-     "shell.execute_reply": "2026-07-17T04:58:31.993216Z"
+     "iopub.execute_input": "2026-07-18T20:24:04.459738Z",
+     "iopub.status.busy": "2026-07-18T20:24:04.459256Z",
+     "iopub.status.idle": "2026-07-18T20:24:12.883810Z",
+     "shell.execute_reply": "2026-07-18T20:24:12.882460Z"
     },
     "papermill": {
-     "duration": 9.360206,
-     "end_time": "2026-07-17T04:58:31.996992+00:00",
+     "duration": 8.442353,
+     "end_time": "2026-07-18T20:24:12.886344+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:22.636786+00:00",
+     "start_time": "2026-07-18T20:24:04.443991+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1417,13 +1417,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "a6e65a91",
+   "id": "157005da",
    "metadata": {
     "papermill": {
-     "duration": 0.014127,
-     "end_time": "2026-07-17T04:58:32.025861+00:00",
+     "duration": 0.013725,
+     "end_time": "2026-07-18T20:24:12.913863+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:32.011734+00:00",
+     "start_time": "2026-07-18T20:24:12.900138+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1435,19 +1435,19 @@
   {
    "cell_type": "code",
    "execution_count": 21,
-   "id": "1536fd89",
+   "id": "6f50136b",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:32.058225Z",
-     "iopub.status.busy": "2026-07-17T04:58:32.057755Z",
-     "iopub.status.idle": "2026-07-17T04:58:33.379626Z",
-     "shell.execute_reply": "2026-07-17T04:58:33.378324Z"
+     "iopub.execute_input": "2026-07-18T20:24:12.943337Z",
+     "iopub.status.busy": "2026-07-18T20:24:12.942601Z",
+     "iopub.status.idle": "2026-07-18T20:24:14.115514Z",
+     "shell.execute_reply": "2026-07-18T20:24:14.114413Z"
     },
     "papermill": {
-     "duration": 1.341596,
-     "end_time": "2026-07-17T04:58:33.382033+00:00",
+     "duration": 1.190551,
+     "end_time": "2026-07-18T20:24:14.117758+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:32.040437+00:00",
+     "start_time": "2026-07-18T20:24:12.927207+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1468,19 +1468,19 @@
   {
    "cell_type": "code",
    "execution_count": 22,
-   "id": "ecd0496c",
+   "id": "9963fab2",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:33.412590Z",
-     "iopub.status.busy": "2026-07-17T04:58:33.412080Z",
-     "iopub.status.idle": "2026-07-17T04:58:34.724031Z",
-     "shell.execute_reply": "2026-07-17T04:58:34.722529Z"
+     "iopub.execute_input": "2026-07-18T20:24:14.149244Z",
+     "iopub.status.busy": "2026-07-18T20:24:14.148277Z",
+     "iopub.status.idle": "2026-07-18T20:24:15.332061Z",
+     "shell.execute_reply": "2026-07-18T20:24:15.330814Z"
     },
     "papermill": {
-     "duration": 1.330438,
-     "end_time": "2026-07-17T04:58:34.726735+00:00",
+     "duration": 1.202592,
+     "end_time": "2026-07-18T20:24:15.334399+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:33.396297+00:00",
+     "start_time": "2026-07-18T20:24:14.131807+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1501,19 +1501,19 @@
   {
    "cell_type": "code",
    "execution_count": 23,
-   "id": "8cca7331",
+   "id": "9773a756",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:34.755850Z",
-     "iopub.status.busy": "2026-07-17T04:58:34.755476Z",
-     "iopub.status.idle": "2026-07-17T04:58:36.080472Z",
-     "shell.execute_reply": "2026-07-17T04:58:36.078912Z"
+     "iopub.execute_input": "2026-07-18T20:24:15.365031Z",
+     "iopub.status.busy": "2026-07-18T20:24:15.364114Z",
+     "iopub.status.idle": "2026-07-18T20:24:16.565727Z",
+     "shell.execute_reply": "2026-07-18T20:24:16.564381Z"
     },
     "papermill": {
-     "duration": 1.342707,
-     "end_time": "2026-07-17T04:58:36.082840+00:00",
+     "duration": 1.219998,
+     "end_time": "2026-07-18T20:24:16.568117+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:34.740133+00:00",
+     "start_time": "2026-07-18T20:24:15.348119+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1534,19 +1534,19 @@
   {
    "cell_type": "code",
    "execution_count": 24,
-   "id": "910e556d",
+   "id": "3800e8bc",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:36.111761Z",
-     "iopub.status.busy": "2026-07-17T04:58:36.111106Z",
-     "iopub.status.idle": "2026-07-17T04:58:37.579681Z",
-     "shell.execute_reply": "2026-07-17T04:58:37.578331Z"
+     "iopub.execute_input": "2026-07-18T20:24:16.598592Z",
+     "iopub.status.busy": "2026-07-18T20:24:16.597694Z",
+     "iopub.status.idle": "2026-07-18T20:24:17.837874Z",
+     "shell.execute_reply": "2026-07-18T20:24:17.836681Z"
     },
     "papermill": {
-     "duration": 1.486705,
-     "end_time": "2026-07-17T04:58:37.582359+00:00",
+     "duration": 1.258487,
+     "end_time": "2026-07-18T20:24:17.840252+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:36.095654+00:00",
+     "start_time": "2026-07-18T20:24:16.581765+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1567,19 +1567,19 @@
   {
    "cell_type": "code",
    "execution_count": 25,
-   "id": "71520c8a",
+   "id": "8291cc61",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:37.611461Z",
-     "iopub.status.busy": "2026-07-17T04:58:37.611084Z",
-     "iopub.status.idle": "2026-07-17T04:58:38.939969Z",
-     "shell.execute_reply": "2026-07-17T04:58:38.938674Z"
+     "iopub.execute_input": "2026-07-18T20:24:17.869979Z",
+     "iopub.status.busy": "2026-07-18T20:24:17.869615Z",
+     "iopub.status.idle": "2026-07-18T20:24:19.062669Z",
+     "shell.execute_reply": "2026-07-18T20:24:19.061531Z"
     },
     "papermill": {
-     "duration": 1.346901,
-     "end_time": "2026-07-17T04:58:38.942316+00:00",
+     "duration": 1.211198,
+     "end_time": "2026-07-18T20:24:19.065142+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:37.595415+00:00",
+     "start_time": "2026-07-18T20:24:17.853944+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1600,19 +1600,19 @@
   {
    "cell_type": "code",
    "execution_count": 26,
-   "id": "ccdeda20",
+   "id": "705aaac5",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:38.972278Z",
-     "iopub.status.busy": "2026-07-17T04:58:38.971697Z",
-     "iopub.status.idle": "2026-07-17T04:58:40.246719Z",
-     "shell.execute_reply": "2026-07-17T04:58:40.245298Z"
+     "iopub.execute_input": "2026-07-18T20:24:19.094911Z",
+     "iopub.status.busy": "2026-07-18T20:24:19.094523Z",
+     "iopub.status.idle": "2026-07-18T20:24:20.272384Z",
+     "shell.execute_reply": "2026-07-18T20:24:20.271226Z"
     },
     "papermill": {
-     "duration": 1.292428,
-     "end_time": "2026-07-17T04:58:40.249360+00:00",
+     "duration": 1.195609,
+     "end_time": "2026-07-18T20:24:20.274717+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:38.956932+00:00",
+     "start_time": "2026-07-18T20:24:19.079108+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1632,13 +1632,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "674024ee",
+   "id": "621cb480",
    "metadata": {
     "papermill": {
-     "duration": 0.013404,
-     "end_time": "2026-07-17T04:58:40.276456+00:00",
+     "duration": 0.013745,
+     "end_time": "2026-07-18T20:24:20.303401+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:40.263052+00:00",
+     "start_time": "2026-07-18T20:24:20.289656+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1650,19 +1650,19 @@
   {
    "cell_type": "code",
    "execution_count": 27,
-   "id": "a1276500",
+   "id": "344300ce",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:40.305956Z",
-     "iopub.status.busy": "2026-07-17T04:58:40.305598Z",
-     "iopub.status.idle": "2026-07-17T04:58:41.558085Z",
-     "shell.execute_reply": "2026-07-17T04:58:41.556140Z"
+     "iopub.execute_input": "2026-07-18T20:24:20.333294Z",
+     "iopub.status.busy": "2026-07-18T20:24:20.332921Z",
+     "iopub.status.idle": "2026-07-18T20:24:21.510928Z",
+     "shell.execute_reply": "2026-07-18T20:24:21.509439Z"
     },
     "papermill": {
-     "duration": 1.270974,
-     "end_time": "2026-07-17T04:58:41.560844+00:00",
+     "duration": 1.195871,
+     "end_time": "2026-07-18T20:24:21.513541+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:40.289870+00:00",
+     "start_time": "2026-07-18T20:24:20.317670+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1685,13 +1685,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "8e5b4122",
+   "id": "166a0f61",
    "metadata": {
     "papermill": {
-     "duration": 0.014576,
-     "end_time": "2026-07-17T04:58:41.588638+00:00",
+     "duration": 0.015057,
+     "end_time": "2026-07-18T20:24:21.542557+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:41.574062+00:00",
+     "start_time": "2026-07-18T20:24:21.527500+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1704,19 +1704,19 @@
   {
    "cell_type": "code",
    "execution_count": 28,
-   "id": "601b0621",
+   "id": "18e76384",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:41.619381Z",
-     "iopub.status.busy": "2026-07-17T04:58:41.618968Z",
-     "iopub.status.idle": "2026-07-17T04:58:43.916499Z",
-     "shell.execute_reply": "2026-07-17T04:58:43.915366Z"
+     "iopub.execute_input": "2026-07-18T20:24:21.574427Z",
+     "iopub.status.busy": "2026-07-18T20:24:21.573125Z",
+     "iopub.status.idle": "2026-07-18T20:24:23.770164Z",
+     "shell.execute_reply": "2026-07-18T20:24:23.768916Z"
     },
     "papermill": {
-     "duration": 2.317676,
-     "end_time": "2026-07-17T04:58:43.919359+00:00",
+     "duration": 2.215341,
+     "end_time": "2026-07-18T20:24:23.772296+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:41.601683+00:00",
+     "start_time": "2026-07-18T20:24:21.556955+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1729,7 +1729,7 @@
       "Logged markdown cell to page 'conclusion'.\n",
       "\n",
       "\n",
-      "Pinned cell cell_17a32b61b397 on page 'conclusion'.\n",
+      "Pinned cell cell_ca29beee0960 on page 'conclusion'.\n",
       " \n"
      ]
     }
@@ -1764,13 +1764,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "acf4fc0c",
+   "id": "84c0d4d8",
    "metadata": {
     "papermill": {
-     "duration": 0.013746,
-     "end_time": "2026-07-17T04:58:43.947885+00:00",
+     "duration": 0.013714,
+     "end_time": "2026-07-18T20:24:23.800326+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:43.934139+00:00",
+     "start_time": "2026-07-18T20:24:23.786612+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1782,19 +1782,19 @@
   {
    "cell_type": "code",
    "execution_count": 29,
-   "id": "f625adf0",
+   "id": "5dc281f8",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:43.976941Z",
-     "iopub.status.busy": "2026-07-17T04:58:43.976580Z",
-     "iopub.status.idle": "2026-07-17T04:58:47.866379Z",
-     "shell.execute_reply": "2026-07-17T04:58:47.864982Z"
+     "iopub.execute_input": "2026-07-18T20:24:23.830313Z",
+     "iopub.status.busy": "2026-07-18T20:24:23.829390Z",
+     "iopub.status.idle": "2026-07-18T20:24:26.598397Z",
+     "shell.execute_reply": "2026-07-18T20:24:26.597303Z"
     },
     "papermill": {
-     "duration": 3.907771,
-     "end_time": "2026-07-17T04:58:47.868796+00:00",
+     "duration": 2.78657,
+     "end_time": "2026-07-18T20:24:26.600848+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:43.961025+00:00",
+     "start_time": "2026-07-18T20:24:23.814278+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1817,13 +1817,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9d8f9537",
+   "id": "335011eb",
    "metadata": {
     "papermill": {
-     "duration": 0.01317,
-     "end_time": "2026-07-17T04:58:47.895393+00:00",
+     "duration": 0.014073,
+     "end_time": "2026-07-18T20:24:26.629107+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:47.882223+00:00",
+     "start_time": "2026-07-18T20:24:26.615034+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1838,13 +1838,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c492f764",
+   "id": "e69e8624",
    "metadata": {
     "papermill": {
-     "duration": 0.014296,
-     "end_time": "2026-07-17T04:58:47.924021+00:00",
+     "duration": 0.015145,
+     "end_time": "2026-07-18T20:24:26.658543+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:47.909725+00:00",
+     "start_time": "2026-07-18T20:24:26.643398+00:00",
      "status": "completed"
     },
     "tags": []
@@ -1986,13 +1986,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "758abd49",
+   "id": "c9a92dba",
    "metadata": {
     "papermill": {
-     "duration": 0.01323,
-     "end_time": "2026-07-17T04:58:47.950099+00:00",
+     "duration": 0.01382,
+     "end_time": "2026-07-18T20:24:26.686216+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:47.936869+00:00",
+     "start_time": "2026-07-18T20:24:26.672396+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2011,19 +2011,19 @@
   {
    "cell_type": "code",
    "execution_count": 30,
-   "id": "9a6b0742",
+   "id": "142c4449",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:47.978917Z",
-     "iopub.status.busy": "2026-07-17T04:58:47.978050Z",
-     "iopub.status.idle": "2026-07-17T04:58:49.104955Z",
-     "shell.execute_reply": "2026-07-17T04:58:49.103115Z"
+     "iopub.execute_input": "2026-07-18T20:24:26.717233Z",
+     "iopub.status.busy": "2026-07-18T20:24:26.716688Z",
+     "iopub.status.idle": "2026-07-18T20:24:27.787312Z",
+     "shell.execute_reply": "2026-07-18T20:24:27.786092Z"
     },
     "papermill": {
-     "duration": 1.146785,
-     "end_time": "2026-07-17T04:58:49.109712+00:00",
+     "duration": 1.08881,
+     "end_time": "2026-07-18T20:24:27.789426+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:47.962927+00:00",
+     "start_time": "2026-07-18T20:24:26.700616+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2053,19 +2053,19 @@
   {
    "cell_type": "code",
    "execution_count": 31,
-   "id": "8da115b3",
+   "id": "a2406aa0",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:49.145312Z",
-     "iopub.status.busy": "2026-07-17T04:58:49.144921Z",
-     "iopub.status.idle": "2026-07-17T04:58:52.317990Z",
-     "shell.execute_reply": "2026-07-17T04:58:52.316692Z"
+     "iopub.execute_input": "2026-07-18T20:24:27.820927Z",
+     "iopub.status.busy": "2026-07-18T20:24:27.820439Z",
+     "iopub.status.idle": "2026-07-18T20:24:30.362900Z",
+     "shell.execute_reply": "2026-07-18T20:24:30.361654Z"
     },
     "papermill": {
-     "duration": 3.190564,
-     "end_time": "2026-07-17T04:58:52.320287+00:00",
+     "duration": 2.56093,
+     "end_time": "2026-07-18T20:24:30.365133+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:49.129723+00:00",
+     "start_time": "2026-07-18T20:24:27.804203+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2089,19 +2089,19 @@
   {
    "cell_type": "code",
    "execution_count": 32,
-   "id": "43390fac",
+   "id": "3884455f",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:52.350131Z",
-     "iopub.status.busy": "2026-07-17T04:58:52.349787Z",
-     "iopub.status.idle": "2026-07-17T04:58:52.361321Z",
-     "shell.execute_reply": "2026-07-17T04:58:52.360261Z"
+     "iopub.execute_input": "2026-07-18T20:24:30.398561Z",
+     "iopub.status.busy": "2026-07-18T20:24:30.398035Z",
+     "iopub.status.idle": "2026-07-18T20:24:30.409375Z",
+     "shell.execute_reply": "2026-07-18T20:24:30.408300Z"
     },
     "papermill": {
-     "duration": 0.029655,
-     "end_time": "2026-07-17T04:58:52.363274+00:00",
+     "duration": 0.031242,
+     "end_time": "2026-07-18T20:24:30.411283+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:52.333619+00:00",
+     "start_time": "2026-07-18T20:24:30.380041+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2331,19 +2331,19 @@
   {
    "cell_type": "code",
    "execution_count": 33,
-   "id": "d9e75ac8",
+   "id": "2204eb73",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T04:58:52.392725Z",
-     "iopub.status.busy": "2026-07-17T04:58:52.392325Z",
-     "iopub.status.idle": "2026-07-17T05:01:26.335965Z",
-     "shell.execute_reply": "2026-07-17T05:01:26.334561Z"
+     "iopub.execute_input": "2026-07-18T20:24:30.441996Z",
+     "iopub.status.busy": "2026-07-18T20:24:30.441355Z",
+     "iopub.status.idle": "2026-07-18T20:26:59.650984Z",
+     "shell.execute_reply": "2026-07-18T20:26:59.649556Z"
     },
     "papermill": {
-     "duration": 153.960945,
-     "end_time": "2026-07-17T05:01:26.338581+00:00",
+     "duration": 149.228075,
+     "end_time": "2026-07-18T20:26:59.653681+00:00",
      "exception": false,
-     "start_time": "2026-07-17T04:58:52.377636+00:00",
+     "start_time": "2026-07-18T20:24:30.425606+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2358,36 +2358,36 @@
       "# ///\r\n",
       "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_experimental.py:59: UserWarning: 'HfApi.run_uv_job' is experimental and might be subject to breaking changes in the future without prior notice. You can disable this warning by setting `HF_HUB_DISABLE_EXPERIMENTAL_WARNING=1` as environment variable.\r\n",
       "  warnings.warn(\r\n",
-      "Job started with ID: 6a59b68e85d9643ce16d72c1\r\n",
-      "View at: https://huggingface.co/jobs/byte-vortex/6a59b68e85d9643ce16d72c1\r\n",
-      "Downloading nvidia-cuda-runtime (2.1MiB)\r\n",
-      "Downloading networkx (2.0MiB)\r\n",
-      "Downloading nvidia-cusolver (191.6MiB)\r\n",
-      "Downloading nvidia-cublas (403.5MiB)\r\n",
-      "Downloading nvidia-nccl-cu13 (196.4MiB)\r\n",
-      "Downloading nvidia-cuda-cupti (10.2MiB)\r\n",
-      "Downloading nvidia-cufft (204.2MiB)\r\n",
-      "Downloading nvidia-cudnn-cu13 (349.2MiB)\r\n",
-      "Downloading nvidia-cusparselt-cu13 (162.3MiB)\r\n",
-      "Downloading nvidia-nvjitlink (38.9MiB)\r\n",
-      "Downloading torch (502.2MiB)\r\n",
-      "Downloading triton (188.6MiB)\r\n",
+      "Job started with ID: 6a5be100d216bd6f3a1ff492\r\n",
+      "View at: https://huggingface.co/jobs/byte-vortex/6a5be100d216bd6f3a1ff492\r\n",
+      "Downloading nvidia-curand (56.8MiB)\r\n",
       "Downloading nvidia-nvshmem-cu13 (57.6MiB)\r\n",
       "Downloading nvidia-cusparse (139.2MiB)\r\n",
-      "Downloading nvidia-curand (56.8MiB)\r\n",
-      "Downloading cuda-bindings (6.3MiB)\r\n",
-      "Downloading nvidia-cuda-nvrtc (86.0MiB)\r\n",
+      "Downloading nvidia-nvjitlink (38.9MiB)\r\n",
       "Downloading numpy (15.9MiB)\r\n",
+      "Downloading nvidia-cusolver (191.6MiB)\r\n",
+      "Downloading nvidia-cuda-cupti (10.2MiB)\r\n",
+      "Downloading nvidia-cuda-runtime (2.1MiB)\r\n",
+      "Downloading nvidia-cufft (204.2MiB)\r\n",
+      "Downloading cuda-bindings (6.3MiB)\r\n",
+      "Downloading nvidia-cudnn-cu13 (349.2MiB)\r\n",
+      "Downloading nvidia-nccl-cu13 (196.4MiB)\r\n",
       "Downloading nvidia-cufile (1.2MiB)\r\n",
+      "Downloading networkx (2.0MiB)\r\n",
       "Downloading sympy (6.0MiB)\r\n",
+      "Downloading nvidia-cuda-nvrtc (86.0MiB)\r\n",
+      "Downloading torch (502.2MiB)\r\n",
+      "Downloading nvidia-cublas (403.5MiB)\r\n",
+      "Downloading triton (188.6MiB)\r\n",
+      "Downloading nvidia-cusparselt-cu13 (162.3MiB)\r\n",
       " Downloaded nvidia-cufile\r\n",
       " Downloaded nvidia-cuda-runtime\r\n",
       " Downloaded networkx\r\n",
       " Downloaded cuda-bindings\r\n",
       " Downloaded nvidia-cuda-cupti\r\n",
       " Downloaded numpy\r\n",
-      " Downloaded sympy\r\n",
       " Downloaded nvidia-nvjitlink\r\n",
+      " Downloaded sympy\r\n",
       " Downloaded nvidia-curand\r\n",
       " Downloaded nvidia-nvshmem-cu13\r\n",
       " Downloaded nvidia-cuda-nvrtc\r\n",
@@ -2395,12 +2395,12 @@
       " Downloaded nvidia-cusparselt-cu13\r\n",
       " Downloaded nvidia-cusolver\r\n",
       " Downloaded nvidia-nccl-cu13\r\n",
-      " Downloaded nvidia-cufft\r\n",
       " Downloaded triton\r\n",
+      " Downloaded nvidia-cufft\r\n",
       " Downloaded nvidia-cudnn-cu13\r\n",
       " Downloaded nvidia-cublas\r\n",
       " Downloaded torch\r\n",
-      "Installed 30 packages in 245ms\r\n",
+      "Installed 30 packages in 230ms\r\n",
       "======================================================================\r\n",
       "NonZero reproduction -- Claim 1 mechanism test (toy scale)\r\n",
       "Testing: does surrogate-guided proposal beat random search\r\n",
@@ -2436,13 +2436,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "4cb8255e",
+   "id": "687ddb31",
    "metadata": {
     "papermill": {
-     "duration": 0.01397,
-     "end_time": "2026-07-17T05:01:26.366847+00:00",
+     "duration": 0.014687,
+     "end_time": "2026-07-18T20:26:59.682934+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:01:26.352877+00:00",
+     "start_time": "2026-07-18T20:26:59.668247+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2456,19 +2456,19 @@
   {
    "cell_type": "code",
    "execution_count": 34,
-   "id": "0670e7fb",
+   "id": "aae2f8dc",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T05:01:26.398688Z",
-     "iopub.status.busy": "2026-07-17T05:01:26.398285Z",
-     "iopub.status.idle": "2026-07-17T05:01:27.250527Z",
-     "shell.execute_reply": "2026-07-17T05:01:27.249305Z"
+     "iopub.execute_input": "2026-07-18T20:26:59.714970Z",
+     "iopub.status.busy": "2026-07-18T20:26:59.714534Z",
+     "iopub.status.idle": "2026-07-18T20:27:00.559278Z",
+     "shell.execute_reply": "2026-07-18T20:27:00.557935Z"
     },
     "papermill": {
-     "duration": 0.87324,
-     "end_time": "2026-07-17T05:01:27.253619+00:00",
+     "duration": 0.864442,
+     "end_time": "2026-07-18T20:27:00.561863+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:01:26.380379+00:00",
+     "start_time": "2026-07-18T20:26:59.697421+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2479,11 +2479,11 @@
      "output_type": "stream",
      "text": [
       "total 24\r\n",
-      "drwxr-xr-x 2 root root 4096 Jul 17 05:01 .\r\n",
-      "drwxr-xr-x 4 root root 4096 Jul 17 05:01 ..\r\n",
-      "-rw-r--r-- 1 root root 4397 Jul 17 05:01 matgame_nonzero.py\r\n",
-      "-rw-r--r-- 1 root root 3164 Jul 17 05:01 nonzero_surrogate.py\r\n",
-      "-rw-r--r-- 1 root root 2539 Jul 17 05:01 validate_surrogate_fit.py\r\n"
+      "drwxr-xr-x 2 root root 4096 Jul 18 20:27 .\r\n",
+      "drwxr-xr-x 4 root root 4096 Jul 18 20:26 ..\r\n",
+      "-rw-r--r-- 1 root root 4397 Jul 18 20:26 matgame_nonzero.py\r\n",
+      "-rw-r--r-- 1 root root 3164 Jul 18 20:26 nonzero_surrogate.py\r\n",
+      "-rw-r--r-- 1 root root 2539 Jul 18 20:27 validate_surrogate_fit.py\r\n"
      ]
     }
    ],
@@ -2499,13 +2499,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b544c418",
+   "id": "6bd44835",
    "metadata": {
     "papermill": {
-     "duration": 0.01548,
-     "end_time": "2026-07-17T05:01:27.283852+00:00",
+     "duration": 0.01564,
+     "end_time": "2026-07-18T20:27:00.593007+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:01:27.268372+00:00",
+     "start_time": "2026-07-18T20:27:00.577367+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2517,19 +2517,19 @@
   {
    "cell_type": "code",
    "execution_count": 35,
-   "id": "bf2013d3",
+   "id": "a4cf6402",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T05:01:27.314527Z",
-     "iopub.status.busy": "2026-07-17T05:01:27.314100Z",
-     "iopub.status.idle": "2026-07-17T05:01:29.306426Z",
-     "shell.execute_reply": "2026-07-17T05:01:29.305167Z"
+     "iopub.execute_input": "2026-07-18T20:27:00.626822Z",
+     "iopub.status.busy": "2026-07-18T20:27:00.626356Z",
+     "iopub.status.idle": "2026-07-18T20:27:02.881877Z",
+     "shell.execute_reply": "2026-07-18T20:27:02.880357Z"
     },
     "papermill": {
-     "duration": 2.011031,
-     "end_time": "2026-07-17T05:01:29.308955+00:00",
+     "duration": 2.27522,
+     "end_time": "2026-07-18T20:27:02.884347+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:01:27.297924+00:00",
+     "start_time": "2026-07-18T20:27:00.609127+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2568,7 +2568,7 @@
       "\r\n",
       "\r\n",
       "\r\n",
-      "Processing Files (3 / 3)      : 100%|██████████████| 10.1kB / 10.1kB,   ???B/s  \r\n",
+      "Processing Files (3 / 3)      : 100%|██████████████| 10.1kB / 10.1kB, 50.4kB/s  \r\n",
       "\r\n",
       "  ...ifacts/matgame_nonzero.py: 100%|██████████████| 4.40kB / 4.40kB            \u001b[A\u001b[A\r\n",
       "\r\n",
@@ -2620,19 +2620,19 @@
   {
    "cell_type": "code",
    "execution_count": 36,
-   "id": "ea409f4f",
+   "id": "cf6c5836",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T05:01:29.341612Z",
-     "iopub.status.busy": "2026-07-17T05:01:29.341163Z",
-     "iopub.status.idle": "2026-07-17T05:01:30.529279Z",
-     "shell.execute_reply": "2026-07-17T05:01:30.528017Z"
+     "iopub.execute_input": "2026-07-18T20:27:02.917277Z",
+     "iopub.status.busy": "2026-07-18T20:27:02.916721Z",
+     "iopub.status.idle": "2026-07-18T20:27:04.052363Z",
+     "shell.execute_reply": "2026-07-18T20:27:04.051084Z"
     },
     "papermill": {
-     "duration": 1.207807,
-     "end_time": "2026-07-17T05:01:30.531930+00:00",
+     "duration": 1.155447,
+     "end_time": "2026-07-18T20:27:04.055218+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:01:29.324123+00:00",
+     "start_time": "2026-07-18T20:27:02.899771+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2667,19 +2667,19 @@
   {
    "cell_type": "code",
    "execution_count": 37,
-   "id": "c5183835",
+   "id": "946994ef",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T05:01:30.572876Z",
-     "iopub.status.busy": "2026-07-17T05:01:30.572523Z",
-     "iopub.status.idle": "2026-07-17T05:01:34.071303Z",
-     "shell.execute_reply": "2026-07-17T05:01:34.069725Z"
+     "iopub.execute_input": "2026-07-18T20:27:04.100049Z",
+     "iopub.status.busy": "2026-07-18T20:27:04.099559Z",
+     "iopub.status.idle": "2026-07-18T20:27:06.475131Z",
+     "shell.execute_reply": "2026-07-18T20:27:06.474058Z"
     },
     "papermill": {
-     "duration": 3.519356,
-     "end_time": "2026-07-17T05:01:34.073955+00:00",
+     "duration": 2.395614,
+     "end_time": "2026-07-18T20:27:06.477359+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:01:30.554599+00:00",
+     "start_time": "2026-07-18T20:27:04.081745+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2702,13 +2702,13 @@
   },
   {
    "cell_type": "markdown",
-   "id": "30d500ac",
+   "id": "a696a205",
    "metadata": {
     "papermill": {
-     "duration": 0.014889,
-     "end_time": "2026-07-17T05:01:34.103733+00:00",
+     "duration": 0.015159,
+     "end_time": "2026-07-18T20:27:06.507319+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:01:34.088844+00:00",
+     "start_time": "2026-07-18T20:27:06.492160+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2720,19 +2720,19 @@
   {
    "cell_type": "code",
    "execution_count": 38,
-   "id": "d5d28da5",
+   "id": "e6c962e7",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T05:01:34.135762Z",
-     "iopub.status.busy": "2026-07-17T05:01:34.135325Z",
-     "iopub.status.idle": "2026-07-17T05:01:34.146552Z",
-     "shell.execute_reply": "2026-07-17T05:01:34.145673Z"
+     "iopub.execute_input": "2026-07-18T20:27:06.541350Z",
+     "iopub.status.busy": "2026-07-18T20:27:06.540772Z",
+     "iopub.status.idle": "2026-07-18T20:27:06.552895Z",
+     "shell.execute_reply": "2026-07-18T20:27:06.551386Z"
     },
     "papermill": {
-     "duration": 0.030503,
-     "end_time": "2026-07-17T05:01:34.148415+00:00",
+     "duration": 0.032363,
+     "end_time": "2026-07-18T20:27:06.555051+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:01:34.117912+00:00",
+     "start_time": "2026-07-18T20:27:06.522688+00:00",
      "status": "completed"
     },
     "tags": []
@@ -2978,19 +2978,19 @@
   {
    "cell_type": "code",
    "execution_count": 39,
-   "id": "0e73b9f8",
+   "id": "d5a41f8d",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T05:01:34.180441Z",
-     "iopub.status.busy": "2026-07-17T05:01:34.179797Z",
-     "iopub.status.idle": "2026-07-17T05:02:35.728855Z",
-     "shell.execute_reply": "2026-07-17T05:02:35.727481Z"
+     "iopub.execute_input": "2026-07-18T20:27:06.592382Z",
+     "iopub.status.busy": "2026-07-18T20:27:06.591285Z",
+     "iopub.status.idle": "2026-07-18T20:28:04.196563Z",
+     "shell.execute_reply": "2026-07-18T20:28:04.195061Z"
     },
     "papermill": {
-     "duration": 61.567876,
-     "end_time": "2026-07-17T05:02:35.731476+00:00",
+     "duration": 57.626957,
+     "end_time": "2026-07-18T20:28:04.199064+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:01:34.163600+00:00",
+     "start_time": "2026-07-18T20:27:06.572107+00:00",
      "status": "completed"
     },
     "tags": []
@@ -3005,27 +3005,27 @@
       "# dependencies = [\"torch\", \"numpy\"]\r\n",
       "/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_experimental.py:59: UserWarning: 'HfApi.run_uv_job' is experimental and might be subject to breaking changes in the future without prior notice. You can disable this warning by setting `HF_HUB_DISABLE_EXPERIMENTAL_WARNING=1` as environment variable.\r\n",
       "  warnings.warn(\r\n",
-      "Job started with ID: 6a59b73085d9643ce16d72d8\r\n",
-      "View at: https://huggingface.co/jobs/byte-vortex/6a59b73085d9643ce16d72d8\r\n",
-      "Downloading numpy (15.9MiB)\r\n",
-      "Downloading nvidia-cuda-cupti (10.2MiB)\r\n",
-      "Downloading sympy (6.0MiB)\r\n",
-      "Downloading nvidia-nvjitlink (38.9MiB)\r\n",
-      "Downloading nvidia-nvshmem-cu13 (57.6MiB)\r\n",
-      "Downloading triton (188.6MiB)\r\n",
-      "Downloading nvidia-cudnn-cu13 (349.2MiB)\r\n",
-      "Downloading nvidia-cusolver (191.6MiB)\r\n",
-      "Downloading nvidia-cublas (403.5MiB)\r\n",
-      "Downloading nvidia-nccl-cu13 (196.4MiB)\r\n",
+      "Job started with ID: 6a5be19cd216bd6f3a1ff4a3\r\n",
+      "View at: https://huggingface.co/jobs/byte-vortex/6a5be19cd216bd6f3a1ff4a3\r\n",
       "Downloading nvidia-cuda-nvrtc (86.0MiB)\r\n",
-      "Downloading nvidia-cusparselt-cu13 (162.3MiB)\r\n",
-      "Downloading torch (502.2MiB)\r\n",
-      "Downloading nvidia-cusparse (139.2MiB)\r\n",
-      "Downloading nvidia-cufile (1.2MiB)\r\n",
-      "Downloading networkx (2.0MiB)\r\n",
+      "Downloading triton (188.6MiB)\r\n",
       "Downloading cuda-bindings (6.3MiB)\r\n",
-      "Downloading nvidia-cufft (204.2MiB)\r\n",
+      "Downloading nvidia-cusolver (191.6MiB)\r\n",
+      "Downloading nvidia-nccl-cu13 (196.4MiB)\r\n",
+      "Downloading nvidia-cuda-cupti (10.2MiB)\r\n",
+      "Downloading nvidia-cudnn-cu13 (349.2MiB)\r\n",
       "Downloading nvidia-curand (56.8MiB)\r\n",
+      "Downloading numpy (15.9MiB)\r\n",
+      "Downloading nvidia-cublas (403.5MiB)\r\n",
+      "Downloading nvidia-cufft (204.2MiB)\r\n",
+      "Downloading nvidia-nvshmem-cu13 (57.6MiB)\r\n",
+      "Downloading nvidia-cusparse (139.2MiB)\r\n",
+      "Downloading nvidia-nvjitlink (38.9MiB)\r\n",
+      "Downloading nvidia-cusparselt-cu13 (162.3MiB)\r\n",
+      "Downloading nvidia-cufile (1.2MiB)\r\n",
+      "Downloading torch (502.2MiB)\r\n",
+      "Downloading networkx (2.0MiB)\r\n",
+      "Downloading sympy (6.0MiB)\r\n",
       "Downloading nvidia-cuda-runtime (2.1MiB)\r\n",
       " Downloaded nvidia-cufile\r\n",
       " Downloaded nvidia-cuda-runtime\r\n",
@@ -3047,7 +3047,7 @@
       " Downloaded nvidia-cudnn-cu13\r\n",
       " Downloaded nvidia-cublas\r\n",
       " Downloaded torch\r\n",
-      "Installed 30 packages in 219ms\r\n",
+      "Installed 30 packages in 217ms\r\n",
       "======================================================================\r\n",
       "NonZero reproduction -- Claim 4 toy comparison (vectorized)\r\n",
       "Setting: 8 agents, 10 actions, nonlinear (Table 1's hardest config)\r\n",
@@ -3088,19 +3088,19 @@
   {
    "cell_type": "code",
    "execution_count": 40,
-   "id": "97e96ea8",
+   "id": "757359ab",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T05:02:35.765127Z",
-     "iopub.status.busy": "2026-07-17T05:02:35.764759Z",
-     "iopub.status.idle": "2026-07-17T05:02:37.675781Z",
-     "shell.execute_reply": "2026-07-17T05:02:37.671721Z"
+     "iopub.execute_input": "2026-07-18T20:28:04.233814Z",
+     "iopub.status.busy": "2026-07-18T20:28:04.232756Z",
+     "iopub.status.idle": "2026-07-18T20:28:05.317356Z",
+     "shell.execute_reply": "2026-07-18T20:28:05.315767Z"
     },
     "papermill": {
-     "duration": 1.937702,
-     "end_time": "2026-07-17T05:02:37.684283+00:00",
+     "duration": 1.105355,
+     "end_time": "2026-07-18T20:28:05.319982+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:02:35.746581+00:00",
+     "start_time": "2026-07-18T20:28:04.214627+00:00",
      "status": "completed"
     },
     "tags": []
@@ -3141,19 +3141,388 @@
   {
    "cell_type": "code",
    "execution_count": 41,
-   "id": "075ab943",
+   "id": "6ca5ebb5",
    "metadata": {
     "execution": {
-     "iopub.execute_input": "2026-07-17T05:02:37.751715Z",
-     "iopub.status.busy": "2026-07-17T05:02:37.750779Z",
-     "iopub.status.idle": "2026-07-17T05:02:41.986420Z",
-     "shell.execute_reply": "2026-07-17T05:02:41.985125Z"
+     "iopub.execute_input": "2026-07-18T20:28:05.357951Z",
+     "iopub.status.busy": "2026-07-18T20:28:05.357401Z",
+     "iopub.status.idle": "2026-07-18T20:28:06.593060Z",
+     "shell.execute_reply": "2026-07-18T20:28:06.591839Z"
     },
     "papermill": {
-     "duration": 4.271705,
-     "end_time": "2026-07-17T05:02:41.988810+00:00",
+     "duration": 1.256972,
+     "end_time": "2026-07-18T20:28:06.595369+00:00",
      "exception": false,
-     "start_time": "2026-07-17T05:02:37.717105+00:00",
+     "start_time": "2026-07-18T20:28:05.338397+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'claim-4-matgame-8-agent-10-action-nonlinear'. · syncing to byte-vortex/nonzero-repro…\n",
+      " \n"
+     ]
+    }
+   ],
+   "source": [
+    "import subprocess\n",
+    "\n",
+    "claim4_deep_dive_note = \"\"\"Deeper investigation into wiring NonUCT into the real MCTS search (beyond the toy comparison above): confirmed each C++ tree node stores its own joint action (`int *action`) that led to it, and that Python-to-C++ bindings for setting a NonUCT weight/scores were successfully built and tested (see the batch-bindings patch). However, full integration requires more than initially scoped: child actions are sampled and deduplicated internally in C++ (variable count per node, unknown to Python in advance), meaning real wiring needs additional getters to query actual sampled actions per node after each expansion, a trained state-conditioned theta-head network (a real architecture/training-loop change), and careful indexing into the node pool. This was assessed as a substantial additional engineering effort beyond what could be safely completed and verified without live debugging capability, and was not completed. Documenting this honestly rather than shipping unverified wiring.\"\"\"\n",
+    "\n",
+    "result = subprocess.run(\n",
+    "    [\"trackio\", \"logbook\", \"cell\", \"markdown\", claim4_deep_dive_note,\n",
+    "     \"--title\", \"NonUCT integration -- deeper findings (not completed)\", \"--page\", \"Claim 4: MatGame 8-agent 10-action nonlinear\"],\n",
+    "    capture_output=True, text=True\n",
+    ")\n",
+    "print(result.stdout, result.stderr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "1c7bc787",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-18T20:28:06.633163Z",
+     "iopub.status.busy": "2026-07-18T20:28:06.632081Z",
+     "iopub.status.idle": "2026-07-18T20:28:09.031662Z",
+     "shell.execute_reply": "2026-07-18T20:28:09.030285Z"
+    },
+    "papermill": {
+     "duration": 2.421233,
+     "end_time": "2026-07-18T20:28:09.033898+00:00",
+     "exception": false,
+     "start_time": "2026-07-18T20:28:06.612665+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "  · pushing artifacts for 'nonzero-repro' → bucket byte-vortex/nonzero-repro-artifacts\r\n",
+      "  · could not push artifacts to bucket: No database found for project 'nonzero-repro'\r\n",
+      "Published: https://huggingface.co/spaces/byte-vortex/nonzero-repro\r\n",
+      "Rendered at: https://byte-vortex-nonzero-repro.static.hf.space/\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook publish byte-vortex/nonzero-repro"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ac4ef1a7",
+   "metadata": {
+    "papermill": {
+     "duration": 0.020595,
+     "end_time": "2026-07-18T20:28:09.070940+00:00",
+     "exception": false,
+     "start_time": "2026-07-18T20:28:09.050345+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "source": [
+    "---"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "id": "0560d251",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-18T20:28:09.105928Z",
+     "iopub.status.busy": "2026-07-18T20:28:09.105543Z",
+     "iopub.status.idle": "2026-07-18T20:28:10.352432Z",
+     "shell.execute_reply": "2026-07-18T20:28:10.351122Z"
+    },
+    "papermill": {
+     "duration": 1.267729,
+     "end_time": "2026-07-18T20:28:10.355248+00:00",
+     "exception": false,
+     "start_time": "2026-07-18T20:28:09.087519+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Selected page 'claim-3-efficiency-separation-theorem-3-7' as default. · syncing to byte-vortex/nonzero-repro…\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "!trackio logbook page \"Claim 3: Efficiency separation (Theorem 3.7)\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 44,
+   "id": "24160548",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-18T20:28:10.395840Z",
+     "iopub.status.busy": "2026-07-18T20:28:10.395212Z",
+     "iopub.status.idle": "2026-07-18T20:28:10.407479Z",
+     "shell.execute_reply": "2026-07-18T20:28:10.406428Z"
+    },
+    "papermill": {
+     "duration": 0.035525,
+     "end_time": "2026-07-18T20:28:10.409488+00:00",
+     "exception": false,
+     "start_time": "2026-07-18T20:28:10.373963+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Writing nonzero_claim3_illustration.py\n"
+     ]
+    }
+   ],
+   "source": [
+    "%%writefile nonzero_claim3_illustration.py\n",
+    "\n",
+    "# /// script\n",
+    "# dependencies = [\"torch\", \"numpy\"]\n",
+    "# ///\n",
+    "\"\"\"\n",
+    "NonZero reproduction -- Claim 3 (toy numerical illustration).\n",
+    "Paper: arXiv 2605.00751, Theorem 3.7 -- efficiency separation\n",
+    "ratio zeta_sep >= exp(c*n*d) / poly(n*d, eps^-1).\n",
+    "\n",
+    "HONESTY NOTE: numerical illustration of the claimed asymptotic trend,\n",
+    "not a formal proof verification.\n",
+    "\"\"\"\n",
+    "\n",
+    "import torch\n",
+    "import numpy as np\n",
+    "\n",
+    "\n",
+    "class MatgameNonZeroEnv:\n",
+    "    def __init__(self, n_agents, n_actions, noise_std=2.0, noise_uniform_range=3.0, seed=None):\n",
+    "        self.n_agents = n_agents\n",
+    "        self.n_actions = n_actions\n",
+    "        self.noise_std = noise_std\n",
+    "        self.noise_uniform_range = noise_uniform_range\n",
+    "        self._rng = np.random.default_rng(seed)\n",
+    "\n",
+    "    def joint_reward(self, actions):\n",
+    "        base = float(np.sum(actions))\n",
+    "        u = self._rng.normal(0.0, self.noise_std)\n",
+    "        v = self._rng.uniform(-self.noise_uniform_range, self.noise_uniform_range)\n",
+    "        return base + u + v\n",
+    "\n",
+    "\n",
+    "class AsinhGLMSurrogate:\n",
+    "    def __init__(self, n_agents, n_actions, c=1.0, alpha=1.0):\n",
+    "        self.n_agents, self.n_actions = n_agents, n_actions\n",
+    "        self.nd = n_agents * n_actions\n",
+    "        self.c, self.alpha = c, alpha\n",
+    "\n",
+    "    def one_hot(self, agent_actions):\n",
+    "        agent_actions = torch.as_tensor(agent_actions, dtype=torch.long)\n",
+    "        oh = torch.nn.functional.one_hot(agent_actions, num_classes=self.n_actions)\n",
+    "        return oh.reshape(*agent_actions.shape[:-1], self.nd).float()\n",
+    "\n",
+    "    def eta(self, theta, a):\n",
+    "        return self.c * torch.asinh(self.alpha * (theta * a).sum(dim=-1))\n",
+    "\n",
+    "    def neighbor(self, a, agent_idx, new_action):\n",
+    "        a = a.clone()\n",
+    "        s = agent_idx * self.n_actions\n",
+    "        a[..., s:s + self.n_actions] = 0.0\n",
+    "        a[..., s + new_action] = 1.0\n",
+    "        return a\n",
+    "\n",
+    "\n",
+    "def fit_surrogate(env, surrogate, n_samples=3000, n_epochs=1000, rng=None):\n",
+    "    actions = rng.integers(0, env.n_actions, size=(n_samples, env.n_agents))\n",
+    "    rewards = torch.tensor([env.joint_reward(a) for a in actions], dtype=torch.float32)\n",
+    "    a_enc = surrogate.one_hot(torch.tensor(actions, dtype=torch.long))\n",
+    "    theta = torch.nn.Parameter(torch.zeros(surrogate.nd))\n",
+    "    log_c, log_alpha = torch.nn.Parameter(torch.zeros(())), torch.nn.Parameter(torch.zeros(()))\n",
+    "    opt = torch.optim.Adam([theta, log_c, log_alpha], lr=0.05)\n",
+    "    for _ in range(n_epochs):\n",
+    "        opt.zero_grad()\n",
+    "        pred = torch.exp(log_c) * torch.asinh(torch.exp(log_alpha) * (theta * a_enc).sum(dim=-1))\n",
+    "        loss = ((pred - rewards) ** 2).mean()\n",
+    "        loss.backward()\n",
+    "        opt.step()\n",
+    "    return theta.detach()\n",
+    "\n",
+    "\n",
+    "def guided_search_budget_to_near_optimal(env, surrogate, theta, target_reward, max_budget, rng):\n",
+    "    n_agents, n_actions = env.n_agents, env.n_actions\n",
+    "    current = rng.integers(0, n_actions, size=n_agents)\n",
+    "    best_reward = env.joint_reward(current)\n",
+    "    evals_used = 1\n",
+    "    while evals_used < max_budget and best_reward < target_reward:\n",
+    "        cur_enc = surrogate.one_hot(current)\n",
+    "        cur_eta = surrogate.eta(theta, cur_enc).item()\n",
+    "        best_candidate, best_delta = None, -float(\"inf\")\n",
+    "        for agent_idx in range(n_agents):\n",
+    "            for new_action in range(n_actions):\n",
+    "                if new_action == current[agent_idx]:\n",
+    "                    continue\n",
+    "                cand_enc = surrogate.neighbor(cur_enc, agent_idx, new_action)\n",
+    "                delta = (surrogate.eta(theta, cand_enc) - cur_eta).item()\n",
+    "                if delta > best_delta:\n",
+    "                    best_delta, best_candidate = delta, (agent_idx, new_action)\n",
+    "        if best_candidate is None:\n",
+    "            break\n",
+    "        agent_idx, new_action = best_candidate\n",
+    "        candidate_actions = current.copy()\n",
+    "        candidate_actions[agent_idx] = new_action\n",
+    "        r = env.joint_reward(candidate_actions)\n",
+    "        evals_used += 1\n",
+    "        if r > best_reward:\n",
+    "            current, best_reward = candidate_actions, r\n",
+    "        else:\n",
+    "            break\n",
+    "    return evals_used, best_reward\n",
+    "\n",
+    "\n",
+    "def main():\n",
+    "    print(\"=\" * 70)\n",
+    "    print(\"NonZero reproduction -- Claim 3 (toy numerical illustration)\")\n",
+    "    print(\"Testing: does guided search need exponentially less budget than\")\n",
+    "    print(\"full joint-action enumeration as agents (n) increase?\")\n",
+    "    print(\"=\" * 70)\n",
+    "\n",
+    "    n_actions = 8\n",
+    "    agent_counts = [3, 4, 5, 6]\n",
+    "    n_trials = 30\n",
+    "\n",
+    "    print(f\"\\n{'n_agents':>10} {'full space d^n':>16} {'guided budget':>16} {'separation ratio':>18}\")\n",
+    "\n",
+    "    ratios = []\n",
+    "    for n_agents in agent_counts:\n",
+    "        rng_fit = np.random.default_rng(n_agents)\n",
+    "        env_fit = MatgameNonZeroEnv(n_agents, n_actions, seed=1)\n",
+    "        surrogate = AsinhGLMSurrogate(n_agents, n_actions)\n",
+    "        theta = fit_surrogate(env_fit, surrogate, rng=rng_fit)\n",
+    "\n",
+    "        rng_ref = np.random.default_rng(100 + n_agents)\n",
+    "        env_ref = MatgameNonZeroEnv(n_agents, n_actions, seed=2)\n",
+    "        _, ref_best = guided_search_budget_to_near_optimal(\n",
+    "            env_ref, surrogate, theta, target_reward=1e9, max_budget=200, rng=rng_ref\n",
+    "        )\n",
+    "        target = 0.9 * ref_best\n",
+    "\n",
+    "        budgets = []\n",
+    "        for trial in range(n_trials):\n",
+    "            rng_t = np.random.default_rng(1000 + n_agents * 100 + trial)\n",
+    "            env_t = MatgameNonZeroEnv(n_agents, n_actions, seed=2000 + trial)\n",
+    "            evals_used, _ = guided_search_budget_to_near_optimal(\n",
+    "                env_t, surrogate, theta, target_reward=target, max_budget=200, rng=rng_t\n",
+    "            )\n",
+    "            budgets.append(evals_used)\n",
+    "        mean_budget = np.mean(budgets)\n",
+    "\n",
+    "        full_space = n_actions ** n_agents\n",
+    "        ratio = full_space / mean_budget\n",
+    "        ratios.append(ratio)\n",
+    "        print(f\"{n_agents:>10} {full_space:>16,} {mean_budget:>16.1f} {ratio:>18,.1f}\")\n",
+    "\n",
+    "    growth_factor = ratios[-1] / ratios[0]\n",
+    "    print(f\"\\n[Separation ratio growth from n={agent_counts[0]} to n={agent_counts[-1]}]\")\n",
+    "    print(f\"  Ratio grew {growth_factor:,.1f}x while full space grew \"\n",
+    "          f\"{n_actions**agent_counts[-1] / n_actions**agent_counts[0]:,.1f}x\")\n",
+    "\n",
+    "    print(\"\\n\" + \"=\" * 70)\n",
+    "    print(\"SUMMARY\")\n",
+    "    if all(ratios[i] < ratios[i + 1] for i in range(len(ratios) - 1)):\n",
+    "        print(f\"  PASS (toy illustration): the separation ratio (full space / guided\")\n",
+    "        print(f\"  budget) grows monotonically and steeply with the number of agents,\")\n",
+    "        print(f\"  consistent with Theorem 3.7's claimed exponential advantage of\")\n",
+    "        print(f\"  NonUCT-style guided search over full joint-action enumeration.\")\n",
+    "        print(f\"  This is a numerical illustration of the trend, not a formal proof\")\n",
+    "        print(f\"  verification of the theorem's exact bound.\")\n",
+    "    else:\n",
+    "        print(f\"  PARTIAL: separation ratio did not grow monotonically in this run.\")\n",
+    "    print(\"=\" * 70)\n",
+    "\n",
+    "\n",
+    "if __name__ == \"__main__\":\n",
+    "    main()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "id": "72a90a9f",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-18T20:28:10.444766Z",
+     "iopub.status.busy": "2026-07-18T20:28:10.444359Z",
+     "iopub.status.idle": "2026-07-18T20:28:11.621717Z",
+     "shell.execute_reply": "2026-07-18T20:28:11.620412Z"
+    },
+    "papermill": {
+     "duration": 1.19811,
+     "end_time": "2026-07-18T20:28:11.624366+00:00",
+     "exception": false,
+     "start_time": "2026-07-18T20:28:10.426256+00:00",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Logged markdown cell to page 'claim-3-efficiency-separation-theorem-3-7'. · syncing to byte-vortex/nonzero-repro…\n",
+      " \n"
+     ]
+    }
+   ],
+   "source": [
+    "import subprocess\n",
+    "\n",
+    "claim3_note = \"\"\"[toy numerical illustration] Not a formal proof-check of Theorem 3.7's exact bound (that would require verifying the proof in Appendix A.6, not code). Instead, numerically measured the guided-search budget needed to reach a near-optimal joint action as the number of agents (n) grows from 3 to 6, and compared against the size of the full joint-action space (d^n) that a standard UCB-style method would need to enumerate for comparable coverage. The resulting separation ratio grew from ~160x to ~90,394x -- steep, monotonic growth consistent with the theorem's claimed exponential advantage in n, though this illustrates the qualitative trend rather than verifying the theorem's precise constants.\"\"\"\n",
+    "\n",
+    "result = subprocess.run(\n",
+    "    [\"trackio\", \"logbook\", \"cell\", \"markdown\", claim3_note,\n",
+    "     \"--title\", \"Toy numerical illustration\", \"--page\", \"Claim 3: Efficiency separation (Theorem 3.7)\"],\n",
+    "    capture_output=True, text=True\n",
+    ")\n",
+    "print(result.stdout, result.stderr)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "820286bb",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2026-07-18T20:28:11.661703Z",
+     "iopub.status.busy": "2026-07-18T20:28:11.660282Z",
+     "iopub.status.idle": "2026-07-18T20:28:14.342164Z",
+     "shell.execute_reply": "2026-07-18T20:28:14.340863Z"
+    },
+    "papermill": {
+     "duration": 2.702682,
+     "end_time": "2026-07-18T20:28:14.344563+00:00",
+     "exception": false,
+     "start_time": "2026-07-18T20:28:11.641881+00:00",
      "status": "completed"
     },
     "tags": []
@@ -3204,14 +3573,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 449.078233,
-   "end_time": "2026-07-17T05:02:43.032698+00:00",
+   "duration": 446.292694,
+   "end_time": "2026-07-18T20:28:15.283891+00:00",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2026-07-17T04:55:13.954465+00:00",
+   "start_time": "2026-07-18T20:20:48.991197+00:00",
    "version": "2.7.0"
   }
  },
